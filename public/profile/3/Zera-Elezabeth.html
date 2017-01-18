@@ -1,0 +1,2326 @@
+<!doctype html>
+<html>
+	
+<!-- Mirrored from inout-realestate.demo.inoutscripts.net/agents/profile/3/Zera-Elezabeth by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 28 Nov 2016 12:08:13 GMT -->
+<head>
+	<meta charset="utf-8">
+	<title>Inout RealEstate</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="keywords" content="Comprar, vender, alugar, trocar ou dar.">
+<meta name="description" content="Desapegue a sua Sogra !!!! rsrsrs">
+
+
+<meta http-equiv="cache-control" content="max-age=0" />
+<meta http-equiv="cache-control" content="no-cache" />
+<meta http-equiv="expires" content="0" />
+<meta http-equiv="pragma" content="no-cache" />
+	<link rel="stylesheet" type="text/css" href="css/main.css" />
+	<link rel="stylesheet" type="text/css" href="css/reset.css" />
+	<link rel="stylesheet" type="text/css" href="css/responsive.css" />
+	<link rel="stylesheet" type="text/css" href="css/flaticon.css" />
+	<link rel="stylesheet" type="text/css" href="css/select2.css" />
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/animate/animate.css" />
+	<link rel="stylesheet" type="text/css" href="css/owl.carousel.css" />
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.css" />
+    
+    
+	<!-- Slider -->
+	<link rel="stylesheet" href="css/superslides.css">
+
+	<!-- Slider ends -->
+	<!-- Date range picker -->
+
+	<link rel="stylesheet" href="css/simpledatepicker/datepicker.css" type="text/css">
+	<!-- Date Range piker ends -->
+
+
+ <link rel="stylesheet" type="text/css" href="css/rangeslider/ion.rangeSlider.css" />
+ 
+    <link rel="stylesheet" type="text/css" href="css/rangeslider/ion.rangeSlider.skinFlat.css" />
+
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500' rel='stylesheet' type='text/css'>
+	<script src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery_ui.js"></script>
+	<!--[if lt IE 9]>
+<link rel="stylesheet" href="css/sangaslider/ie8.css" type="text/css">
+    <script src="js/html5shiv.js"></script>
+    
+     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+	<style>
+html, body {
+	width: 100%;
+	height: 100%;
+}
+.mainslider {
+	width: 100%;
+	height: 100%;
+	background-color: #EBEFEF;
+	margin-bottom: 30px;
+}
+.slides-container {
+	z-index: 1;
+}
+</style>
+<script type="text/javascript">
+
+function logout()
+{
+	
+	$.ajax({
+
+		type: "POST",cache: false,
+
+		url: "http://inout-realestate.demo.inoutscripts.net/index/logout",
+
+	
+
+		success: function(data) { 
+	//alert(data);		
+			if(data=="1")
+			{
+				location.reload(true);
+			}
+			
+
+									
+		}
+		});
+}
+
+
+function login()
+{
+	
+	var username=$('#username').val().trim();
+	
+	var password=$('#lpassword').val();
+
+	//
+
+	var pass_len=password.length;
+	
+	
+	if(username=="")
+	{
+		 $('#unameerror').html('Please Enter Your Username');
+		 
+		  $('#unameerror').addClass('show');
+				  
+				   setTimeout(function () {
+        $('#unameerror').removeClass('show');
+    }, 1700);
+		 
+		 
+	}
+	if(password=="")
+	{
+		 $('#passerror').html('Please Enter Your Password');
+		  $('#passerror').addClass('show');
+				  
+				   setTimeout(function () {
+        $('#passerror').removeClass('show');
+    }, 1700);
+		 
+		  return false;
+	}
+
+	/**/
+	$.ajax({
+
+		type: "POST",cache: false,
+
+		url: "http://inout-realestate.demo.inoutscripts.net/index/loginprocess",
+
+		data: {'username':username,'pword':password},
+
+		success: function(datas) { 
+var dataaa=datas.split("###");
+var data=dataaa[0];
+			
+			if(data=="1")
+			{
+				
+					
+					   $('#unameerror').html('Please Enter Your Username');
+					   
+					   $('#unameerror').addClass('show');
+				  
+				   setTimeout(function () {
+        $('#unameerror').removeClass('show');
+    }, 1700);
+		 
+					   
+			 
+						
+						
+				
+				return false;
+				
+			}
+			if(data=="2")
+			{
+				
+				  $('#passerror').html('Please Enter Your Password');
+				  
+				  	   $('#passerror').addClass('show');
+				  
+				   setTimeout(function () {
+        $('#passerror').removeClass('show');
+    }, 1700);
+		 
+				  
+				   
+				
+				return false;
+				
+			}
+			if(data=="3")
+ 			{
+                     if(dataaa[1]==0)
+                         {
+var url='../../../index.html';
+
+
+                           }
+            else
+            {
+
+var url='../../../index.html';
+            }
+ 				window.location = url;
+ 			}
+			if(data=="4")
+			{
+		
+				  $('#passerror').html('Invalid Email or Password ');
+				  
+				   $('#passerror').addClass('show');
+				  
+				   setTimeout(function () {
+        $('#passerror').removeClass('show');
+    }, 1700);
+				  
+				   
+				
+				return false;
+				
+			}
+
+									
+		}
+		});
+}
+
+
+
+function register()
+{
+
+	var fname=$('#fname').val().trim();
+	
+	var lname=$('#lname').val().trim();
+	//var email=$('#emailuser').val().trim();
+	var email=document.getElementById("emailuser").value;
+	
+	var cpassword=$('#cpassword').val();
+	var password=$('#password').val();
+	var agentstatus=$('#agentstatus').val();
+	if(fname=="")
+	{
+		
+		 $('#fnameerror').html('Please Enter Your First Name');
+		 
+		 	$('#fnameerror').addClass('show');
+				   setTimeout(function () {
+        $('#fnameerror').removeClass('show');
+    }, 1700);
+		 
+	 
+		 return false;
+	}
+	if(lname=="")
+	{
+		
+		 $('#lnameerror').html('Please Enter Your Last Name');
+		 
+		 $('#lnameerror').addClass('show');
+				   setTimeout(function () {
+        $('#lnameerror').removeClass('show');
+    }, 1700);
+	
+		 
+		 return false;
+	}
+	if(/^[A-Za-z\s]+$/.test(fname)==false)
+	{
+		 $('#fnameerror').html('First Name Must Contain only Letters');
+		 
+		 $('#fnameerror').addClass('show');
+				   setTimeout(function () {
+        $('#fnameerror').removeClass('show');
+    }, 1700);
+		 
+		  
+		 return false;
+	}
+	if(/^[A-Za-z\s]+$/.test(lname)==false)
+	{
+		 $('#lnameerror').html('Last Name Must Contain only Letters');
+		 
+		 
+		  $('#lnameerror').addClass('show');
+				   setTimeout(function () {
+        $('#lnameerror').removeClass('show');
+    }, 1700);
+		 
+		 
+		 return false;
+	}
+	if(email=="")
+	{
+		
+		 $('#emailerror').html('Please Enter Your Email');
+		 
+		 $('#emailerror').addClass('show');
+				   setTimeout(function () {
+        $('#emailerror').removeClass('show');
+    }, 1700);
+		 
+	 
+		 return false;
+	}
+	  var regex = /^([0-9a-zA-Z]([-_\\.]*[0-9a-zA-Z]+)*)@([0-9a-zA-Z]([-_\\.]*[0-9a-zA-Z]+)*)[\\.]([a-zA-Z]{2,9})$/;
+
+	    if(!regex.test(email)){
+			$('#emailerror').html('Invalid Email');
+			
+			 $('#emailerror').addClass('show');
+				   setTimeout(function () {
+        $('#emailerror').removeClass('show');
+    }, 1700);
+		 
+			 return false;
+		}
+	
+	if(password=="")
+	{
+		
+		$('#passwrderror').html('Please Enter a Password');
+		
+		$('#passwrderror').addClass('show');
+				   setTimeout(function () {
+        $('#passwrderror').removeClass('show');
+    }, 1700);
+		
+		  
+		 return false;
+	}
+	if(cpassword=="")
+	{
+		
+		$('#cpassworderror').html('Please Confirm Your Password');
+		
+		$('#cpassworderror').addClass('show');
+				   setTimeout(function () {
+        $('#cpassworderror').removeClass('show');
+    }, 1700);
+		
+		 
+		 return false;
+	}
+	var min_password='4';
+	var pass_len=password.length;
+	var cpass_len=cpassword.length;
+	if(pass_len<min_password)
+	{
+		$('#passwrderror').html('Minimum Password Length Must be '+min_password);
+		
+		$('#passwrderror').addClass('show');
+				   setTimeout(function () {
+        $('#passwrderror').removeClass('show');
+    }, 1700);
+		
+		  
+		 return false;
+    }
+	
+	if(cpass_len<min_password)
+	{
+		$('#cpassworderror').html('Minimum Password Length Must be '+min_password);
+		
+		$('#cpassworderror').addClass('show');
+				   setTimeout(function () {
+        $('#cpassworderror').removeClass('show');
+    }, 1700);
+		
+		
+	 
+		 return false;
+    }
+	if(password!=cpassword)
+	{
+		$('#cpassworderror').html('Password and Confirm password Must be Same');
+		
+		$('#cpassworderror').addClass('show');
+				   setTimeout(function () {
+        $('#cpassworderror').removeClass('show');
+    }, 1700);
+		
+	 
+		 return false;
+	}
+	//var emailid=JSON.stringify(email);
+	
+	$.ajax({
+
+		type: "POST",cache: false,
+
+		url: "http://inout-realestate.demo.inoutscripts.net/index/registerprocess",
+
+		data: {'pword':password,'cpword':cpassword,'fname':fname,'lname':lname,'email':email,'agentstatus':agentstatus},
+
+		success: function(data) { 
+			//alert(data);
+			
+			if(data=="1")
+			{
+				
+					
+
+				 $('#fnameerror').html('Please Enter Your First Name');
+				 
+				 $('#fnameerror').addClass('show');
+				   setTimeout(function () {
+        $('#fnameerror').removeClass('show');
+    }, 1700);
+				 
+			 
+				 return false;
+						
+				
+		
+				
+			}
+			else if(data=="2")
+			{
+				 $('#lnameerror').html('Please Enter Your Last Name');
+				 
+				  $('#lnameerror').addClass('show');
+				   setTimeout(function () {
+        $('#lnameerror').removeClass('show');
+    }, 1700);
+				 
+				 
+				 return false;
+				
+			}
+			else if(data=="3")
+			{
+				 $('#emailerror').html('Please Enter Your Email');
+				 
+				   $('#emailerror').addClass('show');
+				   setTimeout(function () {
+        $('#emailerror').removeClass('show');
+    }, 1700);
+				 
+			 
+				 return false;
+			}
+		
+			else if(data=="5")
+			{
+		
+				 $('#passwrderror').html('Please Enter a Password');
+				 
+				 $('#passwrderror').addClass('show');
+				   setTimeout(function () {
+        $('#passwrderror').removeClass('show');
+    }, 1700);
+				 
+			 
+				 return false;
+				
+			}
+
+			else if(data=="6")
+			{
+		
+				$('#passwrderror').html('Minimum Password Length Must be '+min_password);
+				
+					 $('#passwrderror').addClass('show');
+				   setTimeout(function () {
+        $('#passwrderror').removeClass('show');
+    }, 1700);
+				
+			 
+				 return false;
+				
+			}
+			
+			else if(data=="7")
+			{
+		
+				 $('#cpassworderror').html('Please Confirm Your Password');
+				 
+				 	 $('#cpassworderror').addClass('show');
+				   setTimeout(function () {
+        $('#cpassworderror').removeClass('show');
+    }, 1700);
+				 
+			 
+				 return false;
+				
+			}
+			else if(data=="8")
+			{
+		
+				 $('#cpassworderror').html('Password and Confirm password Must be Same');
+				 
+				 	 	 $('#cpassworderror').addClass('show');
+				   setTimeout(function () {
+        $('#cpassworderror').removeClass('show');
+    }, 1700);
+	
+			 
+				 return false;
+				
+			}
+			else if(data=="9")
+			{
+		
+				 $('#emailerror').html('Invalid Email');
+				 
+				 
+				 	 	 $('#emailerror').addClass('show');
+				   setTimeout(function () {
+        $('#emailerror').removeClass('show');
+    }, 1700);
+	
+				  
+				 return false;
+				
+			}
+			else if(data=="10")
+			{
+		
+				 $('#fnameerror').html('First Name Must Contain only Letters');
+				 
+				 
+				 	 	 	 $('#fnameerror').addClass('show');
+				   setTimeout(function () {
+        $('#fnameerror').removeClass('show');
+    }, 1700);
+				 
+				 
+				 return false;
+				
+			}
+			else if(data=="11")
+			{
+		
+				 $('#lnameerror').html('Last Name Must Contain only Letters');
+				 
+				 
+				 	 	 	 	 $('#lnameerror').addClass('show');
+				   setTimeout(function () {
+        $('#lnameerror').removeClass('show');
+    }, 1700);
+				 
+				 
+				 return false;
+				
+			}
+			else if(data==12)
+			{
+				$('#cpassworderror').html('Minimum Password Length Must be '+min_password);
+				
+					 	 $('#cpassworderror').addClass('show');
+				   setTimeout(function () {
+        $('#cpassworderror').removeClass('show');
+    }, 1700);
+				
+				 
+				 return false;
+			}
+			else if(data==13)
+			{
+				$('#emailerror').html('This Email already Exists ');
+				
+				 $('#emailerror').addClass('show');
+				   setTimeout(function () {
+        $('#emailerror').removeClass('show');
+    }, 1700);
+				
+			 
+				 return false;
+			}
+			else 
+			{
+				var cx=data.split("-");
+				var id=cx[0];
+			var defaultsatys=cx[1];
+
+if(defaultsatys==0)
+{
+
+	$('#regs').hide();
+	$('#msg1').html('Successfully Registered <p class="robotoregular fontsize13 lgraytext">Your account is currently in Pending Status. Admin will verify and approve it soon.</p> ');
+	//$('#msg2').html('Your account is currently in Pending Status. Admin will verify and approve it soon.');
+}else {
+
+
+	$('#regs').hide();
+	$('#msg1').html('Successfully Registered <p class="robotoregular fontsize13 lgraytext">Thank You for Registering with us. Your account is now active.</p> ');
+	//$('#msg2').html('Thank You for Registering with us. Your account is now active.');
+
+
+}
+
+
+
+
+				
+				$.ajax({
+
+					type: "POST",cache: false,
+
+					url: "http://inout-realestate.demo.inoutscripts.net/index/mailsen",
+
+					data: {'id':id}
+
+					
+				});
+
+				if(defaultsatys==1)
+				{
+window.location = "../../../index.html";
+
+				//location.reload(true);
+				}
+			}
+									
+		}
+		});
+	
+	
+}
+function forgotpassword()
+{
+	window.location.href = "../../../forgotpassword/forgotpassword.html";
+}
+
+$(document).ready(function(e) {
+$('#lpassword').keypress(function (e) {
+ var key = e.which;
+ if(key == 13)  // the enter key code
+  {
+   login();
+  }
+});   
+
+	
+	
+	var indexulmenu = $('.indexul').html();
+	
+	$('.re_ul').html(indexulmenu);
+    
+	$('.mainmenuclick').click(function(e) {
+        $('.slideingmenu').addClass("active");
+		$('.slidemenuoverlay').addClass("active");
+    });
+	$('.closesilde').click(function(e) {
+        $('.slideingmenu').removeClass("active");
+		$('.slidemenuoverlay').removeClass("active");
+    });
+	
+	$('.slidemenuoverlay').click(function(e) {
+        $('.slideingmenu').removeClass("active");
+		$(this).removeClass("active");
+    });
+	
+	$('.slideingmenu  .myacounthover').click(function(e) {
+        $(this).children('.myacountdropdown').slideToggle(200);
+    });
+	
+	// sliding sub menu codeeee
+	
+	
+	$('.slidemneu_a').click(function(e) {
+        $(this).siblings('.slidingsubmenu').slideToggle(200);
+    });
+	
+	
+	
+	
+});
+
+</script>
+	</head>
+ 
+<body>
+<!--  Login Starts -->
+
+<div class="loginwrperoverlay"></div>
+<div class="loginbox">
+      <div class="loouter " >
+    <div class="lomiddle">
+          <div class="loinner col-md-5 col-sm-6 col-lg-4 col-center nopadding">
+        <div class="lobox whitebg fulwidthm left pdg30 ">
+              <div class="registerclose lgraytext"><i class="fa flaticon-cross97"></i></div>
+              <div class="loginrow fulwidthm left mgnB15 text-center josfinsanbold graytext fontsize20">Login With Your Account </div>
+              <div class="loginrow fulwidthm left josfinsanbold graytext mgnB15">
+            <label class="formlabel fontsize13 robotoregular graytext">Email </label> <span class=" required">*</span>
+            <input type="email" id="username"  class="cmnfrminput fulwidthm inputiconpdng" value="testaccount1@xyz.com">
+            <span class="loginicons"><i class="fa fa-user"></i></span>
+          
+            <div class="erorshow" id="unameerror"></div>
+          </div>
+              <div class="loginrow fulwidthm left josfinsanbold graytext mgnB15">
+            <label class="formlabel fontsize13 robotoregular graytext">Password</label> <span class=" required">*</span>
+            <input type="password" id="lpassword" class="cmnfrminput  fulwidthm inputiconpdng" value="123456">
+            <span class="loginicons"><i class="fa fa-lock"></i></span>
+  <div class="erorshow" id="passerror"></div>
+          </div>
+              <div class=" text-right loginrow fulwidthm left robotoregular fontsize14 graytext mgnB15"> Forgot password?  <a href="../../../forgotpassword/forgotpassword.html"  class=" lbluetext ">Click Here</a> </div>
+              <div class="loginrow fulwidthm left josfinsanbold graytext mgnB15">
+            <button class=" btn lblue_bg whitetext fulwidthm font-size14 robotomedium " onclick="login();">Submit</button>
+          </div>
+              <div class="loginrow fulwidthm left josfinsanregular fontsize16 graytext mgnB15">Don't have an account?   <a class="lbluetext signupclick">Sign Up</a> </div>
+            </div>
+      </div>
+        </div>
+  </div>
+    </div>
+<div class="registerbox">
+      <div class="loouter " >
+    <div class="lomiddle">
+          <div class="loinner ">
+        <div class="registerboxin whitebg fulwidthm left  ">
+              <div class="registerclose lgraytext"><i class="fa flaticon-cross97"></i></div>
+              <div class="loginrow fulwidthm left mgnB15 text-center josfinsanbold graytext fontsize20" id="msg1"> Register Now             <p class="robotoregular fontsize13 lgraytext">Please Fill Out the Required Fields.</p>
+          </div>
+           <div id="regs">
+              <div class="loginrow fulwidthm left josfinsanbold graytext ">
+            <div class="col-lg-6 col-md-6 col-sm-6 mgnB15">
+                  <label class="formlabel fontsize13 robotoregular graytext">First Name  <span class=" required">*</span></label>
+                  <input type="text" id="fname" class="cmnfrminput fulwidthm ">
+                <div class="erorshow" id="fnameerror"> </div>
+                </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 mgnB15">
+                  <label class="formlabel fontsize13 robotoregular graytext">Last Name  <span class=" required">*</span></label>
+                  <input type="text" id="lname"  class="cmnfrminput fulwidthm ">
+               <div class="erorshow" id="lnameerror"></div>
+                </div>
+          </div>
+              <div class="loginrow fulwidthm left josfinsanbold graytext ">
+            <div class="col-lg-6 col-md-6 col-sm-6 mgnB15">
+                  <label class="formlabel fontsize13 robotoregular graytext">Email  <span class=" required">*</span></label>
+                  <input type="email" id="emailuser" class="cmnfrminput fulwidthm ">
+                 <div class="erorshow" id="emailerror"></div>
+                </div>
+                 <div class="col-lg-6 col-md-6 col-sm-6 mgnB15">
+                  <label class="formlabel fontsize13 robotoregular graytext">Password <span class=" required">*</span></label>
+                  <input type="password"  id="password" class="cmnfrminput fulwidthm ">
+                <div class="erorshow" id="passwrderror"></div>
+                </div>
+          </div>
+              <div class="loginrow fulwidthm left josfinsanbold graytext ">
+           
+            <div class="col-lg-6 col-md-6 col-sm-6 mgnB15">
+                  <label class="formlabel fontsize13 robotoregular graytext">Confirm Password  <span class=" required">*</span></label>
+                  <input type="password" id="cpassword" class="cmnfrminput fulwidthm ">
+                 <div class="erorshow" id="cpassworderror"></div>
+                </div>
+                  <div class="col-lg-6 col-md-6 col-sm-6 mgnB15">
+                  <label class="formlabel fontsize13 robotoregular graytext">Are you an Agent/Broker?</label>
+                  <select id="agentstatus" class="formselect" style="width:100%">
+                <option value="1">Yes </option>
+                <option value="0">No </option>
+             
+              </select>
+                  <div class="erorshow"></div>
+                </div>
+          </div>
+              <div class="loginrow fulwidthm left josfinsanbold graytext mgnB15">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mgnB15">
+                  <button class="btn lblue_bg whitetext fulwidthm font-size14 robotomedium" onclick="register()">Submit</button>
+                </div>
+          </div>
+              <div class="loginrow fulwidthm left josfinsanregular fontsize16 graytext mgnB15">
+               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mgnB15">Already a  For Sale Network member? <a class=" lbluetext signinclick">Log In</a> </div> </div></div>
+            </div>
+      </div>
+        </div>
+  </div>
+    </div>
+
+<!-- Login ends -->
+
+
+ <div class="slideingmenu dblue_bg">
+<div class="slideingmenu_in">
+<div class="closesilde"> Close<i class="flaticon-cross97 right"></i></div>
+	<ul class="slideingmenu_ul">
+    <li class="slidingmenuli"> <a class="slidemneu_a" href="../../../index.html">Search Homes</a> </li>
+    <li class="slidingmenuli"> <a class="slidemneu_a" href="../../agentslist.html">Agent Finder</a> </li>
+     <li class="slidingmenuli"> <a class="slidemneu_a" href="../../../help/mortgagecalculator.html">Mortgage Calculator</a> </li>
+    <li class="slidingmenuli"> <a class="slidemneu_a" href="../../../help/affordcalculator.html">Affordability Calculator</a> </li>
+    <li class="slidingmenuli"> <a class="slidemneu_a" href="../../../help/rentorbuycalculator.html">Rent Vs Buy</a> </li>
+    <li class="slidingmenuli"> <a class="slidemneu_a" href="../../../help/howitworks.html">How to Sell on For Sale Network</a> </li>
+    <li class="slidingmenuli"> <a class="slidemneu_a" href="../../../help/support.html">Support Desk</a> </li>
+    </ul>
+    
+    <div class="responsivemenu fulwidthm left">
+     <ul class="re_ul left fulwidthm left">
+     
+     </ul>
+    </div>
+</div>
+
+</div>
+<div class="slidemenuoverlay"></div>
+
+
+<!-- Main Right menu ends -->
+
+
+<div class="innerheader dblue_bg">
+	<div class="mainindexcontainer">
+    <div class="indexlogo pull-left">
+    <a href="../../../index.html" class="fulwidthm left inerlogo"><img src="userdata/logo/logo.png" alt="For Sale Network Logo" title="For Sale Network">
+    <span class="backhome"><i class="flaticon-home153"></i></span>
+    </a>
+    </div>
+    <div class="inersearchwrp whitebg left ">
+    	<div class="searchinerbar_in">
+        <input class="inersearchinput" type="text" Placeholder="Search by City or Region" value="Los Angeles, CA" id="citysearch">
+        <button class="searchbuttininer dblue_bg" id="inser"><i class="flaticon-magnifying-glass34"></i></button>
+        </div>
+    </div>
+    <div class="indexright rightmenu pull-right">
+         <ul class="indexul left">
+                  <li class="indexli left" ><a class="signinclickmain robotomedium">Sign In</a></li>
+        <li class="indexli left" ><a class="signupclickmain robotomedium">Sign Up</a></li>
+        		     
+      </ul>
+      <div class="menuouter left">
+      <div class="mainmenuclick">
+            <div class="burgermenu left">
+            <span class="burgerspan"></span>
+            <span class="burgerspan burgrmidle"></span>
+            <span class="burgerspan"></span>
+            </div>
+            <span class="menunaem left whitetext robotoregular font-size14">Menu</span>
+            </div>
+            </div>
+        </div>
+    
+  </div>
+</div>
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>
+    <script type="text/javascript">
+
+    	  google.maps.event.addDomListener(window, 'load', function () {
+    			 var options = {
+    		       		  types: ['(cities)'],
+    			 componentRestrictions: {country: "us"}
+    		       		 };
+    		            var places = new google.maps.places.Autocomplete(document.getElementById('citysearch'),options);
+    		            google.maps.event.addListener(places, 'place_changed', function () {
+    		                var place = places.getPlace();
+    		                var address = place.formatted_address;
+    		                var latitude = place.geometry.location.lat();
+    		                var longitude = place.geometry.location.lng();
+    						var fulllocation=document.getElementById('citysearch').value;
+
+    		//alert(address);alert(fulllocation);
+    		//$('form#searchsubmit').submit();
+    						
+    		            //   $('#location').val(fulllocation);
+    		              //  $('#address').val(address);
+    		           //     $('#lat').val(latitude);
+    		           //     $('#long').val(longitude);
+
+    		                var tempx=[];
+
+    		                
+
+    		                tempx=fulllocation.split(",");
+
+    		                if(tempx.length >=3)
+    		                {
+
+    		                fulllocation = fulllocation.substr(0, fulllocation.lastIndexOf(","));
+
+    		                }	
+
+    		                    		Set_Cookie('location_temp',fulllocation,0, "../../../index.html");
+    		                    		Set_Cookie('location_lat',latitude,0, "../../../index.html");
+    		                    		Set_Cookie('location_long',longitude,0, "../../../index.html");
+
+
+    		            });
+    		        });
+
+
+
+
+    		       
+
+ 
+
+$('#inser').click(function(){
+	
+
+	if($('#citysearch').val().trim()=="")
+	{
+
+	alert("Please Select a Location");
+		
+	return false;
+
+	}
+
+
+
+	var plcesxx=Get_Cookie('location_temp');
+
+	plcesxx=plcesxx.replace(/\+/g,' ');
+
+	if($('#citysearch').val().trim().indexOf(plcesxx) == -1)
+	{
+
+		alert("Please Select a Location from the List");
+		return false;
+
+	}
+
+
+
+
+	
+
+
+if($('#location').val()=="" || $('#lat').val()=="" || $('#long').val()=="")
+{
+	alert("Please Select a Location");
+
+}
+var cvii="";
+
+
+cvii="All-Homes";
+
+
+var txct=[];
+var plces=Get_Cookie('location_temp');
+plces=plces.replace(/\+/g,' ');
+txct=plces.split(",");
+
+var necnt=txct.length;
+var ncxds="";
+if(necnt>1)
+{
+ncxds=txct[0].trim().replace(/ /g,"-").replace(/\./g,"")+"-"+txct[1].trim().replace(/ /g,"-").replace(/\./g,"");
+}else if(necnt==1)
+{
+ncxds=txct[0].trim().replace(/ /g,"-").replace(/\./g,"");
+}
+
+var url='http://inout-realestate.demo.inoutscripts.net/search/homes/8/'+cvii+"/"+ncxds;
+
+window.location = url;
+
+
+var newssd=window.location.href;
+var getseatd=newssd.split("../../../index.html");
+
+var codeb="homes";
+if($.inArray(codeb, getseatd) > -1){
+
+}else {
+
+
+
+}
+
+
+
+});
+
+
+		
+
+
+
+
+
+
+
+      function Set_Cookie( name, value, expires, path, domain, secure ) 
+      {	
+
+
+      	document.cookie = name + "=" +escape( value ) +
+
+      		( ( path ) ? ";path=" + path : "" ) + 
+
+      		( ( domain ) ? ";domain=" + domain : "" ) +
+
+      		( ( secure ) ? ";secure" : "" );
+
+      }
+
+      function Get_Cookie( name )
+      {
+     	var start = document.cookie.indexOf( name + "=" );
+     	var len = start + name.length + 1;
+     	if ( ( !start ) && ( name != document.cookie.substring( 0, name.length ) ) )
+     	{
+     		return null;
+     	}
+
+     	if ( start == -1 ) return null;
+
+     	var end = document.cookie.indexOf( ";", len );
+
+     	if ( end == -1 ) end = document.cookie.length;
+
+     	return unescape( document.cookie.substring( len, end ) );
+
+     }
+
+    </script>
+
+
+<!-- Header Ends --->
+ 
+    <div class="overlayb"></div>
+<!-- wishlist popup starts -->
+<div class="wishlistouter">
+<div class="loouter" style="">
+<div class="lomiddle">
+<div class="loinner col-md-8 col-sm-8 col-lg-8  col-center nopadding">
+<div class="lobox whitebg fulwidthm left pdg30 ">
+<div class=" wishlistclose lgraytext"><i class="flaticon-cross97"></i></div>
+<div id="listimagewishdiv" class="leftpopimage col-sm-3 nopaddingL">
+
+</div>
+<div class="wishlistpopright col-sm-9 nopaddingR">
+<h4 class="whislisttilt fulwidthm robotomedium  singledot graytext fontsize16" id="listaddresswish"></h4>
+<p class=" robotoregular font-size14 lgraytext" ></p>
+<div class="wiscatwrper fulwidthm">
+<div class="wishlistlitingwrp">
+Please Select the Wishlists to which you want to add this List. !<select id="wishlistselectopt" class="wishlistselect" style="width:100%" multiple="multiple" data-placeholder="Click to Select!">
+
+</select>
+
+
+</div>
+<div class="createwishlist">
+<h3 class=" robotomedium graytext  mgnTB15 font-size14 createnew_wclick">Create New category &nbsp;<i class="flaticon-arrow486"></i></h3>
+<div class="cratewinput fulwidthm graybg pdg05 left mgnB10">
+<div class="col-md-6 nopadding "><input id="wishlistname" class="fulwidthm commoninput  text-left whitebg lgray_border lgraytext pdg05" type="text" placeholder="Enter the WishList Name">
+</div>
+<input id="wishids" type="hidden" value=""/>
+<input id="actuallistid" type="hidden" value=""/>
+<div class="col-md-3 nopadding" style="padding-left:14px !important;">
+<button class="btn lblue_bg" onclick="createwishlist()">Create</button>
+</div>
+</div>
+<div class="clearfix"></div>
+Enter a description (optional). !<div class="comentwishlistwrp mgnB15">
+<textarea id="wish_desc" class="fulwidthm lgray_border lgraytext pdg05 ">
+
+</textarea>
+
+</div>
+<div class="clearfix"></div>
+<button class="btn lblue_bg" onclick="mapwishlist()">Save</button>
+<div id="errordivwish" style="color:red;"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- wishlist popup ens -->  
+    
+<div class="innerwraperful  pdgT15 fulwidthm left">
+	<div class="resultwraperfull">
+  <div class="mainindexcontainer">
+ 
+  <div class="mainontainer_in fulwidthm left">
+ 
+  
+  <div class="detailsfulleft  col-lg-8 col-md-8 col-sm-12 col-xs-12 ">
+  
+  	 
+  
+    
+ 
+ 
+ 
+  <section class="detailsection mgnB20 fulwidthm whitebg left pdg15">
+  <div class="agentdetialshead mgnB15 fulwidthm left">
+  	<div class="agentdetialsimg" title="Zera Elezabeth">
+  	    <img src="userdata/Profile/2/person-801823_960_720.png" alt="Zera Elezabeth">
+        </div>
+    <div class="agentdetailsright">
+    	<div class="agentdetailsright_in">
+        	<div class="agentdetialsRtop fulwidthm left">
+            	<div class="agentnamenc left">
+                	<h4 class="agentname fontsize18 robotomedium">Zera Elezabeth</h4>
+                <p class="midlep graytext fontsize12 fulwidthm textdot"><i class="fa fa-building"></i> 
+                     New Homes Agency</p>
+                     </div>
+                                          <div class="agentlogn right">
+                     <!-- Logo <br> --><img src="userdata/Agencylogo/3/logo5.jpg" title="Logo" alt="Logo">
+           </div>
+                       </div> <!-- agentdetialsRtop ends -->
+            <div class="agentDRmidle mgnT15  fulwidthm left">
+           
+                 
+                     
+                     
+            <h6 class="agentphoneD lbluetext fontsize16"><i class="fa fa-phone"></i> 
+            452-5363</h6>
+            <p class="agentplace"><i class="fa fa-location-arrow"></i>
+             Abc Street,Patal Nagar</p>
+            
+            </div> <!-- agentDRmidle ends -->
+            	
+                <div class="agntDbottom mgnT15 fulwidthm left">
+                <div class="agentDRBleft left">
+                <div class="brkerRbottom fontsize12">
+<span class="brkRsalec lgraytext"> 1 Recent Sales</span>&nbsp;|&nbsp; <span class="brklistStatus lbluetext"> 1 Lead Listings </span>&nbsp;|&nbsp; <span class="brklistStatus lbluetext"> 4 Active Listings </span></div>
+                <div class="clearfix"></div>
+                <div class="brokerratingd fontsize16 mgnT05">
+                <i class="fa fa-star yellowtext"></i><i class="fa fa-star yellowtext"></i><i class="fa fa-star yellowtext"></i><i class="fa fa-star lgraytext"></i><i class="fa fa-star lgraytext"></i><span class=" fontsize12"> (1) </span>
+</div>
+</div>
+<div class="agentDRBright right">
+                <span class="left">
+<img alt="" src="images/premiumagnticon.png">
+</span>
+<span class=" mgnS05 premimumagntname left whitetext lblue_bg fontsize12 pdg05">Premium Agent</span>
+                </div>
+                
+                </div> <!-- agntDbottom ends -->
+                
+                
+        </div>
+    </div>
+    <!-- agentdetailsright ends -->
+  </div>
+  <div class="clearfix"></div>
+  
+  <div class="ca_tb_btnwrp">
+       
+        <div class="cal_tab_btn cal_tab_btn4 active">
+          About     
+        </div>
+        <div class="cal_tab_btn cal_tab_btn4">
+         Reviews  
+        </div>
+        <div class="cal_tab_btn cal_tab_btn4">
+    Lead Listings   
+        </div>
+         <div class="cal_tab_btn cal_tab_btn4">
+    Listings        </div>
+        </div>
+        <div class="cal_tabwrp fulwidthm left">
+        	
+         <!-- Tab3 ends -->
+            <div class="cal_tabbox active">
+            <div class="cal_tabbox_in pdgTB30">
+             <div class="agentabout mgnB20 fulwidthm left">
+               
+               
+               <div class="fulwidthm left agntdabwrp pdgB15 mgnB15">
+               <h4 class="agntabtsubhead robotomedium fontsize18 mgnB20">Zera Elezabeth's Bio</h4>
+          
+<p class="font-size14 lgraytext paragrphtext ">
+</p>
+
+    <ul class="adlistingul font-size14 graytext"> 
+                               <li class="adlistingli">Languages Known - English,Spanish</li>
+                              </ul>
+                </div>
+       
+                <div class="fulwidthm left agntdabwrp pdgB15 mgnB15">
+               <h4 class="agntabtsubhead robotomedium fontsize18 mgnB20">Service Areas</h4>
+               
+                <ul class="adlistingul font-size14 graytext">    
+                  			<li class="adlistingli">Orlando, FL</li>
+
+ 			<li class="adlistingli">San Francisco, CA</li>
+
+ 			<li class="adlistingli">El Paso, TX</li>
+
+ </ul>
+                </div>
+                                </div>
+            </div>
+            </div>      
+            
+            <div class="cal_tabbox ">
+            <div class="cal_tabbox_in pdgTB30">
+             <div class="reviewwrp fulwidthm left">
+                <h4 class="reviewhead fontsize24 dbluetext robotoregular">Reviews (1)</h4>
+                <ul class="reviewul">
+                                               <li class="reviewli mgnB15 pdgB10 fulwidthm left">
+                <div class="reviewuserimg">
+               <img src="userdata/Profile/3/woman-690036_960_720.png" alt="User">                </div>
+                <div class="reviewmsg">
+                <h4 class="reusername robotoregular graytext fontsize16">Rincy Titus</h4>
+                <p class=" fontsize13 paragrphtext robotoregular lgraytext"> Very helpful</p>
+                <div class="clearfix"></div>
+                <div class="reviewbottom fulwidthm mgnT05">
+                <div class="reviewBleft left">
+                <div class=" font-size14 ">
+              <i class="fa fa-star yellowtext"></i><i class="fa fa-star yellowtext"></i><i class="fa fa-star yellowtext"></i><i class="fa fa-star lgraytext"></i><i class="fa fa-star lgraytext"></i></div>
+                </div>
+                <div class="reviewBright right">
+                <span class="right redate fontsize12">12/11/15 </span>
+                </div>
+                </div>
+                </div>
+                </li>
+                                              
+               
+         
+                </ul>
+                </div> 
+            </div>
+            </div>
+            <!--  tab2 ends -->
+            
+            <div class="cal_tabbox ">
+            <div class="cal_tabbox_in pdgTB30">
+            <div class="prolistingwrp fulwidthm left">
+                <h4 class="reviewhead fontsize24 dbluetext robotoregular">
+Listings Handled by Agent (1)
+ </h4>
+                <div class="fulwidthm left">
+                                               <div class="col-xs-12 resultlisting mgnB20 nopadding">
+    <div class="whitebg fulwidthm resultlisting_in left lgray_border" title="Orlando, FL 47367">
+   	<div class="resultim col-md-5 col-sm-4 col-xs-12 nopaddingL transition2">
+    	<div class="resultn_image" style="background: url(userdata/List/Thumb/1/9/home-wallpaper-26.jpg) no-repeat">            <div class="photocount">2 Photos</div>
+     </div>
+     
+    </div>
+    <div class="result_descrptn pdgTB15 col-md-7 col-sm-8 col-xs-12 left whitebg  ">
+     <div class="resulthead">
+     <a class="fontsize18 robotomedium graytext resultname" href="../../../home/details/9/Orlando-FL.html" title="Orlando, FL 47367">Orlando, FL 47367</a>
+     <p class="postdate lgraytext robotomedium fontsize12">Open: 12/31/2015-10:00 am to 1:00 pm</p>
+     </div>
+     <div class="resultmiddle mgnTB10 fulwidthm left">
+     <div class="priceresult left robotoregular fontsize24">
+            <i class="flaticon-up7 redtext"></i>
+             <span class="pricespan lbluetext" title="₪ 15,000,000">₪ 15,000,000</span>
+     </div>
+     <div class="right lgraytext fontsize18 mgnT10 sqrftdiv" title="Home Size : 1,000 Sq.ft">
+
+ 1,000 Sq.ft
+      
+     </div>
+     </div>
+     <div class="resultbottom fulwidthm left  pdgT10">
+      <div class="n_botmrd left">
+       <div class="roomcount left"><i class="flaticon-sleeping fontsize24"></i><span class="n_botmrdcount">3</span></div>
+ <div class="broomcont left"><i class="flaticon-shower15 fontsize24"></i><span class="n_botmrdcount">0.5</span></div>
+ </div>
+ 
+ <div class="right"> 
+  <span id="wishlist_9" class="hearlike wishlistopen"> <i class="flaticon-heart297"></i> </span>
+                               </div>
+ 
+     </div>
+     
+    </div>
+    </div>
+    
+   </div>
+        
+   
+   </div>
+   				</div>
+            </div>
+            
+            
+            </div>
+            
+            
+             <div class="cal_tabbox ">
+            <div class="cal_tabbox_in pdgTB30">
+            <div class="prolistingwrp fulwidthm left">
+                <h4 class="reviewhead fontsize24 dbluetext robotoregular">
+                Agent's Listings (4)
+
+ </h4>
+                <div class="fulwidthm left">
+                                               <div class="col-xs-12 resultlisting mgnB20 nopadding">
+    <div class="whitebg fulwidthm resultlisting_in left lgray_border" title="Albany, New York, NY 4345">
+   	<div class="resultim col-md-5 col-sm-4 col-xs-12 nopaddingL transition2">
+    	<div class="resultn_image" style="background: url(userdata/List/Thumb/2/13/55cb83c7efc6b.image.jpg) no-repeat">             <div class="featuredim"><img src="images/featured.png" title="Featured Property"></div>
+           <div class="photocount">2 Photos</div>
+     </div>
+     
+    </div>
+    <div class="result_descrptn pdgTB15 col-md-7 col-sm-8 col-xs-12 left whitebg  ">
+     <div class="resulthead">
+     <a class="fontsize18 robotomedium graytext resultname" href="../../../home/details/13/New-York-NY.html" title="Albany, New York, NY 4345">Albany, New York, NY 4345</a>
+     <p class="postdate lgraytext robotomedium fontsize12"></p>
+     </div>
+     <div class="resultmiddle mgnTB10 fulwidthm left">
+     <div class="priceresult left robotoregular fontsize24">
+         <span class="pricespan lbluetext" title="₪ 3,400,000">₪ 3,400,000</span>
+     </div>
+     <div class="right lgraytext fontsize18 mgnT10 sqrftdiv" title="Home Size : 2,000 Sq.ft">
+ 2,000 Sq.ft    
+     </div>
+     </div>
+     <div class="resultbottom fulwidthm left  pdgT10">
+      <div class="n_botmrd left">
+       <div class="roomcount left"><i class="flaticon-sleeping fontsize24"></i><span class="n_botmrdcount">6</span></div>
+ <div class="broomcont left"><i class="flaticon-shower15 fontsize24"></i><span class="n_botmrdcount">3.5</span></div>
+ </div>
+ 
+ <div class="right"> 
+  <span id="wishlist_" class="hearlike wishlistopen"> <i class="flaticon-heart297"></i> </span>
+                               </div>
+ 
+     </div>
+     
+    </div>
+    </div>
+    
+   </div>
+                 <div class="col-xs-12 resultlisting mgnB20 nopadding">
+    <div class="whitebg fulwidthm resultlisting_in left lgray_border" title="New York, NY 9700">
+   	<div class="resultim col-md-5 col-sm-4 col-xs-12 nopaddingL transition2">
+    	<div class="resultn_image" style="background: url(userdata/List/Thumb/2/15/beautiful_house_wallpaper_1a1a6.jpg) no-repeat">             <div class="featuredim"><img src="images/featured.png" title="Featured Property"></div>
+           <div class="photocount">2 Photos</div>
+     </div>
+     
+    </div>
+    <div class="result_descrptn pdgTB15 col-md-7 col-sm-8 col-xs-12 left whitebg  ">
+     <div class="resulthead">
+     <a class="fontsize18 robotomedium graytext resultname" href="../../../home/details/15/New-York-NY.html" title="New York, NY 9700">New York, NY 9700</a>
+     <p class="postdate lgraytext robotomedium fontsize12"></p>
+     </div>
+     <div class="resultmiddle mgnTB10 fulwidthm left">
+     <div class="priceresult left robotoregular fontsize24">
+         <span class="pricespan lbluetext" title="₪ 2,700">₪ 2,700</span>
+     </div>
+     <div class="right lgraytext fontsize18 mgnT10 sqrftdiv" title="Home Size : 1,700 Sq.ft">
+ 1,700 Sq.ft    
+     </div>
+     </div>
+     <div class="resultbottom fulwidthm left  pdgT10">
+      <div class="n_botmrd left">
+       <div class="roomcount left"><i class="flaticon-sleeping fontsize24"></i><span class="n_botmrdcount">4</span></div>
+ <div class="broomcont left"><i class="flaticon-shower15 fontsize24"></i><span class="n_botmrdcount">2</span></div>
+ </div>
+ 
+ <div class="right"> 
+  <span id="wishlist_" class="hearlike wishlistopen"> <i class="flaticon-heart297"></i> </span>
+                               </div>
+ 
+     </div>
+     
+    </div>
+    </div>
+    
+   </div>
+                 <div class="col-xs-12 resultlisting mgnB20 nopadding">
+    <div class="whitebg fulwidthm resultlisting_in left lgray_border" title="New York, NY 4325">
+   	<div class="resultim col-md-5 col-sm-4 col-xs-12 nopaddingL transition2">
+    	<div class="resultn_image" style="background: url(userdata/List/Thumb/2/14/hd-nature-free-high-resolution-widescreen-beautiful-home-and-natural-graphic-design-fresh-gallery-276596.19a2.d) no-repeat">            <div class="photocount">1 Photos</div>
+     </div>
+     
+    </div>
+    <div class="result_descrptn pdgTB15 col-md-7 col-sm-8 col-xs-12 left whitebg  ">
+     <div class="resulthead">
+     <a class="fontsize18 robotomedium graytext resultname" href="../../../home/details/14/New-York-NY.html" title="New York, NY 4325">New York, NY 4325</a>
+     <p class="postdate lgraytext robotomedium fontsize12"></p>
+     </div>
+     <div class="resultmiddle mgnTB10 fulwidthm left">
+     <div class="priceresult left robotoregular fontsize24">
+         <span class="pricespan lbluetext" title="₪ 3,500">₪ 3,500</span>
+     </div>
+     <div class="right lgraytext fontsize18 mgnT10 sqrftdiv" title="Home Size : 1,845 Sq.ft">
+ 1,845 Sq.ft    
+     </div>
+     </div>
+     <div class="resultbottom fulwidthm left  pdgT10">
+      <div class="n_botmrd left">
+       <div class="roomcount left"><i class="flaticon-sleeping fontsize24"></i><span class="n_botmrdcount">8</span></div>
+ <div class="broomcont left"><i class="flaticon-shower15 fontsize24"></i><span class="n_botmrdcount">3.5</span></div>
+ </div>
+ 
+ <div class="right"> 
+  <span id="wishlist_" class="hearlike wishlistopen"> <i class="flaticon-heart297"></i> </span>
+                               </div>
+ 
+     </div>
+     
+    </div>
+    </div>
+    
+   </div>
+                 <div class="col-xs-12 resultlisting mgnB20 nopadding">
+    <div class="whitebg fulwidthm resultlisting_in left lgray_border" title="Clermont, Orlando, FL 8758">
+   	<div class="resultim col-md-5 col-sm-4 col-xs-12 nopaddingL transition2">
+    	<div class="resultn_image" style="background: url(userdata/List/Thumb/2/23/jjjjjj1.jpg) no-repeat">            <div class="photocount">1 Photos</div>
+     </div>
+     
+    </div>
+    <div class="result_descrptn pdgTB15 col-md-7 col-sm-8 col-xs-12 left whitebg  ">
+     <div class="resulthead">
+     <a class="fontsize18 robotomedium graytext resultname" href="../../../home/details/23/Orlando-FL.html" title="Clermont, Orlando, FL 8758">Clermont, Orlando, FL 8758</a>
+     <p class="postdate lgraytext robotomedium fontsize12">Open: 02/18/2016-10:00 am to 1:00 pm</p>
+     </div>
+     <div class="resultmiddle mgnTB10 fulwidthm left">
+     <div class="priceresult left robotoregular fontsize24">
+         <span class="pricespan lbluetext" title="₪ 8,000">₪ 8,000</span>
+     </div>
+     <div class="right lgraytext fontsize18 mgnT10 sqrftdiv" title="Home Size : 1,000 Sq.ft">
+ 1,000 Sq.ft    
+     </div>
+     </div>
+     <div class="resultbottom fulwidthm left  pdgT10">
+      <div class="n_botmrd left">
+       <div class="roomcount left"><i class="flaticon-sleeping fontsize24"></i><span class="n_botmrdcount">5</span></div>
+ <div class="broomcont left"><i class="flaticon-shower15 fontsize24"></i><span class="n_botmrdcount">1.5</span></div>
+ </div>
+ 
+ <div class="right"> 
+  <span id="wishlist_" class="hearlike wishlistopen"> <i class="flaticon-heart297"></i> </span>
+                               </div>
+ 
+     </div>
+     
+    </div>
+    </div>
+    
+   </div>
+        
+   
+   </div>
+   				</div>
+            </div>
+            
+            
+         
+             <!-- Tab4 -->
+        
+        
+        <!-- Tab ends -->
+        
+        
+        
+        
+        
+        
+        
+        
+  
+  
+
+ 
+ 
+  
+  <!-- detal box ends -->
+  </section>
+   </div>
+<!-- detailsfullLeft ends -->
+
+ <div class="detailsfullright  col-lg-4 col-md-4 col-sm-12 col-xs-12 ">
+ 
+ <div class="reqstinfowrp fulwidthm left mgnB15">
+ <div class="rqstinfotitle dblue_bg pdg15 fulwidthm fontsize16 left whitetext">Contact <span class="lbluetext ">Zera Elezabeth</span></div>
+ <div class="reqstinfowrp_in fulwidthm left  whitebg">
+ 
+ <div class="rqstinfoformswrp">
+ <div class="pdg15 fulwidthm left rqstinfoformswrp_in">
+ 	<div class="rqstfrmrow fulwidthm left mgnB15">
+    <input class="rqstfrminput fulwidthm left" id="reqname" type="text" placeholder="Your Name">
+    <div class="erorshown left" id="namereqerr">Please Enter Your First Name</div>
+    </div>
+    <div class="rqstfrmrow fulwidthm left mgnB15">
+    <input class="rqstfrminput fulwidthm left" id="reqemail" type="email" placeholder="Your Email">
+    <div class="erorshown left" id="emailreqerr">Please Enter Your First Name</div>
+    </div>
+    <div class="rqstfrmrow fulwidthm left mgnB15">
+    <input class="rqstfrminput fulwidthm left" id="reqphno" type="text" placeholder="Contact Number">
+    <div class="erorshown left" id="phnreqerr">Please Enter Your First Name</div>
+    </div>
+    <div class="rqstfrmrow fulwidthm left mgnB15">
+    <textarea class="rqstfrminput fulwidthm left" id="reqmess" placeholder="Your Message"></textarea>
+    <div class="erorshown left" id="msgreqerr">Please Enter Your First Name</div>
+    </div>
+      <div class="rqstfrmrow fulwidthm left mgnB15">
+      <button class="lblue_bg fulwidthm left pdgTB10 fontsize18 reqstinfopoopen" id="requestbut">Request Info</button>
+      
+      </div>
+      <div class="tremsRs lgraytext left fulwidthm  fontsize12">  <span style="color:red;">*This is a Demo Version, Mail will not be send.</span></div>
+ </div>
+ 
+ </div>
+ 
+ 
+ </div>
+ </div>
+   
+   
+   
+  <div class="advertisment300s text-center pdg15 whitebg fulwidthm left mgnB15">
+<span id="show_ads_65449edab1f71ef5039cf282bca8430c_1306"></span>
+<script language="javascript" type="text/javascript" src="../../../../www.inoutdemo.com/inout_adserver_enterprise/show-ads.html"></script>
+<script language="javascript">
+if (window.ads_65449edab1f71ef5039cf282bca8430c ){ ads_65449edab1f71ef5039cf282bca8430c+= 1;}else{ ads_65449edab1f71ef5039cf282bca8430c =1;}
+ads_65449edab1f71ef5039cf282bca8430c_1306=ads_65449edab1f71ef5039cf282bca8430c;
+timer_65449edab1f71ef5039cf282bca8430c1306=window.setInterval(function(){
+if(window.gc4ca4238a0b923820dcc509a6f75849b){
+setTimeout("showAdsforContent(1306,300,250,'http://www.inoutdemo.com/inout_adserver_enterprise/publisher-show-ads.php',"+ads_65449edab1f71ef5039cf282bca8430c_1306+",'ads_65449edab1f71ef5039cf282bca8430c')",1000*(ads_65449edab1f71ef5039cf282bca8430c_1306 -1));
+window.clearInterval(timer_65449edab1f71ef5039cf282bca8430c1306);}},100);
+ads_65449edab1f71ef5039cf282bca8430c_1306_position=0;
+</script>  </div>
+  
+  </div> <!-- detailsfullright ends -->
+  
+ <div class="clearfix"></div> 
+  <div class="col-xs-12 ">
+  <div class="resultdlistingbottm whitebg pdg15 fulwidthm left mgnB30">
+  <div class="newlsitingwrp">
+            <div class="col-xs-12 col-sm-3">
+                  <h2 class="robotolight fontsize30 newliisthead">Popular <span class="robotomedium">Listings</span></h2>
+                  <p class="newlsitingp fontsize18 robotolight">Popular Listings in <br>Los Angeles, CA</p>
+                  <div class="newlistingcontrol">
+                <div class="n_l_prev n_lcontrl"><i class="flaticon-direction129"></i></div>
+                <div class="n_l_next n_lcontrl"><i class="flaticon-fastforward4"></i></div>
+              </div>
+                </div>
+           <div class="col-xs-12 col-sm-9 newlistingwrp">
+                  <div id="newlisting" class="owl-carousel">
+                                   <div class="item newlistingitem fulwidthm">
+                      <div class="newlistingitem_in pdgS10"> <a href="../../../home/details/6/Los-Angeles-CA.html" class="graybg" title=" Los Angeles, CA 65679">
+                        <div class="listingimageouter fulwidthm left">
+                        <div class="listingimage">
+                            <div class=" listinimgcover">
+                           
+                           <div class="listinimgcoverin media-cover">  <img  class="img-responsive-height"   src="userdata/List/Thumb/0/6/berlin-77791_960_720.jpg"></div>
+                                                    </div>
+                          <div class="photocount1">2 Photos</div>
+                            <div class="listinname whitetext fontsize13 pdg05"> Los Angeles, CA 65679                            </div>
+                            
+                          </div>
+                        
+                      </div>
+                        </a>
+                    <div class="newlistingdetails fulwidthm left graybg">
+                          <div class="n_l_discptn">
+                        <div class="n_lprice halfwidth left lblue_bg  whitetext robotoregular font-size14" title="₪ 1,350,000">₪ 1,350,000</div>
+                        <div class="n_lsqft halfwidth text-right left dblue_bg  whitetext robotoregular font-size14" title="Home Size : 2,000 Sq.ft">2,000 Sq.ft</div>
+                        <div class="nl_bottom fulwidthm left pdg10">
+                        
+                              <div class="left"> 
+                              <span id="wishlist_6" class="hearlike wishlistopen"> <i class="flaticon-heart297"></i> </span>
+                                                             </div>
+                              <div class="n_botmrd right fontsize16 ">
+                            <div class="roomcount left"><i class="flaticon-sleeping fontsize24"></i><span class="n_botmrdcount">6</span></div>
+                            <div class="broomcont left"><i class="flaticon-shower15 fontsize24"></i><span class="n_botmrdcount">2</span></div>
+                          </div>
+                            </div>
+                      </div>
+                        </div>
+                  </div>
+                 
+                    </div>
+              
+                                <div class="item newlistingitem fulwidthm">
+                      <div class="newlistingitem_in pdgS10"> <a href="../../../home/details/21/Los-Angeles-CA.html" class="graybg" title="Avalon, Los Angeles, CA 7568">
+                        <div class="listingimageouter fulwidthm left">
+                        <div class="listingimage">
+                            <div class=" listinimgcover">
+                           
+                           <div class="listinimgcoverin media-cover">  <img  class="img-responsive-height"   src="userdata/List/Thumb/3/21/uuuuu.jpg"></div>
+                                                    </div>
+                          <div class="photocount1">1 Photos</div>
+                            <div class="listinname whitetext fontsize13 pdg05">Avalon, Los Angeles, CA 7568                            </div>
+                            
+                          </div>
+                        
+                      </div>
+                        </a>
+                    <div class="newlistingdetails fulwidthm left graybg">
+                          <div class="n_l_discptn">
+                        <div class="n_lprice halfwidth left lblue_bg  whitetext robotoregular font-size14" title="₪ 4,000">₪ 4,000</div>
+                        <div class="n_lsqft halfwidth text-right left dblue_bg  whitetext robotoregular font-size14" title="Home Size : 1,500 Sq.ft">1,500 Sq.ft</div>
+                        <div class="nl_bottom fulwidthm left pdg10">
+                        
+                              <div class="left"> 
+                              <span id="wishlist_21" class="hearlike wishlistopen"> <i class="flaticon-heart297"></i> </span>
+                                                             </div>
+                              <div class="n_botmrd right fontsize16 ">
+                            <div class="roomcount left"><i class="flaticon-sleeping fontsize24"></i><span class="n_botmrdcount">4</span></div>
+                            <div class="broomcont left"><i class="flaticon-shower15 fontsize24"></i><span class="n_botmrdcount">1.5</span></div>
+                          </div>
+                            </div>
+                      </div>
+                        </div>
+                  </div>
+                 
+                    </div>
+              
+                               
+                 
+              </div>
+                </div>
+          </div>
+  </div>
+  <!-- resultbootm listing ends -->
+  
+  
+  
+  </div>
+    <!-- listing wraper ends -->
+  
+  
+  <!-- mainontainer_in ends -->
+  </div> <!-- mainindexcontainer ends -->
+    
+    
+     
+    
+    </div>
+</div>
+
+   
+  
+ </div>
+ 
+ <!-- Contact Host starts -->
+ <div class="overlayContact"></div>
+ <div class="msgowner">
+   <div class="loouter " style="">
+<div class="lomiddle">
+<div class="loinner col-md-8 col-sm-8 col-lg-8  col-center nopadding">
+<div class="lobox whitebg fulwidthm left pdg30 ">
+<div class=" msgownrclose lgraytext"><i class="flaticon-cross97"></i></div>
+<div class=" fulwidthm left  pdg20">
+  <div class="detailsr_profile mgnB15 pdgB15 dobordergry fulwidthm left">
+  
+  <div class="userimageround left"><a href="#"><img alt="user" src="images/user1.jpg">
+  </a></div>
+  <div class="userdetailsr">
+  <div class="fulwidthm mgnT15 left">
+  	<a class="userdetailsh3 robotomedium  singledot graytext fontsize16">Tiffany</a>
+   </div>
+    <a class="userlocation robotoregular font-size14 lgraytext">tiffiny@gmail.com</a>
+  </div>
+  </div>
+  
+  <!-- user details ends -->
+  <div class="detailsbooking fulwidthm left mgnB10 pdgB15">
+  <div class="col-xs-12 col-md-12 nopadding">
+  	 <div class="col-md-4 col-sm-12 col-xs-12 mgnB10">
+       <input type="text" value="" placeholder="Subject" name="start" class="fulwidthm text-left whitebg rqstfrminput fulwidthm left"> 
+       </div>    	 
+       <div class="col-md-4 col-sm-12 col-xs-12 mgnB10">
+       <input type="text" value="" placeholder="Subject" name="start" class="fulwidthm text-left whitebg rqstfrminput fulwidthm left"> 
+       </div>
+       <div class="col-md-4 col-sm-12 col-xs-12 mgnB10">
+       <input type="text" value="" placeholder="Subject" name="start" class="fulwidthm text-left whitebg rqstfrminput fulwidthm left"> 
+       </div>
+    </div>
+    
+      	
+        <div class="clearfix"></div>
+         <div class="col-xs-12 col-md-12 ">
+            	<div class="detailformrow mgnB10 fulwidthm left">
+                	<textarea class="lgray_border pdg05 fulwidthm">
+                    
+                    </textarea>
+                	
+                </div>
+        <div class="detailformrow mgnB15 fulwidthm">
+        <button class="lblue_bg fulwidthm left pdgTB10 fontsize18">Send Message</button>
+        </div>
+        </div>
+  </div>
+  
+   <!-- booking section ends -->
+    
+  </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+ 
+ 
+ <!-- Contact host ends-->
+ 
+ 
+  <!-- Requset info msg Starts -->
+ <div class="overlayrqstinfo"></div>
+  <div class="infomsgouter">
+   <div class="loouter " style="">
+<div class="lomiddle">
+<div class="loinner col-md-8 col-sm-8 col-lg-8  col-center nopadding">
+<div class="lobox whitebg fulwidthm left pdg30 ">
+ 
+<div class=" fulwidthm left text-center  pdg20">
+<div class="msgicon dblue_bg mgnB30"><i class="flaticon-hands17"></i></div>
+ <h4 class="thnkymsg" id="errorsgc">Actual Mail will not be send.</h4>
+    <!--<p class="thnkuinfoadres mgnTB20 lgraytext"> {$address1}</p>
+    --><a class="rqstinfoclose lblue_bg whitetext btn center-block">Done</a>
+  </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+ 
+ 
+ <!-- Requset info msg ends-->
+ 
+ <script type="text/javascript" src="js/owl.carousel.js"></script> 
+<script type="text/javascript">
+$(document).ready(function(e) {
+	
+var owl_newlisting = $("#newlisting");	
+	
+    owl_newlisting.owlCarousel ({
+		autoPlay: true,
+		center: true,
+		pagination: true,
+		lazyLoad : true,
+		  navigation : false,
+		  rewindSpeed : 200,
+        items : 3,
+        itemsDesktop : [1199,3],
+        itemsDesktopSmall : [979,2],
+		itemsTablet : [768,2],
+		itemsMobile : [479,1],
+		
+	  });
+	  
+	 $(".n_l_next").click(function(){
+        owl_newlisting.trigger('owl.next');
+      })
+      $(".n_l_prev").click(function(){
+        owl_newlisting.trigger('owl.prev');
+      }); 
+	  
+});
+</script> 
+  <!-- Tab -->
+ 
+ <script type="text/javascript">
+   
+   $(document).ready(function(){
+    $(".ca_tb_btnwrp .cal_tab_btn").click(function(e){
+        if (!$(this).hasClass("active")) {
+            var tabNum = $(this).index();
+			
+            var nthChild = tabNum+1;
+			 
+            $(".ca_tb_btnwrp .cal_tab_btn.active").removeClass("active");
+            $(this).addClass("active");
+            $(".cal_tabwrp .cal_tabbox.active").removeClass("active");
+            $(".cal_tabwrp .cal_tabbox:nth-child("+nthChild+")").addClass("active");
+        }
+    });
+});
+
+         
+    </script>
+    
+    
+    <!-- Tab ends -->
+ 
+ 
+<!-- Footer section -->
+<div class="clearfix"></div>
+
+ 
+<div class="fulfooter fulwidthm left">
+<footer class="mainfooter  fulwidthm left">
+<div class="mainindexcontainer">
+<div class="mainontainer_in pdgS10">
+	<div class="footerbox pdgTB50 fulwidthm left">
+    	
+       <div class="footerboxeach col-lg-3 col-md-3 col-sm-4 col-xs-4">
+    	<h5 class="footerhead fontsize18 robotomedium ">Popular Cities</h5>
+        <div class="clearfix"></div>
+        <ul class="footerul robotomedium">
+   <li class="footerli"><a class="footera graytext" href="../../../search/homes/3/2/New-York-NY.html">New York, NY</a></li><li class="footerli"><a class="footera graytext" href="../../../search/homes/3/3/Las-Vegas-NV.html">Las Vegas, NV</a></li><li class="footerli"><a class="footera graytext" href="../../../search/homes/3/4/Los-Angeles-CA.html">Los Angeles, CA</a></li><li class="footerli"><a class="footera graytext" href="../../../search/homes/3/9/San-Francisco-CA.html">San Francisco, CA</a></li><li class="footerli"><a class="footera graytext" href="../../../search/homes/3/11/Chicago-IL.html">Chicago, IL</a></li>     	
+ </ul>
+    </div>
+     <!-- Footerboxeachends-->
+       <div class="footerboxeach col-lg-4 col-md-4 col-sm-4 col-xs-4">
+    	<h5 class="footerhead fontsize18 robotomedium ">Recent Searches</h5>
+        <div class="clearfix"></div>
+        <ul class="footerul robotomedium">
+        
+        <li class="footerli"><a class="footera graytext" href="../../../search/homes/2/18928/For-Sale/Los-Angeles-CA.html">Homes for Sale in Los Angeles, CA</a></li><li class="footerli"><a class="footera graytext" href="../../../search/homes/2/18927/For-Rent/Boston-Massachusetts.html">Homes for Rent in Boston, Massachusetts</a></li><li class="footerli"><a class="footera graytext" href="../../../search/homes/2/18926/For-Sale/Canadice-Ontario.html">Homes for Sale in Canadice, Ontario</a></li><li class="footerli"><a class="footera graytext" href="../../../search/homes/2/18925/For-Sale/Universal-City-CA.html">Homes for Sale in Universal City, CA</a></li><li class="footerli"><a class="footera graytext" href="../../../search/homes/2/18924/All-Homes/Orlando-FL.html">All Homes Orlando, FL</a></li>        <!--
+        	
+            <li class="footerli"><a class="footera graytext" href="">About</a></li>
+<li class="footerli"><a class="footera graytext" href="">Careers</a></li>
+<li class="footerli"><a class="footera graytext" href="">Press</a></li>
+<li class="footerli"><a class="footera graytext" href="">Blog</a></li>
+<li class="footerli"><a class="footera graytext" href="">Help</a></li>
+<li class="footerli"><a class="footera graytext" href="">Policies</a></li>
+<li class="footerli"><a class="footera graytext" href="">Disaster Response</a></li>
+<li class="footerli"><a class="footera graytext" href="">Terms & Privacy</a></li>
+        --></ul>
+    </div>
+     <!-- Footerboxeachends-->
+      <div class="footerboxeach col-lg-2 col-md-2 col-sm-4 col-xs-4">
+    	<h5 class="footerhead fontsize18 robotomedium ">Company</h5>
+        <div class="clearfix"></div>
+        <ul class="footerul robotomedium">
+        	
+            <li class="footerli"><a class="footera graytext" href="../../../help/aboutus.html">About us</a></li>
+<li class="footerli"><a class="footera graytext" href="../../../help/terms.html">Terms & Policy</a></li>
+<li class="footerli"><a class="footera graytext" href="../../../help/contact.html">Contact Us</a></li>
+<li class="footerli"><a class="footera graytext" href="../../../help/support.html">Support Desk</a></li>
+<!--<li class="footerli"><a class="footera graytext" href="">Recent Searches</a></li>-->
+        </ul>
+    </div>
+     <!-- Footerboxeachends-->
+     <script type="text/javascript" src="js/common.js"></script>
+       <div class="footerboxeach col-lg-3 col-md-3 col-sm-12 col-xs-12 mgnT30">
+          <div class="foterselectdiv mgnB10 fulwidthm left">
+        	<select class="footerselect" style="width:100%;" name="lang" id="lang" onChange="changelanguage();">
+            <option  value="16_ar-jo">Arabic </option><option  value="14_Fe">Chinese </option><option  value="1_en"selected>English </option><option  value="18_fa">Farsça </option><option  value="3_fr">French </option><option  value="8_de">german </option><option  value="9_gr">greek </option><option  value="19_he">Hebrew </option><option  value="5_it">Italiano </option><option  value="12_no">Norwegian </option><option  value="10_pt">Português </option><option  value="15_ro">Romana </option><option  value="6_ru">Russian </option><option  value="13_ff">sdg </option><option  value="2_es">Spanish </option><option  value="20_sv">Svenska </option><option  value="11_tr">turkce </option><option  value="17_vn">Vietnamese </option><option  value="7_zh-Ha">中文 </option>            </select>
+            </div>
+          <div class="socialwrp fulwidthm left">
+          <ul class="socialul">
+          	<li class="social_li"><a href="http://www.facebook.com/" class="flaticon-facebook55 sociala"></a></li>
+            <li class="social_li"><a href="http://twitter.com/" class="flaticon-twitter1 sociala"></a></li>
+            <li class="social_li"><a href="http://www.google-plus.com/" class="flaticon-google116 sociala"></a></li>
+          </ul>
+          </div>  
+          <div class="copyrightwrp text-center left fulwidthm fontsize12 lgraytxt"> Copyright &copy; 2016 For Sale Network. All Rights Reserved. </div>
+          <div style="display:none;">   ls    </div>  
+        </div>
+        	
+    
+    <!-- Footerboxeachends-->
+</div>
+</div>
+</div>
+ 
+</footer>
+
+</div>
+
+<!-- Footer section Ends -->
+
+
+
+
+
+
+<!-- Animation ends -->
+<!-- Date Range Picker -->
+ <script type="text/javascript" src="js/moment.min.js"></script>
+<script type="text/javascript" src="js/simpledatpiker/datepiker.js"></script>
+<!-- Date Range Picker Ends -->
+
+<!--  Menuu -->
+
+<script type="text/javascript">
+	$(document).ready(function(e) {
+        
+		
+$('.indexheaderwrper .myacounthover, .innerheader .myacounthover').hover(function(){
+	
+	$(this).children('.myacountdropdown').stop().fadeIn(200);
+	
+},
+function(){
+	$(this).children('.myacountdropdown ').stop().fadeOut(200);
+});
+		
+			// RESPONSIVE MENU Starts
+	
+ 
+	
+	
+	
+	
+ 
+	
+	
+	
+	 
+	
+	
+	
+ 
+		
+		
+		
+		
+		
+		
+		
+		
+    });
+
+
+</script>
+
+ <script type="text/javascript" src="js/signinpopup.js"></script>
+<!-- Menu ends -->
+
+<!-- animation and select -->
+<script type="text/javascript" src="js/animate/animate.js"></script>
+<script type="text/javascript" src="js/animate/wow.js"></script>
+<script type="text/javascript" src="js/select2.js"></script>
+<script type="text/javascript">
+$(document).ready(function(e) {
+	
+	
+	 $(".selectsearch, .footerselect, .formselect").select2();
+
+	
+	
+    wow = new WOW(
+	    {
+		  animateClass: 'animated',
+		  mobile: false,
+		 
+		  offset: 100
+		}
+	);
+	wow.init();
+// slect style
+
+ 
+});
+</script>
+<!-- error divvvv -->
+<div class="notoficationgc alert alert-success succesgc">
+Details Updated Successfully
+</div>
+  <div class="notoficationgc alert alert-danger errorsgc">
+Error
+</div>  
+<!--    error div -->
+</body>
+
+<!-- Mirrored from inout-realestate.demo.inoutscripts.net/agents/profile/3/Zera-Elezabeth by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 28 Nov 2016 12:09:41 GMT -->
+</html> <script type="text/javascript">
+
+function createwishlist()
+{
+	
+	var wishlistname=$('#wishlistname').val().trim();
+var wishlisttype=1;
+	$('#errordivwish').html('');
+	//alert(wishlisttype);
+	if(wishlistname=="")
+	{
+		$('#errordivwish').html('Wishlist Name Cannot be Null');
+		return false;
+	}
+	if(wishlisttype=="")
+	{
+		$('#errordivwish').html('Wishlist Type Cannot be Null');
+		return false;
+	}
+	if(wishlisttype!="" && wishlistname!="")
+	{
+		//alert(wishlistname);
+	$.ajax({
+
+		type: "POST",cache: false,
+
+		url: "http://inout-realestate.demo.inoutscripts.net/index/createwishlist",
+
+		data: {'wishlistname':wishlistname,'wishlisttype':wishlisttype},
+
+		success: function(data) { 
+			//alert(data);
+			if(data==1)
+			{
+				$('#errordivwish').html('Wishlist Name Cannot be Null');
+				return false;
+			}
+			if(data==2)
+			{
+				$('#errordivwish').html('Wishlist Type Cannot be Null');
+			}
+			if(data==3)
+			{
+				$('#errordivwish').html('Invalid User');
+				return false;
+				
+			}
+			if(data==5)
+			{
+				$('#errordivwish').html('Wishlist Name Already Exists');
+				return false;
+			}
+			if(data==4)
+			{
+				
+			wishlistview();
+		  $('.cratewinput').fadeToggle(200);
+			}
+			
+		}
+		});
+	}
+}
+function mapwishlist()
+{
+	//wish_desc
+	var wish_sesc=$('#wish_desc').val().trim();
+	var wishlists=$('#wishlistselectopt').val();
+	var listid=$('#actuallistid').val();
+var type=1;
+	$('#errordivwish').html('');
+	
+	if(wishlists=="" || wishlists==null)
+	{
+    	
+		$('#errordivwish').html('Select a WishList for Adding');
+		return false;
+	}
+	
+	var wishlists_arr = new Array();
+	 wishlists_arr = wishlists.toString().split(',');
+	
+	wisglistarr1=JSON.stringify(wishlists_arr);
+
+
+
+//alert(wish_sesc);exit;
+if(wishlists!="")
+{
+	$.ajax({
+
+			type: "POST",cache: false,
+
+			url: "http://inout-realestate.demo.inoutscripts.net/index/mapwishlist",
+
+			//data: {'wish_sesc':wish_sesc,'wishlists[]':wisglistarr1,'listid':listid},
+			
+			data: {data:wisglistarr1,'wish_sesc':wish_sesc,'listid':listid,'type':type},
+			
+
+			
+
+			success: function(data) { 
+				//alert(data);
+				var details = data.split('??');
+				
+				if(details[0]==3)
+				{
+					$('#errordivwish').html('Invalid User');
+					return false;
+				}
+				
+				if(details[0]==4)
+				{
+					//var c=$("#wishiconmap_"+listid).val();
+					//alert(c);
+				//	$("#wishiconmap_"+listid).replaceWith( details[1] );
+				//alert($("#wishiconmap_3").attr(""));
+					$( "#wishlist_"+listid).replaceWith( details[1] );
+					$( "#wishlistic_"+listid).replaceWith( details[1] );
+					$(document.body).find('.nope').addClass("hearliked");
+					//alert($(document.body).find('.nope').attr("Class"));
+					  $('.wishlistouter, .overlayb').fadeOut(200);
+					
+				}
+				
+			}
+			});
+	}
+	
+}
+
+
+function wishlistview()
+{
+	 $.ajax({
+
+			type: "POST",cache: false,
+
+			url: "http://inout-realestate.demo.inoutscripts.net/index/wishlist",
+
+			
+
+			success: function(data) { 
+				//alert(data);
+				if(data!=0)
+				{
+				$('#wishlistselectopt').html(data);
+				}
+				
+				
+			}
+			});
+}
+</script>
+ 
+<script type="text/javascript">
+$(document).ready(function(e) {
+
+
+	
+     $(".detailschkin, .w_privcyslect").select2();
+	 
+	 
+	
+	$(".wishlistselect").select2();
+	 
+	 // create category
+	 
+	 $('.createnew_wclick').click(function(e) {
+        $('.cratewinput').fadeToggle(200);
+    });
+	 
+	 
+	 $('.wishlistopen').click(function(e) {
+		 $(".wishlistselect").select2("val", "");
+		 var userloginstat='0';
+		// alert(userloginstat);
+		 
+			//	alert(markersArray[0]); return false;
+			 if(userloginstat==0)
+			 {
+				
+				 $(".signinclickmain").click();
+				 return false;
+				
+			 }
+			 wishlistview();
+			 var lidstring = $(this).attr("id");
+			 var lid1=lidstring.split("_");
+			 var lid=lid1[1];
+			
+			 $.ajax({
+
+					type: "POST",cache: false,
+
+					url: "http://inout-realestate.demo.inoutscripts.net/index/getwishlistdetail",
+
+					data: {'lid':lid},
+
+					success: function(data) { 
+						var details=data.split("??");
+						if(data!=0)
+						{
+						$('#listaddresswish').html(details[0]);
+						$('#listheadingwish').html(details[1]);
+						$('#listimagewishdiv').html(details[2]);
+						$('#actuallistid').val(lid);
+						
+						}
+						
+						
+					}
+					});
+	   $('.wishlistouter, .overlayb').fadeIn(200);
+	});
+	
+	
+	// request info open
+	
+	
+	 $('.reqstinfopoopen').click(function(e) {
+		 $(".errorsgc").html("Sorry, You cannot perform this operation in demo.");
+			$(".errorsgc").animate({right: "21px"});
+			                           
+			                             setTimeout(function(){
+			                             $(".errorsgc").animate({ right : "-410px"});
+			                             
+			                             }, 2000 ); 
+			                             return false;
+		 var reqname=$('#reqname').val().trim();
+		 var reqemail=$('#reqemail').val().trim();
+		 var reqphno=$('#reqphno').val().trim();
+		 var reqmess=$('#reqmess').val().trim();
+		 var userid='2';
+		 $("#phnreqerr").html("");
+		 $("#namereqerr").html("");
+		 $("#emailreqerr").html("");
+		 $("#msgreqerr").html("");
+	
+		 if(reqname=='')
+		 {
+			 
+			 $("#namereqerr").html("Please Enter Your Name");
+			 $("#namereqerr").show();
+				$("#namereqerr").animate({right: "21px"});
+				                           
+				                             setTimeout(function(){
+				                             $("#namereqerr").hide();
+				                             
+				                             }, 2000 ); 
+				                      
+				                             return false;
+		 }
+		 if(reqemail=='')
+		 {
+			 $("#emailreqerr").html("Please Enter Your Email");
+			 $("#emailreqerr").show();
+				$("#emailreqerr").animate({right: "21px"});
+				                           
+				                             setTimeout(function(){
+				                            	 $("#emailreqerr").hide();
+				                             
+				                             }, 2000 ); 
+				                             return false;
+		 }
+		 var regex = /^([0-9a-zA-Z]([-_\\.]*[0-9a-zA-Z]+)*)@([0-9a-zA-Z]([-_\\.]*[0-9a-zA-Z]+)*)[\\.]([a-zA-Z]{2,9})$/;
+
+	 	    if(!regex.test(reqemail)){
+	 	    	$("#emailreqerr").html("Invalid Email");
+	 	    	 $("#emailreqerr").show();
+				$("#emailreqerr").animate({right: "21px"});
+				                           
+				                             setTimeout(function(){
+				                            	 $("#emailreqerr").hide();
+				                             
+				                             }, 2000 ); 
+				                             return false;
+	 		}
+	 		
+		 if(reqmess=='')
+		 {
+			 $("#msgreqerr").html("Please Enter Your Message");
+			 $("#msgreqerr").show();
+				$("#msgreqerr").animate({right: "21px"});
+				                           
+				                             setTimeout(function(){
+				                            	 $("#msgreqerr").hide();
+				                             
+				                             }, 2000 ); 
+				                             return false;
+		 }
+		  
+	 		
+	 	//	alert(reqname);
+	 	
+	 	$('.infomsgouter, .overlayrqstinfo').fadeIn(200);
+
+	 		 $.ajax({
+
+					type: "POST",cache: false,
+
+					url: "http://inout-realestate.demo.inoutscripts.net/agents/contactuserbroker",
+
+					data: {'userid':userid,'reqname':reqname,'reqemail':reqemail,'reqphno':reqphno,'reqmess':reqmess},
+
+					success: function(data) { 
+			
+						if(data==1)
+						{
+							 $("#namereqerr").html("Please enter your name");
+							 $("#namereqerr").show();
+								$("#namereqerr").animate({right: "21px"});
+								                           
+								                             setTimeout(function(){
+								                             $("#namereqerr").animate({ right : "-410px"});
+								                             
+								                             }, 2000 ); 
+								                             return false;
+						}
+						if(data==2)
+						{
+							 $("#emailreqerr").html("Please enter your email");
+							 $("#emailreqerr").show();
+								$("#emailreqerr").animate({right: "21px"});
+								                           
+								                             setTimeout(function(){
+								                             $("#emailreqerr").animate({ right : "-410px"});
+								                             
+								                             }, 2000 ); 
+								                             return false;
+						}
+						if(data==3)
+						{
+							 $("#msgreqerr").html("Please enter your message");
+							 $("#msgreqerr").show();
+								$("#msgreqerr").animate({right: "21px"});
+								                           
+								                             setTimeout(function(){
+								                             $("#msgreqerr").animate({ right : "-410px"});
+								                             
+								                             }, 2000 ); 
+								                             return false;
+						}
+						if(data==4)
+						{
+							$("#phnreqerr").html("Phone Number must be a number");
+							 $("#phnreqerr").show();
+								$("#phnreqerr").animate({right: "21px"});
+								                           
+								                             setTimeout(function(){
+								                             $("#phnreqerr").animate({ right : "-410px"});
+								                             
+								                             }, 2000 ); 
+								                             return false;
+						}	
+						if(data==6)
+						{
+							$("#emailreqerr").html("Invalid Email");
+							 $("#emailreqerr").show();
+								$("#emailreqerr").animate({right: "21px"});
+								                           
+								                             setTimeout(function(){
+								                             $("#emailreqerr").animate({ right : "-410px"});
+								                             
+								                             }, 2000 ); 
+								                             return false;
+						}	
+					
+				
+							
+						
+					}
+					  
+					});
+	  
+		 
+	  
+    });
+	 $('.rqstinfoclose').click(function(e) {
+        $('.infomsgouter, .overlayrqstinfo').fadeOut(200);
+    });
+	
+	
+	 $('.wishlistclose').click(function(e) {
+	        $('.wishlistouter, .overlayb').fadeOut(200);
+	    });
+		 $(document).click(function(e) {
+	         $('.wishlistouter, .overlayb').fadeOut(200);
+	    });
+		$('.lobox, .wishlistopen').click(function(event) {
+	        event.stopPropagation();
+	    });
+		
+	
+	
+});
+	
+	
+</script> 
+ 
+  

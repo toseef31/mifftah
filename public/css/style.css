@@ -1,0 +1,217 @@
+.btn-custom {
+ background-color: #00b8d4;
+ color: white;
+ padding: 7px;
+ margin-top: -7px;
+ border-radius: 6px;
+}
+
+a.btn.lblue_bg.whitetext.fulwidthm.font-size14.robotomedium:hover {
+ text-decoration: none;
+}
+
+a.btn.lblue_bg.whitetext.fulwidthm.font-size14.robotomedium {
+ margin: 4px 0px;
+ display: inline-block;
+ width: 49%;
+ float: left;
+ padding-top: 9px;
+}
+
+a.btn.lblue_bg.whitetext.fulwidthm.font-size14.robotomedium i {
+ padding-right: 7px;
+}
+
+.loginrow.fulwidthm.left.josfinsanbold.graytext.mgnB15 a:nth-child(3) {
+ margin-left: 1%;
+ float: right;
+ background-color: #6CB7F0;
+}
+
+.loginrow.fulwidthm.left.josfinsanbold.graytext.mgnB15 a:nth-child(2) {
+ background-color: #3b5998;
+}
+
+.loginrow.fulwidthm.left.josfinsanbold.graytext.mgnB15 a span {
+
+}
+
+.orcls {
+ display: block;
+ width: 32px;
+ background-color: black;
+ text-align: center;
+ z-index: 9999;
+ line-height: 29px;
+ margin: 0 auto;
+ height: 30px;
+ margin-top: -30px;
+ border-radius: 55px;
+ color: white;
+}
+
+p.hr {
+ height: 9px;
+ margin-top: -22px;
+ border-top: 7px solid #ebefef;
+ border-radius: 5px;
+}
+
+a.language {
+
+}
+
+img.img-language {
+ max-height: 32px;
+ max-width: 50px;
+ margin-top: -3px;
+}
+
+.formstylign select, input {
+ min-height: 38px !important;
+ width: 100%;
+}
+
+.formstylign input[type="checkbox"] {
+ width: 22px;
+ border-radius: 2em;
+ overflow: hidden;
+}
+
+.eachaminiti .aminitname {
+ margin-top: 12px;
+}
+
+.formlong {
+}
+
+.formlong input, select * {
+ width: 100% !important;
+}
+
+.sutominputfromfiles {
+ position: absolute;
+ max-width: 94px;
+ display: block;
+ top: 45px;
+ opacity: 0;
+}
+
+.carousel-inner > .item > img, .carousel-inner > .item > a > img {
+ max-height: 500px;
+ width: 100%;
+}
+
+#filterform {
+}
+
+/*#filterform input{}*/
+#filterform * input[type ="checkbox"] {
+ display: inline-block;
+ min-width: 20px;
+}
+
+#filterform * span.pdgS05 {
+
+}
+
+#filterform * .icheckbox_flat-green {
+ display: inline-block;
+ width: auto;
+}
+
+.form-control {
+ color: black !important;
+}
+
+#carousel-custom .carousel-indicators {
+ margin: 10px 0 0;
+ overflow: auto;
+ position: static;
+ text-align: left;
+ white-space: normal;
+ width: 100%;
+}
+
+#carousel-custom .carousel-indicators li img {
+ /*opacity: 1;*/
+ max-width: 100px;
+ max-height: 80px;
+ min-width: 100px;
+ min-height: 80px;
+}
+
+/*map staty*/
+
+/* Always set the map height explicitly to define the size of the div
+ * element that contains the map. */
+#map {
+ height: 100%;
+}
+
+/* Optional: Makes the sample page fill the window. */
+html, body {
+ height: 100%;
+ margin: 0;
+ padding: 0;
+}
+
+.controls {
+ margin-top: 10px;
+ border: 1px solid transparent;
+ border-radius: 2px 0 0 2px;
+ box-sizing: border-box;
+ -moz-box-sizing: border-box;
+ height: 32px;
+ outline: none;
+ box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+#pac-input {
+ background-color: #fff;
+ font-family: Roboto;
+ font-size: 15px;
+ font-weight: 300;
+ margin-left: 12px;
+ padding: 0 11px 0 13px;
+ text-overflow: ellipsis;
+ width: 300px;
+}
+
+#pac-input:focus {
+ border-color: #4d90fe;
+}
+
+.pac-container {
+ font-family: Roboto;
+}
+
+#type-selector {
+ color: #fff;
+ background-color: #4d90fe;
+ padding: 5px 11px 0px 11px;
+}
+
+#type-selector label {
+ font-family: Roboto;
+ font-size: 13px;
+ font-weight: 300;
+}
+
+#target {
+ width: 345px;
+}
+
+/*map end*/
+#newvalentery * input, select, text{
+/* width: 100% !important;*/
+ min-height: 37px !important;
+ border-radius: 5px;
+
+}
+.detailsection.mgnB20.fulwidthm.whitebg.left.pdg15 .fa{
+ padding: 10px;
+}
+.dashmenua{text-align: left;}
+.subdashmenu_a:hover, .subdashmenuli.current-page .subdashmenu_a{text-align: left;}
+.subdashmenu_a{text-align: left;}
