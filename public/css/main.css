@@ -472,6 +472,7 @@ button.dblue_bg:hover, a.dblue_bg:hover {
 	background: url(../images/footerli.png) no-repeat left center;
 	padding-left: 20px;
 	margin-bottom: 5px;
+    text-align: left;
 }
  
 .footera {
@@ -2661,6 +2662,7 @@ width: 345px;
 .footerhead{
 	color:#FFFFFF;
 	margin-bottom:20px;
+    text-align: left;
 }
 .footera.graytext{
 	color:#b9b9b9;
@@ -3367,6 +3369,7 @@ textarea.rqstfrminput{
 .dashmenua:hover, .dashmenuli.active .dashmenua{
 	background-color:#14205A;
 	color:#FFFFFF;
+    text-decoration: none;
 }
 .subdashicon {
     position: absolute;

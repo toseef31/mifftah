@@ -4,14 +4,17 @@ namespace mifftah\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use mifftah\Listings;
+use mifftah\booking;
+use Illuminate\Support\Facades\Auth;
 
 class PagesController extends Controller {
-
-//  public function index(){
-//    return view('extra');
-//  }
+	
 	public function index() {
 		return view('index');
+	}
+	
+	public function arindex() {
+		return view('ar.index');
 	}
 	
 	public function agents() {
@@ -37,6 +40,7 @@ class PagesController extends Controller {
 	public function mailsend() {
 		return view('mailsend');
 	}
+	
 	public function support() {
 		return view('support');
 	}
@@ -45,8 +49,8 @@ class PagesController extends Controller {
 	/*============================*/
 	public function searchpro(Request $request) {
 		
-		if (isset($request->filter)) {
-			return $request->all();
+		if (isset($request->filter_wewwrw)) {
+			
 			/** if there is a filter value then we have advance searching **/
 			$query = DB::table('listings');
 			/** min price  **/
@@ -98,15 +102,45 @@ class PagesController extends Controller {
 				$q->orWhere('region', 'like', '%' . strtoupper($request->citysearch) . '%');
 			})->paginate(10);
 		}
-//		return $user_mange;
 		return view('searchList', compact('data'));
 	}
 	
 	public function homepreview($id) {
 		$data = Listings::where('id', $id)->get()->first();
-		//return $data;
-        
-		return view('dashboardUser.userDashboard_homepreview', compact('data'));
+		if ($data) {
+			return view('dashboardUser.userDashboard_homepreview', compact('data'));
+		} else {
+			return redirect(url('/'));
+		}
+		
+	}
+	
+	public function arhomepreview($id) {
+		$data = Listings::where('id', $id)->get()->first();
+		if ($data) {
+			return view('ar.dashboardUser.userDashboard_homepreview', compact('data'));
+		} else {
+			return redirect(url('/'));
+		}
+		
+	}
+	
+	public function postform(Request $request) {
+		if (Auth::check()) {
+			$this->validate($request, [
+				'name' => 'required|max:130',
+				'email' => 'required|max:130|email',
+				'phone' => 'required|max:130',
+				'message' => 'required',
+				'bookingStatus' => 'required|numeric',
+			]);
+			$request->merge(['userID' => Auth::user()->id, 'notification' => 0]);
+			booking::create($request->all());
+			$request->session()->flash('status', 'Your Booking is Reserved and notiification is sent to Vendor !');
+			return back();
+		} else {
+			return back();
+		}
 	}
 	
 }

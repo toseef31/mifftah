@@ -139,8 +139,18 @@
     </div>
     <div class="indexright rightmenu pull-right">
       <ul class="indexul left">
-        <a href="#" class="indexli left  language" style="margin-right: 12px;"><img class="img-responsive img-language" src="{{ asset('userdata/logo/flag.png') }}" alt="Language" title="Language"/></a>
-        <a href="<?= (Auth::check())? url('/user/newlist'):'#'; ?>" class=" <?= (!Auth::check())?'signinclickmain robotomedium':''; ?>indexli left btn_rent btn-custom">Add listing</a>
+        
+        <a href="{{ url('/ar-home') }}" class="indexli left  language" style=" margin-right: 12px;
+    padding: 7px 0px;
+    /*background-color: rgba(0, 153, 25, 0.06);*/
+    border-radius: 3px;
+    color: white;
+    min-width: 68px;
+    text-align: center;
+    margin-top: -5px;">Ar</a>
+        {{--<a href="#" class="indexli left  language" style="margin-right: 12px;"><img class="img-responsive img-language" src="{{ asset('userdata/logo/flag.png') }}" alt="Language" title="Language"/></a>--}}
+        
+        <a href="<?= (Auth::check()) ? url('/user/newlist') : '#'; ?>" class=" <?= (!Auth::check()) ? 'signinclickmain robotomedium' : ''; ?>indexli left btn_rent btn-custom">Add listing</a>
         <?php if(!Auth::check()){?>
         <li class="indexli left"><a class="signinclickmain robotomedium">Sign In</a></li>
         <li class="indexli left"><a class="signupclickmain robotomedium">Sign Up</a></li>
@@ -168,10 +178,10 @@
           <div class="searchloactionwrpin  fulwidthm left">
             <div class="searchloctionbtnwrp">
               <div class="btnsef">
-                <button class="indexlocbtn lblue_bg btn_rent robotoregular active" id="buyx">Buy</button>
+                <button class="indexlocbtn lblue_bg btn_rent robotoregular active" id="buyx"><?= $lang[11][$current] ?></button>
               </div>
               <div class="btnsef">
-                <button class="indexlocbtn dblue_bg btn_sell robotoregular " id="rentx">Rent</button>
+                <button class="indexlocbtn dblue_bg btn_sell robotoregular " id="rentx"><?= $lang[12][$current] ?></button>
               </div>
             </div>
           </div>
@@ -181,7 +191,7 @@
             <!-- simple form -->
             <form class="" role="form" method="post" action="{{ url('/search') }}">
               {{  csrf_field() }}
-              <input class="maininexinput" type="text" name="citysearch" id="citysearch2" placeholder="Search by City or Region" value="">
+              <input class="maininexinput" type="text" name="citysearch" id="citysearch2" placeholder="<?= $lang[35][$current] ?>" value="">
               <button class="maininputbtn lblue_bg" id="searchnx"><i class="flaticon-magnifying-glass34"></i></button>
             </form>
           </div>
@@ -217,7 +227,7 @@
             <h4 class="whislisttilt fulwidthm robotomedium  singledot graytext fontsize16" id="listaddresswish"></h4>
             <p class=" robotoregular font-size14 lgraytext"></p>
             <div class="wiscatwrper fulwidthm">
-              <div class="wishlistlitingwrp"> Please Select the Wishlists to which you want to add this List. !
+              <div class="wishlistlitingwrp"> <?= (isset($lang)) ? $lang[174][$current] : ''; ?> !
                 <select id="wishlistselectopt" class="wishlistselect" style="width:100%" multiple="multiple" data-placeholder="Click to Select!"> </select>
               </div>
               <div class="createwishlist">
@@ -1547,7 +1557,7 @@
         <div class="indexbox_in pdg20 fulwidthm left">
           <div class="listingstuts fulwidthm left">
             <div class="listingstutstilte text-center">
-              <h4 class="robotolight fontsize24">Currently in <span class="robotomedium">For Sale Network</span></h4>
+              <h4 class="robotolight fontsize24"><?= $lang[14][$current] ?> </h4>
               <!--
   <p class="listsub robotolight fontsize16">In the last 24 Hours</p>
          -->
@@ -1558,7 +1568,7 @@
                   <div class="ststusicon dblue_bg whitetext"><i class="flaticon-list67"></i></div>
                   <div class="status_dindex graybg robotolight">
                     <h4 class="ststuscount fontsize24 robotolight dbluetext">40</h4>
-                    <p class="stsusname fontsize18 robotolight">All Active Listings</p>
+                    <p class="stsusname fontsize18 robotolight"><?= $lang[29][$current] ?></p>
                   </div>
                 </div>
               </div>

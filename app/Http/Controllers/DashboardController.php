@@ -1,15 +1,10 @@
 <?php
 namespace mifftah\Http\Controllers;
 
-//use App\About;
+use Illuminate\Http\File;
 use Illuminate\Http\Request;
+use mifftah\Msg;
 
-//use App\User;
-//use App\Songs;
-//use App\Shows;
-//use App\Albums;
-//use App\Socials;
-//use App\Blogs;
 use Illuminate\Support\Facades\Auth as aauth;
 use \Faker as Faker;
 use \Carbon as Carbon;
@@ -116,7 +111,6 @@ class DashboardController extends Controller {
 	/* Shows */
 	/* ================================================================================= */
 	
-	
 	public function manageLeads() {
 		$data = Listings::whereAvailability(1)->orderBy('id', 'desc')->paginate(10);
 		return view('dashboard.leadsList', compact('data'));
@@ -138,13 +132,44 @@ class DashboardController extends Controller {
 	
 	
 	public function delead($id) {
+		$listingimg = Listings::findOrfail($id);
+//		return $listingimg->imagedata;
+		foreach ($listingimg->imagedata as $singleImg) {
+			$filename = public_path('uploads/' . $singleImg->name);
+			\File::delete($filename);
+		}
 		$dellead = Listings::destroy($id);
 		if ($dellead == 1) {
-			return redirect(url('/admin/manageLeads'));
+			return back();
 		} else {
-			return "Soory Wrong Argument Passed Go back and dont try to do fancy things things are tight here";
+			return "Soory Wrong Argument Passed Go back and Do it again";
 		}
 	}
 	
+	public function updateLanguage() {
+		$data = Msg::paginate(50);
+		return $data;
+		return view('dashboard.languageUpdate', compact('data'));
+	}
+	
+	public function updateLanguageStore(Request $request) {
+		$total_counter = count($request->except('_token')) / 2;
+		for ($i = 1; $i <= $total_counter; $i++) {
+			$id = $request->input('postid_' . $i);
+			$messgae = $request->input('message_' . $i);
+			$requestObjeject = Msg::where('id', $id)->first();
+			$requestObjeject->update(['msg_ar' => $messgae]);
+		}
+		return back()->with('smsg', 'Your query sucessfully updated');
+	}
+	
+	public function ardelead($id) {
+		$dellead = Listings::destroy($id);
+		if ($dellead == 1) {
+			return back();
+		} else {
+			return "Soory Wrong Argument Passed Go back and Do it again";
+		}
+	}
 	
 }

@@ -1,11 +1,16 @@
-<!-- including header --> 
+<!-- including header -->
+<style>
+  footer.footer{
+    display:none !important;
+  }
+</style>
 @include('dashboard.partials.header')
 
-<!-- include side bar --> 
+<!-- include side bar -->
 @include('dashboard.partials.sidebar')
 
-<!-- include Bread Cum--> 
 @include('dashboard.partials.breadcum')
+<!-- include Bread Cum-->
 
 <!-- yield the main page conten --> 
 @yield('content')

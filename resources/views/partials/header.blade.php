@@ -6,7 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="keywords" content="Comprar, vender, alugar, trocar ou dar.">
   <meta name="description" content="Desapegue a sua Sogra !!!! rsrsrs">
-  <link type="text/css" rel="stylesheet" href="{{ asset('css/jquery.ui.autocomplete.css') }}"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link type="text/css" rel="stylesheet" href="{{ str_replace('/ar', '' ,asset('css/jquery.ui.autocomplete.css')) }}"/>
   <link rel="stylesheet" type="text/css" href="{{ asset('css/main.css') }}"/>
   <link rel="stylesheet" type="text/css" href="{{ asset('css/reset.css') }}"/>
   <link rel="stylesheet" type="text/css" href="{{ asset('css/responsive.css') }}"/>
@@ -44,6 +47,16 @@
     
     .slides-container {
       z-index: 1;
+    }
+    
+    a.signinclickmain.robotomedium:hover {
+      color: #fff;
+      text-decoration: none;
+    }
+    
+    input.inersearchinput {
+      border: none;
+      height: 29px;
     }
   </style>
   <script type="text/javascript">
@@ -128,13 +141,59 @@
     </div>
     <div class="indexright rightmenu pull-right">
       <ul class="indexul left">
-        
-        <li class="indexli left myacount robotomedium font-size14 whitetext myacounthover">
         <?php if(!Auth::check()){?>
         <li class="indexli left"><a class="signinclickmain robotomedium">Sign In</a></li>
         <li class="indexli left"><a class="signupclickmain robotomedium">Sign Up</a></li>
         <?php }else{?>
-        <li class="indexli left"><a class="signinclickmain robotomedium" href="{{ url('/user/dashboard') }}"><?= (Auth::check()) ? Auth::user()->name : ''; ?> / Dashboard</a>
+        <li class="indexli left myacount robotomedium font-size14 whitetext myacounthover">
+          <div class="acountpic">
+            <img src="<?= (Auth::check()) ? asset('uploads/' . Auth::user()->img) : ''; ?>" alt="userimage" style="min-height: 31px;">
+          </div>
+          <div class="acoutspan left">
+            <div class="acountname">
+              <a class="signinclickmain robotomedium" href="{{ url('/user/dashboard') }}"><?= (Auth::check()) ? Auth::user()->name : ''; ?></a>
+            </div>
+            <i class="flaticon-arrow486"></i>
+          </div>
+          
+          <div class="myacountdropdown " style="display: none; opacity: 1;"><span class="droptip"><i class="fa flaticon-drop27"></i></span>
+            <ul class="myacountdropdownul whitebg pdg15 text-left">
+              <li class="myacountdropdownli mgnB10 fulwidthm"><a href="{{ url('/user/dashboard') }}" class="myacountdropdown_a graytext fontsize13">Dashboard</a></li>
+              <li class="myacountdropdownli mgnB10 fulwidthm"><a href="{{ url('/user/newlist') }}" class="myacountdropdown_a graytext fontsize13">Create New Listing</a></li>
+              <li class="myacountdropdownli mgnB10 fulwidthm"><a href="{{ url('/user/managelist') }}" class="myacountdropdown_a graytext fontsize13">Manage My Listings</a></li>
+              <li class="myacountdropdownli mgnB10 fulwidthm"><a href="{{ url('/user/transactions') }}" class="myacountdropdown_a graytext fontsize13">My Transactions</a></li>
+              <li class="myacountdropdownli mgnB10 fulwidthm"><a href="{{ url('/help/support') }}" class="myacountdropdown_a graytext fontsize13">Need Help ?</a></li>
+              <li class="myacountdropdownli mgnB10 fulwidthm">
+                <a onclick="logout()" class="myacountdropdown_a  btn greennbg whitetext font-size14" href="{{ url('/logout') }}">Logout</a>
+              </li>
+              <?php }?>
+            </ul>
+          </div>
+        </li>
+      
+      </ul>
+      <div class="menuouter left">
+        <div class="mainmenuclick">
+          <div class="burgermenu left">
+            <span class="burgerspan"></span>
+            <span class="burgerspan burgrmidle"></span>
+            <span class="burgerspan"></span>
+          </div>
+          <span class="menunaem left whitetext robotoregular font-size14">Menu</span>
+        </div>
+      </div>
+    </div>
+  <!--    <div class="indexright rightmenu pull-right">
+      <ul class="indexul left">
+        
+        <li class="indexli left myacount robotomedium font-size14 whitetext myacounthover">
+        <?php if(!Auth::check()){?>
+    <li class="indexli left"><a class="signinclickmain robotomedium">Sign In</a></li>
+    <li class="indexli left"><a class="signupclickmain robotomedium">Sign Up</a></li>
+    <?php }else{?>
+    <li class="indexli left">
+     <div class="acountpic"><img src="userdata/Profile/1/girl-1252995_1920.png" alt="userimage"></div>
+     <a class="signinclickmain robotomedium" href="{{ url('/user/dashboard') }}"><?= (Auth::check()) ? Auth::user()->name : ''; ?> / Dashboard</a>
         <li class="indexli left"><a class="signinclickmain robotomedium" href="{{ url('logout') }}">Logout</a>
           <div class="myacountdropdown " style="display: none; opacity: 1;"><span class="droptip"><i class="fa flaticon-drop27"></i></span>
             <ul class="myacountdropdownul whitebg pdg15 text-left">
@@ -158,19 +217,19 @@
             </ul>
           </div>
         </li>
-        <?php }?>
-      </ul>
-      <div class="menuouter left">
-        <div class="mainmenuclick">
-          <div class="burgermenu left">
-            <span class="burgerspan"></span>
-            <span class="burgerspan burgrmidle"></span>
-            <span class="burgerspan"></span>
-          </div>
-          <span class="menunaem left whitetext robotoregular font-size14">Menu</span>
+        <?php  }?>
+    </ul>
+    <div class="menuouter left">
+      <div class="mainmenuclick">
+        <div class="burgermenu left">
+          <span class="burgerspan"></span>
+          <span class="burgerspan burgrmidle"></span>
+          <span class="burgerspan"></span>
         </div>
+        <span class="menunaem left whitetext robotoregular font-size14">Menu</span>
       </div>
     </div>
+  </div>-->
   </div>
 </div>
      

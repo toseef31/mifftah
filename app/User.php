@@ -34,5 +34,8 @@ class User extends Authenticatable {
 	public function userdatainfo() {
 		return $this->belongsTo('App\Userinfo');
 	}
+	public function bookingdata(){
+		return  $this->hasMany('App\booking');
+	}
 	
 }

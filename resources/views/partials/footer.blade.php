@@ -124,30 +124,64 @@
 <script type="text/javascript" src="{{ asset('js/animate/wow.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/select2.js') }}"></script>
 <script type="text/javascript">
+  $(document).ready(function (e) {
+    $('.innerheader .myacounthover').hover(function () {
+      $(this).children('.myacountdropdown').stop().fadeIn(200);
+    }, function () {
+      $(this).children('.myacountdropdown ').stop().fadeOut(200);
+    });
+    // RESPONSIVE MENU Starts
+    var menucontent = $('.rightmenu').html(); // main menu's Html
+    $('.responsive_menulist').html(menucontent); // adding main menu to responsive menu
+    // if width > 1000px responsive menu and close btn Hide Starts
+    // if width > 1000px responsive menu and close btn Hide Ends
+    $('.responsivebtn').click(function (e) {
+      $(this).toggleClass("active");
+      $('.responsive_menulist').fadeToggle(200);
+      //$('.responsive_menulist').toggle( "drop", { direction: "right" }, 200);
+    });
+    $('.responsivebtn, .responsive_menulist').click(function (event) {
+      event.stopPropagation();
+    });
+    $(document).click(function (e) {
+      $('.responsivebtn').removeClass("active");
+      $('.responsive_menulist').fadeOut(200);
+    });
+    // Sub Menu showing in Responsive menu
+    $(".responsive_menulist .myacounthover").click(function () {
+      $(this).children('.responsive_menulist .myacountdropdown ').slideToggle(200);
+    });
+    // Sub Menu showing in Responsive menu	 Ends
+    // RESPONSIVE MENU ENDS
+  });
+</script>
+<script type="text/javascript" src="js/signinpopup.js"></script>
+<!-- Menu ends -->
+<script type="text/javascript">
   
   
   $(document).ready(function () {
     // more filter show
     
-    $('.morefilterclick').click(function(e) {
+    $('.morefilterclick').click(function (e) {
       $('#advancefil').prop("disabled", true);
       $('.morefilterdiv').fadeToggle(200);
     });
     
-    $('.morefiltercancel').click(function(e) {
+    $('.morefiltercancel').click(function (e) {
       $('.morefilterdiv').fadeOut(200);
     });
     
-    $('.morefilteraply').click(function(e) {
+    $('.morefilteraply').click(function (e) {
       $('.morefilterdiv').fadeOut(200);
     });
-    
-    
     
     
   });
 
+
 </script>
+
 <!--    error div -->
 </body>
-</html> 
+</html>

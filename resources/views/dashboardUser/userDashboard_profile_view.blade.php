@@ -4,7 +4,7 @@
     <section class="detailsection mgnB20 fulwidthm whitebg left pdg15">
       <div class="agentdetialshead mgnB15 fulwidthm left">
         <div class="agentdetialsimg" title="Steve James">
-          <img src="{{ asset('userdata/Profile/1/girl-1252995_1920.png')}}" alt="Steve James">
+          <img src="{{ asset('uploads/' . $data['profile'][0]['img']) }}" alt="Steve James">
         </div>
         <?php // dd($data['profile'][0]['bname']); ?>
         <div class="agentdetailsright">
@@ -30,6 +30,7 @@
               </p>
             </div>
             <!-- agentDRmidle ends -->
+            <?php if(Auth::user()->role == 1){ ?>
             <div class="agntDbottom mgnT15 fulwidthm left">
               <div class="agentDRBleft left">
                 <div class="brkerRbottom fontsize12">
@@ -54,13 +55,21 @@
                 <span class=" mgnS05 premimumagntname left whitetext lblue_bg fontsize12 pdg05">Premium Agent</span>
               </div>
             </div>
-            <!-- agntDbottom ends -->
+          <?php } ?>
+          
+          
+          <!-- agntDbottom ends -->
           </div>
         </div>
         <!-- agentdetailsright ends -->
       </div>
       <div class="clearfix"></div>
       <div class="ca_tb_btnwrp">
+        <?php if(Auth::user()->role == 2){ ?>
+        <div class="cal_tab_btn cal_tab_btn4 active">
+          About
+        </div>
+        <?php }elseif(Auth::user()->role == 1){ ?>
         <div class="cal_tab_btn cal_tab_btn4 active">
           About
         </div>
@@ -73,6 +82,7 @@
         <div class="cal_tab_btn cal_tab_btn4">
           Listings
         </div>
+        <?php } ?>
       </div>
       <div class="cal_tabwrp fulwidthm left">
         <!-- Tab3 ends -->

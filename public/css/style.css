@@ -68,7 +68,7 @@ img.img-language {
 }
 
 .formstylign select, input {
- min-height: 38px !important;
+/* min-height: 38px !important;*/
  width: 100%;
 }
 
@@ -213,5 +213,5 @@ html, body {
  padding: 10px;
 }
 .dashmenua{text-align: left;}
-.subdashmenu_a:hover, .subdashmenuli.current-page .subdashmenu_a{text-align: left;}
+.subdashmenu_a:hover, .subdashmenuli.current-page .subdashmenu_a{text-align: left;text-decoration: none;}
 .subdashmenu_a{text-align: left;}

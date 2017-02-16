@@ -3,6 +3,7 @@
   <!--  --><?php // echo'<pre>';print_r( $data );echo'</pre>'; ?>
   <div class="dashleft  col-lg-9 col-md-9 col-sm-12 col-xs-12 nopadding">
     <form class="form-horizontal form-label-left formstylign formlong" id="data" enctype="multipart/form-data" method="post" action="{{ url('/user/update/profile') }}">
+      {{ csrf_field() }}
       <section class="detailsection mgnB20 fulwidthm whitebg left pdg15">
         <h4 class="robotolight fontsize24 dbluetext mgnB30">Edit Profile Information</h4>
         
@@ -24,17 +25,19 @@
             <div class="col-sm-6 profilefrmwrp  mgnB20">
               <!-- image cropping -->
               <label class="robotomedium font-size14 graytext mgnB10">Profile Image </label>
-              <div class="helpqust mgnT05 graytext"><i class="fa fa-question-circle"></i>
-                <div class="helpanswer"> It is important to give a profile picture to gain the trust of users and to keep it genuine. Note- After uploading the image Click on the Crop button after rearranging the image and you will get a Preview of the cropped image. If you are satisfied with the image then click on 'Save' button to save the image or 'x' to discard and upload/crop again.</div>
-              </div>
+              
               <div class="clearfix"></div>
               <div class="upbtnwithprv">
-                <div class="previwuserpic"><img src="{{ asset('userdata/Profile/1/girl-1252995_1920.png') }}" alt="Steve James" title="Steve James"></div>
-                <div class="btnupgp">
-                  <input class="sutominputfromfiles" type="file" name="img" id="img"/>
-                  <div class="uploadimbtn mgnT15 btn btn-primary "><span class="fa fa-upload"></span> &nbsp; Upload</div>
-                  <span id="dsd" style="display:none;">
-                     <img src="{{ asset('images/uploading.gif') }}"></span>
+                <div class="previwuserpic">
+                  <?php if(!empty($data->img) || $data->img != null ){ ?>
+                  <img src="{{ asset('uploads/'. $data->img) }}" alt="Image" title="Image">
+                  <?php }else{ ?>
+                  <img src="{{ asset('userdata/Profile/1/girl-1252995_1920.png') }}" alt="Steve James" title="Steve James">
+                  <?php }  ?>
+                </div>
+                <div class="btnupgp" style="padding-top: 25px;">
+                  {{--<div class="uploadimbtn mgnT15 btn btn-primary "><span class="fa fa-upload"></span> &nbsp; Upload</div>--}}
+                  <input class="" type="file" name="img" id="img" accept="images/*"/>
                   <div class="clearfix"></div>
                   <span class="fontsize12 graytext">Recommended image size 400x400 </span></div>
               </div>
@@ -46,8 +49,7 @@
               <input class="btn greennbg pull-left" type="submit" value="Save Details" id="useronly" name="useronly"></div>
           </div>
         </div>
-      {{  csrf_field() }}
-      <!-- listed section ends -->
+        <!-- listed section ends -->
       </section>
     </form>
     <!-- simple form -->

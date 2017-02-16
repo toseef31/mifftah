@@ -14,6 +14,7 @@ Auth::routes();
 Route::get('/logout', 'Auth\LoginController@logout');
 Route::get('/', 'PagesController@index');
 Route::get('/home', 'PagesController@index');
+Route::get('/ar-home', 'PagesController@arindex');
 Route::get('/agents', 'PagesController@agents'); /* workign and tested */
 Route::get('/mortgage', 'PagesController@mortgageCalculator'); /* workign and tested */
 Route::get('/affordability', 'PagesController@affordabilityCalculator'); /* working and tested */
@@ -33,36 +34,51 @@ Route::any('/search', 'PagesController@searchpro');
 /* front end Logged users */
 /*============================*/
 Route::get('/user/dashboard', 'UserController@index');
+Route::get('/ar-user/dashboard', 'UserController@arindex');
 Route::get('/user/agentaccount', 'UserController@agentaccount');
+Route::get('/ar-user/agentaccount', 'UserController@aragentaccount');
 /** disable Aget account **/
 Route::get('/user/agentaccount/disable', 'UserController@userdisable');
 /*=================================================================================*/
 /* lists  */
 /*=================================================================================*/
 Route::get('/user/newlist', 'UserController@newlist');
+Route::get('/user/newlistupdate/{id}', 'UserController@newlistupdate');
+Route::get('/ar-user/newlist', 'UserController@arnewlist');
 Route::get('/user/managelist', 'UserController@managelist');
+Route::get('/ar-user/managelist', 'UserController@armanagelist');
+
 Route::get('/user/wishlist', 'UserController@wishlist');
+Route::get('/user/addtowishlist/{id}', 'UserController@addtowishlist');
+Route::get('/ar-user/wishlist', 'UserController@arwishlist');
 Route::get('/remove/wishlist/{id}', 'UserController@removewishlist');
+
 Route::get('/home/preview/{id}', 'UserController@homepreview');
+Route::get('/ar-home/preview/{id}', 'UserController@arhomepreview');
 Route::get('/search/preview/{id}', 'PagesController@homepreview');
+Route::post('form/submit/booking/', 'PagesController@postform');
+Route::get('/ar-search/preview/{id}', 'PagesController@arhomepreview');
 /*============================*/
 /* Lists CRUD  */
 /*============================*/
 
 Route::post('/user/addlist', 'UserController@addlist');
+Route::post('/user/updatelist/{id}', 'UserController@updatelist');
 
 /*=================================================================================*/
 /* manage leads / Agents  */
 /*=================================================================================*/
 
 Route::get('/user/activeleads', 'UserController@activeleads');
+Route::get('/ar-user/activeleads', 'UserController@aractiveleads');
 Route::get('/user/deadleads', 'UserController@deadleads');
+Route::get('/ar-user/deadleads', 'UserController@ardeadleads');
 Route::get('/user/requestsleads', 'UserController@requestsleads');
+Route::get('/ar-user/requestsleads', 'UserController@arrequestsleads');
 Route::post('/user/leadsedit/{id}', 'UserController@updateleadrequests');
 Route::get('/user/requestsleads/send', 'UserController@requestsleadssent');
 Route::get('/user/requestsleads/search', 'UserController@requestsleadsearch');
-
-
+Route::get('/ar-user/requestsleads/search', 'UserController@arrequestsleadsearch');
 
 /*=================================================================================*/
 /* manage Owner leads */
@@ -70,6 +86,7 @@ Route::get('/user/requestsleads/search', 'UserController@requestsleadsearch');
 
 Route::get('/user/requestsleads/admin', 'UserController@adminLeads');
 Route::get('/user/view/profile', 'UserController@viewprofile');
+Route::get('/ar-user/view/profile', 'UserController@arviewprofile');
 
 Route::get('/user/edit/profile', 'UserController@editprofile');
 Route::post('/user/update/profile', 'UserController@updateprofileUser');
@@ -77,100 +94,21 @@ Route::post('/user/update/info', 'UserController@updateinfoUser');
 
 
 Route::get('/user/changepass', 'UserController@changepassword');
+Route::post('/user/updatechangepass', 'UserController@updateChangepassword');
 Route::get('/user/transactions', 'UserController@transactions');
 Route::get('/user/requestsleads/details', 'UserController@homedetails');
 
-/*=================================================================================*/
-/* faker for seeding listing  */
-/*=================================================================================*/
-Route::get('seed/listing', function () {
-	$faker = Faker\Factory::create();
-	$data = [];
-	$data['housetype'] = [0 => 'Single Family', 1 => 'Multi Family', 2 => 'Apartment', 3 => 'Vacant Land', 4 => 'apartamente', 5 => 'Pocket Listings', 6 => 'Farm'];
-	$data['architect'] = [0 => 'Colonial', 1 => 'Contemporary', 2 => 'Modern', 3 => 'Medieval'];
-	$data['lott'] = [0 => 'acer', 1 => 'squ'];
-	$data['floor'] = [0 => 'tile', 1 => 'carpet', 2 => 'hardwood', 3 => 'concrete', 4 => 'granite', 5 => 'marbel'];
-	$data['gerage'] = [0 => 'Garage Attached', 1 => 'Garage Detached', 2 => 'On Street Parking', 3 => 'Off Street Parking'];
-	$data['view'] = [0 => 'City View', 1 => 'Mountain View', 2 => 'Water View', 3 => 'Park View', 4 => 'Building View'];
-	
-	for ($i = 0; $i <= 500; $i++) {
-		$housetype = rand(0, 6);
-		$architect = rand(0, 3);
-		$lott = rand(0, 1);
-		$floor = rand(0, 5);
-		$gerage = rand(0, 3);
-		$view = rand(0, 4);
-		
-		$rec = [
-			'type' => rand(1, 2),
-			'name' => 'property ' . rand(1, 1000) . 'with ' . rand(200, 700) . ' family ' . rand(4000, 6000),
-			'postedBy' => rand(1, 2),
-			'longitude' => $faker->latitude,
-			'latitude' => $faker->longitude,
-			'region' => 'Dubai ' . $faker->city,
-			'street' => $faker->streetAddress,
-			'homesize' => rand(3000, 9000),
-			'pincode' => $faker->postcode,
-			'price' => rand(10000, 200000),
-			'availability' => rand(0, 1),
-			'hometype' => $data['housetype'][$housetype],
-			'info' => $faker->sentence,
-			'architecturalmodel' => $data['architect'][$architect],
-			'yearbuilt' => $faker->date('y-m-d'),
-			'yearmodified' => $faker->date('y-m-d'),
-			'lottype' => $data['lott'][$lott],
-			'stories' => rand(0, 10),
-			'forclosure' => rand(0, 1),
-			'otherrentdetail' => $faker->sentence,
-			'videolink' => $faker->url,
-			'beds' => rand(0, 10),
-			'bathrooms' => rand(0, 10),
-			'opendate' => $faker->date(),
-			'starttime' => $faker->time(),
-			'endtime' => $faker->time(),
-			'office' => rand(0, 1),
-			'dinning' => rand(0, 1),
-			'family' => rand(0, 1),
-			'living' => rand(0, 1),
-			'guest' => rand(0, 1),
-			'kitchen' => rand(0, 1),
-			'cabelTv' => rand(0, 1),
-			'fans' => rand(0, 1),
-			'internet' => rand(0, 1),
-			'securitysys' => rand(0, 1),
-			'wifi' => rand(0, 1),
-			'balcony' => rand(0, 1),
-			'pool' => rand(0, 1),
-			'lawn' => rand(0, 1),
-			'garden' => rand(0, 1),
-			'fence' => rand(0, 1),
-			'gym' => rand(0, 1),
-			'floortye' => $data['floor'][$floor],
-			'aircondition' => rand(0, 1),
-			'heater' => rand(0, 1),
-			'naturalAir' => rand(0, 1),
-			'garagetype' => $data['gerage'][$gerage],
-			'buildingview' => $data['view'][$view],
-		];
-		break;
-//		return $data;
-		Listings::create($rec);
-	}
-});
 
-/* ================================================================================= */
+/* ================================================================================================================================================================== */
 /* dashboard routes  */
-/* ================================================================================= */
+/* ================================================================================================================================================================== */
 /* login */
 Route::get('admin/login', 'DashLoginController@index');
-/**  **/
 /* dashboard */
 Route::get('/admin/dashboard', 'DashboardController@index');
-
 /* ========================= */
 /* update loged in user settings */
 /* ========================= */
-
 Route::get('/admin/udatecuser', 'DashboardController@updateUserRecord');
 
 /* Manage users Routes  */
@@ -194,4 +132,13 @@ Route::get('admin/manageAdminLeads', 'DashboardController@manageAdminLeads');
 Route::get('admin/addlead', 'DashboardController@addLeads');
 Route::get('admin/editlead/{id}', 'DashboardController@editlead');
 Route::get('admin/deletelead/{id}', 'DashboardController@delead');
+Route::get('ar-admin/deletelead/{id}', 'DashboardController@ardelead');
+
+/** seeding the database **/
+Route::get('admin/updateLanguage' , 'DashboardController@updateLanguage');
+Route::post('admin/storeLanguage' , 'DashboardController@updateLanguageStore');
+Route::get('dataseeder', 'UserController@dataseed');
+
+ 
+
  

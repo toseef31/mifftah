@@ -1,6 +1,8 @@
 @extends('dashboardUser.dash_master_layout')
 @section('content')
+  
   <?php
+  
   if (strpos($_SERVER['REQUEST_URI'], 'search') == true) {
     echo "
   <style>
@@ -15,8 +17,6 @@
     <div class="row">
       <div class="resultfilterwrp fulwidthm left lblue_bg">
         <div class=" pdgS10 fulwidthm left">
-          
-          <!-- form filters -->
           <!-- simple form -->
           <form class="" role="form" method="post" action="{{ url('/search') }}" id="filterform">
             <div class="firstfilter left col-md-6 col-sm-9 col-xs-10  nopadding">
@@ -75,182 +75,206 @@
               <i class="flaticon-arrow486"></i>
             </span>
             </div>
-           <div class="morefilterdiv " style="display: block;">
-            <div class="morefilterdivin">
-             <div class="mainindexcontainer">
-              <div class="col-md-7 col-xs-12 mgnTB10">
-
-
-               <div class="mfrow mgnTB10 pdgTB10 graybg fulwidthm left">
-                <div class="mfsection col-xs-12" id="htype">
-                 <div class="mfsectionhead mgnB20 graytext fontsize20">Home Type</div>
-                 <div class="filterechwrp">
-                  <div class="echfilter">
-                   <div class="icheckbox_flat-green" style="position: relative;"><input type="checkbox" class="flat" value="1" name="hometype" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
-                   <span class=" pdgS05 robotomedium font-size14 graytext  aminitname">Single Family</span> </div>
-                  <div class="echfilter">
-                   <div class="icheckbox_flat-green" style="position: relative;"><input type="checkbox" class="flat" value="2" name="hometype" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
-                   <span class=" pdgS05 robotomedium font-size14 graytext  aminitname">Multi Family</span> </div>
-                  <div class="echfilter">
-                   <div class="icheckbox_flat-green" style="position: relative;"><input type="checkbox" class="flat" value="3" name="hometype" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
-                   <span class=" pdgS05 robotomedium font-size14 graytext  aminitname"> Apartment  </span> </div>
-                  <div class="echfilter">
-                   <div class="icheckbox_flat-green" style="position: relative;"><input type="checkbox" class="flat" value="4" name="hometype" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
-                   <span class=" pdgS05 robotomedium font-size14 graytext  aminitname"> Vacant Land</span> </div>
-
-
-
-                 </div>
+            <script>
+              $(document).ready(function () {
+                $("showhide").click(function () {
+                  $("firstfilter left col-md-4 col-sm-4 col-xs-10  nopadding").toggle();
+                });
+              });
+            </script>
+            <div class="morefilterdiv ">
+              <div class="morefilterdivin">
+                <div class="mainindexcontainer">
+                  <div class="col-md-7 col-xs-12 mgnTB10">
+                    
+                    
+                    <div class="mfrow mgnTB10 pdgTB10 graybg fulwidthm left">
+                      <div class="mfsection col-xs-12" id="htype">
+                        <div class="mfsectionhead mgnB20 graytext fontsize20">Home Type</div>
+                        <div class="filterechwrp">
+                          <div class="echfilter">
+                            <div class="icheckbox_flat-green" style="position: relative;"><input type="checkbox" class="flat" value="1" name="hometype" style="position: absolute; opacity: 0;">
+                              <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+                            </div>
+                            <span class=" pdgS05 robotomedium font-size14 graytext  aminitname">Single Family</span></div>
+                          <div class="echfilter">
+                            <div class="icheckbox_flat-green" style="position: relative;"><input type="checkbox" class="flat" value="2" name="hometype" style="position: absolute; opacity: 0;">
+                              <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+                            </div>
+                            <span class=" pdgS05 robotomedium font-size14 graytext  aminitname">Multi Family</span></div>
+                          <div class="echfilter">
+                            <div class="icheckbox_flat-green" style="position: relative;"><input type="checkbox" class="flat" value="3" name="hometype" style="position: absolute; opacity: 0;">
+                              <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+                            </div>
+                            <span class=" pdgS05 robotomedium font-size14 graytext  aminitname"> Apartment  </span></div>
+                          <div class="echfilter">
+                            <div class="icheckbox_flat-green" style="position: relative;"><input type="checkbox" class="flat" value="4" name="hometype" style="position: absolute; opacity: 0;">
+                              <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+                            </div>
+                            <span class=" pdgS05 robotomedium font-size14 graytext  aminitname"> Vacant Land</span></div>
+                        
+                        
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mfrow mgnTB10 pdgTB10 graybg fulwidthm left">
+                      <div class="mfsection col-xs-12 ">
+                        <div class="mfsectionhead mgnB20 graytext fontsize20"> Activities</div>
+                        <div class="filterechwrp">
+                          <div class="echfilter">
+                            <div class="icheckbox_flat-green" style="position: relative;"><input type="checkbox" class="flat" id="open" name="open" style="position: absolute; opacity: 0;">
+                              <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+                            </div>
+                            <span class=" pdgS05 robotomedium font-size14 graytext  aminitname">Open House</span></div>
+                          <div class="echfilter">
+                            <div class="icheckbox_flat-green" style="position: relative;"><input type="checkbox" class="flat" id="newlist" name="newlist" style="position: absolute; opacity: 0;">
+                              <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+                            </div>
+                            <span class=" pdgS05 robotomedium font-size14 graytext  aminitname">New Listing</span></div>
+                          <div class="echfilter">
+                            <div class="icheckbox_flat-green" style="position: relative;"><input type="checkbox" class="flat" id="pricered" name="pricered" style="position: absolute; opacity: 0;">
+                              <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+                            </div>
+                            <span class=" pdgS05 robotomedium font-size14 graytext  aminitname"> Price Reduced </span></div>
+                          
+                          <div class="echfilter">
+                            <div class="icheckbox_flat-green" style="position: relative;"><input type="checkbox" class="flat" id="forclosure" name="forclosure" style="position: absolute; opacity: 0;">
+                              <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+                            </div>
+                            <span class=" pdgS05 robotomedium font-size14 graytext  aminitname"> Foreclosure </span></div>
+                        
+                        
+                        </div>
+                      </div>
+                    </div>
+                  
+                  </div>
+                  <div class="col-md-5  mgnTB10">
+                    <div class="mfrow mobileonlyfilter mgnTB10 pdg10 graybg fulwidthm left">
+                      <div class="morfleft left">
+                        <h3 class="morflefttilte graytext fontsize16">Beds</h3>
+                      </div>
+                      <div class="morfright onmoblefilter left">
+                        <select id="beds1" class="priceselect filterselect xo" style="width: 100%; display: none;" tabindex="-1">
+                          <option value="">All Beds</option>
+                          <option value="0">0 Bed</option>
+                          <option value="1">1 Beds</option>
+                          <option value="2">2 Beds</option>
+                          <option value="3">3 Beds</option>
+                          <option value="4">4 Beds</option>
+                          <option value="5">5 Beds</option>
+                          <option value="6">6 Beds</option>
+                          <option value="7">7 Beds</option>
+                          <option value="8">8 Beds</option>
+                          <option value="9">9 Beds</option>
+                          <option value="10">10+ Beds</option>
+                        </select><span class="select2 select2-container select2-container--default" dir="ltr" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-autocomplete="list" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-beds1-container"><span class="select2-selection__rendered" id="select2-beds1-container" title="All Beds">All Beds</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                      </div>
+                    </div>
+                    <div class="mfrow mgnTB10 pdg10 graybg fulwidthm left">
+                      <div class="morfleft left">
+                        <h3 class="morflefttilte graytext fontsize16">Baths</h3>
+                      </div>
+                      <div class="morfright left">
+                        <select id="bathrooms" class="bathfilter filterselect xo" style="width: 100%; display: none;" tabindex="-1">
+                          <option value="">Bathrooms</option>
+                          <option value="0">0 Bathroom</option>
+                          <option value="1">1 Bathrooms</option>
+                          <option value="2">2 Bathrooms</option>
+                          <option value="3">3 Bathrooms</option>
+                          <option value="4">4 Bathrooms</option>
+                          <option value="5">5 Bathrooms</option>
+                          <option value="6">6 Bathrooms</option>
+                          <option value="6">7+ Bathrooms</option>
+                        </select>
+                        <!--<span class="select2 select2-container select2-container--default" dir="ltr" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-autocomplete="list" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-bathrooms-container"><span class="select2-selection__rendered" id="select2-bathrooms-container" title="Bathrooms">Bathrooms</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>-->
+                      </div>
+                    </div>
+                    <div class="mfrow mgnTB10 pdg10 graybg fulwidthm left">
+                      <div class="morfleft left">
+                        <h3 class="morflefttilte graytext fontsize16">Square Feet</h3>
+                      </div>
+                      <div class="morfright left">
+                        <select id="homesize" class="bathfilter filterselect xo" style="width: 100%; display: none;" tabindex="-1">
+                          
+                          <option value="">Any Home Size</option>
+                          <option value="500">500 sqft</option>
+                          <option value="750">750 sqft</option>
+                          <option value="1000">1,000 sqft</option>
+                          <option value="2000">2,000 sqft</option>
+                          <option value="3000">3,000 sqft</option>
+                          <option value="4000">4,000 sqft</option>
+                          <option value="5000">5,000 sqft</option>
+                          <option value="6000">6,000 sqft</option>
+                          <option value="7000">7,000 sqft</option>
+                          <option value="8000">8,000+sqft</option>
+                        
+                        </select>
+                      
+                      </div>
+                    </div>
+                    
+                    <div class="mfrow mgnTB10 pdg10 graybg fulwidthm left">
+                      <div class="morfleft left">
+                        <h3 class="morflefttilte graytext fontsize16">Year Build</h3>
+                      </div>
+                      <div class="morfright left">
+                        <select id="yearbuilt" class="priceselect filterselect xo" style="width: 100%; display: none;" tabindex="-1">
+                          <option value="">All</option>
+                          <option value="1850">1850</option>
+                          <option value="1851">1851</option>
+                          <option value="2008">2008</option>
+                          <option value="2009">2009</option>
+                          <option value="2010">2010</option>
+                          <option value="2011">2011</option>
+                          <option value="2012">2012</option>
+                          <option value="2013">2013</option>
+                          <option value="2014">2014</option>
+                          <option value="2015">2015</option>
+                          <option value="2016">2016</option>
+                          <option value="2017">2017</option>
+                        </select>
+                      </div>
+                    </div>
+                    
+                    
+                    <div class="mfrow mgnTB10 pdg10 graybg fulwidthm left">
+                      <div class="morfleft left">
+                        <h3 class="morflefttilte graytext fontsize16">Days on For Sale Network</h3>
+                      </div>
+                      <div class="morfright left">
+                        <select id="dayss" class="bathfilter filterselect xo" style="width: 100%; display: none;" tabindex="-1">
+                          <option value="">All</option>
+                          <option value="1">1 Month</option>
+                          <option value="3">3 Months</option>
+                          <option value="6">6 Months</option>
+                          <option value="9">9 Months</option>
+                          <option value="12">12 Months</option>
+                          <option value="15">15 Months</option>
+                          <option value="18">18 Months</option>
+                          <option value="21">21 Months</option>
+                          <option value="24">24 Months</option>
+                        
+                        </select>
+                      </div>
+                    </div>
+                  
+                  </div>
                 </div>
-               </div>
-               <div class="mfrow mgnTB10 pdgTB10 graybg fulwidthm left">
-                <div class="mfsection col-xs-12 ">
-                 <div class="mfsectionhead mgnB20 graytext fontsize20"> Activities</div>
-                 <div class="filterechwrp">
-                  <div class="echfilter">
-                   <div class="icheckbox_flat-green" style="position: relative;"><input type="checkbox" class="flat" id="open" name="open" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
-                   <span class=" pdgS05 robotomedium font-size14 graytext  aminitname">Open House</span> </div>
-                  <div class="echfilter">
-                   <div class="icheckbox_flat-green" style="position: relative;"><input type="checkbox" class="flat" id="newlist" name="newlist" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
-                   <span class=" pdgS05 robotomedium font-size14 graytext  aminitname">New Listing</span> </div>
-                  <div class="echfilter">
-                   <div class="icheckbox_flat-green" style="position: relative;"><input type="checkbox" class="flat" id="pricered" name="pricered" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
-                   <span class=" pdgS05 robotomedium font-size14 graytext  aminitname"> Price Reduced </span> </div>
-
-                  <div class="echfilter">
-                   <div class="icheckbox_flat-green" style="position: relative;"><input type="checkbox" class="flat" id="forclosure" name="forclosure" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
-                   <span class=" pdgS05 robotomedium font-size14 graytext  aminitname"> Foreclosure </span> </div>
-
-
-                 </div>
+                
+                <!-- bottom fixed button -->
+                <div class="bottomfixedfilter pdg10 whitebg">
+                  <div class="pull-right">
+                    <button class="morefiltercancel btn dblue_bg">Cancel</button>
+                    <button class="morefilteraply btn lblue_bg" id="advancefil" disabled=""> Apply Filter</button>
+                  </div>
                 </div>
-               </div>
-
+                <!-- Bottom fixed buttons ends -->
               </div>
-              <div class="col-md-5  mgnTB10">
-               <div class="mfrow mobileonlyfilter mgnTB10 pdg10 graybg fulwidthm left">
-                <div class="morfleft left">
-                 <h3 class="morflefttilte graytext fontsize16">Beds</h3>
-                </div>
-                <div class="morfright onmoblefilter left">
-                 <select id="beds1" class="priceselect filterselect xo" style="width: 100%; display: none;" tabindex="-1">
-                  <option value="">All Beds</option>
-                  <option value="0">0 Bed</option>
-                  <option value="1">1 Beds</option>
-                  <option value="2">2 Beds</option>
-                  <option value="3">3 Beds</option>
-                  <option value="4">4 Beds</option>
-                  <option value="5">5 Beds</option>
-                  <option value="6">6 Beds</option>
-                  <option value="7">7 Beds</option>
-                  <option value="8">8 Beds</option>
-                  <option value="9">9 Beds</option>
-                  <option value="10">10+ Beds</option>
-                 </select><span class="select2 select2-container select2-container--default" dir="ltr" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-autocomplete="list" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-beds1-container"><span class="select2-selection__rendered" id="select2-beds1-container" title="All Beds">All Beds</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
-                </div>
-               </div>
-               <div class="mfrow mgnTB10 pdg10 graybg fulwidthm left">
-                <div class="morfleft left">
-                 <h3 class="morflefttilte graytext fontsize16">Baths</h3>
-                </div>
-                <div class="morfright left">
-                 <select id="bathrooms" class="bathfilter filterselect xo" style="width: 100%; display: none;" tabindex="-1">
-                  <option value="">Bathrooms</option>
-                  <option value="0">0 Bathroom</option>
-                  <option value="1">1 Bathrooms</option>
-                  <option value="2">2 Bathrooms</option>
-                  <option value="3">3 Bathrooms</option>
-                  <option value="4">4 Bathrooms</option>
-                  <option value="5">5 Bathrooms</option>
-                  <option value="6">6 Bathrooms</option>
-                  <option value="6">7+ Bathrooms</option>
-                 </select>
-                </div>
-               </div>
-               <div class="mfrow mgnTB10 pdg10 graybg fulwidthm left">
-                <div class="morfleft left">
-                 <h3 class="morflefttilte graytext fontsize16">Square Feet</h3>
-                </div>
-                <div class="morfright left">
-                 <select id="homesize" class="bathfilter filterselect xo" style="width: 100%; display: none;" tabindex="-1">
-
-                  <option value="">Any Home Size</option>
-                  <option value="500">500 sqft</option>
-                  <option value="750">750 sqft</option>
-                  <option value="1000">1,000 sqft</option>
-                  <option value="2000">2,000 sqft</option>
-                  <option value="3000">3,000 sqft</option>
-                  <option value="4000">4,000 sqft</option>
-                  <option value="5000">5,000 sqft</option>
-                  <option value="6000">6,000 sqft</option>
-                  <option value="7000">7,000 sqft</option>
-                  <option value="8000">8,000+sqft</option>
-
-                 </select>
-
-                </div>
-               </div>
-
-               <div class="mfrow mgnTB10 pdg10 graybg fulwidthm left">
-                <div class="morfleft left">
-                 <h3 class="morflefttilte graytext fontsize16">Year Build</h3>
-                </div>
-                <div class="morfright left">
-                 <select id="yearbuilt" class="priceselect filterselect xo" style="width: 100%; display: none;" tabindex="-1">
-                  <option value="">All</option>
-                  <option value="1850">1850</option>
-                  <option value="1851">1851</option>
-                  <option value="2008">2008</option>
-                  <option value="2009">2009</option>
-                  <option value="2010">2010</option>
-                  <option value="2011">2011</option>
-                  <option value="2012">2012</option>
-                  <option value="2013">2013</option>
-                  <option value="2014">2014</option>
-                  <option value="2015">2015</option>
-                  <option value="2016">2016</option>
-                  <option value="2017">2017</option> 
-                 </select>
-                </div>
-               </div>
-
-
-               <div class="mfrow mgnTB10 pdg10 graybg fulwidthm left">
-                <div class="morfleft left">
-                 <h3 class="morflefttilte graytext fontsize16">Days on For Sale Network</h3>
-                </div>
-                <div class="morfright left">
-                 <select id="dayss" class="bathfilter filterselect xo" style="width: 100%; display: none;" tabindex="-1">
-                  <option value="">All</option>
-                  <option value="1">1 Month</option>
-                  <option value="3">3 Months</option>
-                  <option value="6">6 Months</option>
-                  <option value="9">9 Months</option>
-                  <option value="12">12 Months</option>
-                  <option value="15">15 Months</option>
-                  <option value="18">18 Months</option>
-                  <option value="21">21 Months</option>
-                  <option value="24">24 Months</option>
-
-                 </select>
-                </div>
-               </div>
-
-              </div>
-             </div>
-
-             <!-- bottom fixed button -->
-             <div class="bottomfixedfilter pdg10 whitebg">
-              <div class="pull-right">
-               <button class="morefiltercancel btn dblue_bg">Cancel</button>
-               <button class="morefilteraply btn lblue_bg" id="advancefil" disabled=""> Apply Filter </button>
-              </div>
-             </div>
-             <!-- Bottom fixed buttons ends -->
             </div>
-           </div>
+            
             <!-- third filter -->
-            <div class="firstfilter left col-md-4 col-sm-4 col-xs-10  nopadding">
+            <div id="showhide" class="firstfilter left col-md-4 col-sm-4 col-xs-10  nopadding">
               <div class="pricefilter  left col-sm-6 col-md-6 col-xs-12 nopaddingLR">
                 <div class="pricefilterhalf ">
                   <select id="" class="priceselect filterselect" style="width: 100%; display: none;" tabindex="-1" name="minprice">
@@ -260,7 +284,7 @@
                     <option value="buy">Buy</option>
                   </select>
                 </div>
-               
+                
                 <div class="pricefilterhalf ">
                   <select id="" class="priceselect filterselect" style="width: 100%; display: none;" tabindex="-1" name="maxprice">
                     <option selected>Select a Property type</option>
@@ -302,12 +326,21 @@
                   <div class="col-xs-12 resultlisting mgnTB20" id="xyz-8">
                     <div class="whitebg fulwidthm resultlisting_in left lgray_border">
                       <div class="resultim col-md-5 col-sm-4 col-xs-12 nopaddingL transition2" title="Niagra Nagar, New York, NY 9997">
+                        <?php
+                        if(!empty($property->imagedata)){
+                        foreach ($property->imagedata as $image) {
+                        ?>
                         <a href="{{ url('/search/preview/'.$property->id ) }}">
-                          <div class="resultn_image" style="background: url('userdata/List/Thumb/1/8/beautiful-21864_960_720.jpg') no-repeat;">
-                            <div class="featuredim"><img src="images/featured.png" title="Featured Property"></div>
-                            <div class="photocount"><?= rand(0, 5) ?> Photos</div>
+                          <div class="resultn_image" style="background: url('<?= asset('uploads/' . $image->name) ?>') no-repeat;">
+                            <div class="featuredim">
+                              {{--<img src="{{ asset('uploads/'. $image->name) }}" title="Featured Property">--}}
+                            </div>
+                            <div class="photocount"><?= count($property->imagedata) ?> Photos</div>
                           </div>
                         </a>
+                        <?php
+                        break;}
+                        } ?>
                       </div>
                       <div class="result_descrptn pdgTB15 col-md-7 col-sm-8 col-xs-12 left whitebg">
                         <div class="resulthead">
@@ -326,7 +359,11 @@
                             <div class="broomcont left"><i class="flaticon-shower15 fontsize24" title="Bathrooms"></i><span class="n_botmrdcount"><?= $property->bathrooms ?></span>
                             </div>
                           </div>
-                          <div class="right"><span id="wishlist_8" class="hearlike wishlistopen"> <i class="flaticon-heart297"></i> </span></div>
+                          <div class="right">
+                            <a href="{{ url('user/addtowishlist/' . $property->id ) }}">
+                              <span id="wishlist_8" class="hearlike wishlistopen"> <i class="flaticon-heart297"></i> </span>
+                            </a>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -373,40 +410,7 @@
             <script type="text/javascript" src="js/simpledatpiker/datepiker.js"></script>
             <!-- Date Range Picker Ends -->
             <!--  Menuu -->
-            <script type="text/javascript">
-              $(document).ready(function (e) {
-                $('.innerheader .myacounthover').hover(function () {
-                  $(this).children('.myacountdropdown').stop().fadeIn(200);
-                }, function () {
-                  $(this).children('.myacountdropdown ').stop().fadeOut(200);
-                });
-                // RESPONSIVE MENU Starts
-                var menucontent = $('.rightmenu').html(); // main menu's Html
-                $('.responsive_menulist').html(menucontent); // adding main menu to responsive menu
-                // if width > 1000px responsive menu and close btn Hide Starts
-                // if width > 1000px responsive menu and close btn Hide Ends
-                $('.responsivebtn').click(function (e) {
-                  $(this).toggleClass("active");
-                  $('.responsive_menulist').fadeToggle(200);
-                  //$('.responsive_menulist').toggle( "drop", { direction: "right" }, 200);
-                });
-                $('.responsivebtn, .responsive_menulist').click(function (event) {
-                  event.stopPropagation();
-                });
-                $(document).click(function (e) {
-                  $('.responsivebtn').removeClass("active");
-                  $('.responsive_menulist').fadeOut(200);
-                });
-                // Sub Menu showing in Responsive menu
-                $(".responsive_menulist .myacounthover").click(function () {
-                  $(this).children('.responsive_menulist .myacountdropdown ').slideToggle(200);
-                });
-                // Sub Menu showing in Responsive menu	 Ends
-                // RESPONSIVE MENU ENDS
-              });
-            </script>
-            <script type="text/javascript" src="js/signinpopup.js"></script>
-            <!-- Menu ends -->
+         
             <!-- animation and select -->
             <script type="text/javascript" src="js/animate/animate.js"></script>
             <script type="text/javascript" src="js/animate/wow.js"></script>
@@ -560,7 +564,6 @@
   
   </script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCa-O7jKdRNT_YuLql_7dDfJ6lgoCG0G2U&libraries=places&sensor=false&callback=initialize"></script>
-
 
 @endsection
 

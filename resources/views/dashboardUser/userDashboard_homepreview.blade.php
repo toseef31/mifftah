@@ -1,11 +1,5 @@
-<head>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-</head>
 @extends('dashboardUser.dash_master_layout')
 @section('content')
-  
   <?php
   if (strpos($_SERVER['REQUEST_URI'], 'home/preview') == true) {
     echo "
@@ -20,8 +14,6 @@
 </style>";
   }
   ?>
-  <div class="innerwraperful  pdgT15 fulwidthm left">
-  </div>
   
   <div class="detailsfulleft  col-lg-8 col-md-8 col-sm-12 col-xs-12 ">
     
@@ -86,26 +78,16 @@
             <div class='carousel-outer'>
               <!-- Wrapper for slides -->
               <div class='carousel-inner maxheight'>
-                
-                <div class='item'>
-                  <img src="{{ asset('userdata/List/1/9/home-wallpaper-26.jpg')}}" alt=''/>
+                <?php
+                $active = 'active';
+                foreach ($data->imagedata as $image){  ?>
+                <div class='item <?= $active ?>'>
+                  <img src="{{ asset('uploads/'.$image->name)}}" alt=''/>
                 </div>
-                <div class='item'>
-                  <img src="{{ asset('userdata/List/1/9/family-room-670270_1920.jpg')}}" alt=''/>
-                </div>
-                
-                <div class='item'>
-                  <img src="{{ asset('userdata/List/1/9/home-wallpaper-26.jpg')}}" alt=''/>
-                </div>
-                <div class='item'>
-                  <img src="{{ asset('userdata/List/1/9/family-room-670270_1920.jpg')}}" alt=''/>
-                </div>
-                <div class='item'>
-                  <img src="{{ asset('userdata/List/1/9/home-wallpaper-26.jpg')}}" alt=''/>
-                </div>
-                <div class='item active'>
-                  <img src="{{ asset('userdata/List/1/9/family-room-670270_1920.jpg')}}" alt=''/>
-                </div>
+                <?php
+                $active = '';
+                }
+                ?>
               </div>
               
               <!-- Controls -->
@@ -119,14 +101,16 @@
             
             <!-- Indicators -->
             <ol class='carousel-indicators mCustomScrollbar'>
-              <li data-target='#carousel-custom' data-slide-to='0' class='active'><img src="{{ asset('userdata/List/1/9/home-wallpaper-26.jpg')}}" alt=''/></li>
-              <li data-target='#carousel-custom' data-slide-to='1'><img src="{{ asset('userdata/List/1/9/family-room-670270_1920.jpg')}}" alt=''/></li>
-              <li data-target='#carousel-custom' data-slide-to='2'><img src="{{ asset('userdata/List/1/9/home-wallpaper-26.jpg')}}" alt=''/></li>
-              <li data-target='#carousel-custom' data-slide-to='3'><img src="{{ asset('userdata/List/1/9/family-room-670270_1920.jpg')}}" alt=''/></li>
-              <li data-target='#carousel-custom' data-slide-to='4'><img src="{{ asset('userdata/List/1/9/home-wallpaper-26.jpg')}}" alt=''/></li>
-              <li data-target='#carousel-custom' data-slide-to='5'><img src="{{ asset('userdata/List/1/9/family-room-670270_1920.jpg')}}" alt=''/></li>
-              <li data-target='#carousel-custom' data-slide-to='6'><img src="{{ asset('userdata/List/1/9/home-wallpaper-26.jpg')}}" alt=''/></li>
-            
+              <?php
+              $active = 'active';
+              $slide = 0;
+              foreach ($data->imagedata as $image){  ?>
+              <li data-target='#carousel-custom' data-slide-to='<?= $slide ?>' class='<?= $active ?>'><img src="{{ asset('uploads/'.$image->name)}} " alt=''/></li>
+              <?php
+              $active = '';
+              $slide++;
+              }
+              ?>
             </ol>
           </div>
         
@@ -215,10 +199,7 @@
                   
                   <li class="detaillistingli left mgnB20">
                     <span class="detaillititle col-sm-6 col-xs-6 nopaddingL lgraytext"><i class="flaticon-calendar146"></i> Year Built</span> <span class="detaillititledis col-sm-6 col-xs-6 nopaddingR robotomedium">{{$data->yearbuilt }}</span>
-                  
                   </li>
-                
-                
                 </ul>
               
               </div>
@@ -285,14 +266,20 @@
                     <i class="aminti_icon flaticon-cars7"></i>
                     <span class="aminidis">{{$data->garagetype }} </span>
                   </li>
-                  {{--<li class="detaillistingli fulwidthm left lgraytext mgnB10">--}}
+                  {{--
+                  <li class="detaillistingli fulwidthm left lgraytext mgnB10">--}}
                     {{--<i class="aminti_icon flaticon-home97"></i>--}}
                     {{--<span class="aminidis">City View</span>--}}
-                  {{--</li>--}}
-                  {{--<li class="detaillistingli fulwidthm left lgraytext mgnB10">--}}
+                    {{--
+                  </li>
+                  --}}
+                  {{--
+                  <li class="detaillistingli fulwidthm left lgraytext mgnB10">--}}
                     {{--<i class="aminti_icon flaticon-home97"></i>--}}
                     {{--<span class="aminidis"> Water View  </span>--}}
-                  {{--</li>--}}
+                    {{--
+                  </li>
+                  --}}
                   <li class="detaillistingli fulwidthm left lgraytext mgnB10">
                     <i class="aminti_icon flaticon-home97"></i>
                     <span class="aminidis">{{$data->buildingview }}</span>
@@ -342,10 +329,11 @@
     
     <div class="reqstinfowrp fulwidthm left mgnB15">
       <!-- simple form -->
-      <form class="" role="form" method="post" action="{{ url('') }}">
+      <form class="" role="form" method="post" action="{{ url('form/submit/booking/') }}">
+        
+        {{ csrf_field() }}
         <div class="rqstinfotitle dblue_bg pdg15 fulwidthm fontsize16 left whitetext">Tell Me More About This Property</div>
         <div class="reqstinfowrp_in fulwidthm left  whitebg">
-          
           <div class="rqstinfobrkerlist" style="overflow-y: hidden; outline: none; cursor: -webkit-grab;">
             <div class="rqstinfobrkerlistin pdg15">
               <ul class="borkerRul" id="brkrsel">
@@ -373,31 +361,38 @@
           <!-- Broker ends -->
           <div class="rqstinfoformswrp">
             <div class="pdg15 fulwidthm left rqstinfoformswrp_in">
+              <input type="hidden" name="propertyID" value="{{ $data->id }}"/>
+              <input type="hidden" name="vendorID" value="{{ $data->postedBy }}"/>
               <div class="rqstfrmrow fulwidthm left mgnB15">
-                <input class="rqstfrminput fulwidthm left" id="reqname" type="text" placeholder="Your Name" value="<?= (Auth::check())?Auth::user()->name:''; ?> ">
-                <div class="erorshown fulwidthm  left" id="namereqerr">Please Enter Your First Name</div>
+                <ul class="list-group">
+                  <?= (Session::has('status')) ?'<li class="list-group-item list-group-item-success">'. session('status') .'</li>': ''; ?>
+                  <?php
+                  if(count($errors) > 0){
+                  foreach ($errors->all() as $error) { ?>
+                  <li class="list-group-item list-group-item-danger"><?= $error ?></li>
+                  <?php } } ?>
+                </ul>
               </div>
               <div class="rqstfrmrow fulwidthm left mgnB15">
-                <input class="rqstfrminput fulwidthm left" id="reqemail" type="email" placeholder="Your Email" value="<?= (Auth::check())?Auth::user()->email:''; ?> ">
-                <div class="erorshown fulwidthm  left" id="emailreqerr">Please Enter Your First Name</div>
+                <input class="rqstfrminput fulwidthm left" id="reqname" name="name" type="text" required="required" placeholder="Your Name" value="<?= (Auth::check())?Auth::user()->name:''; ?> ">
               </div>
               <div class="rqstfrmrow fulwidthm left mgnB15">
-                <input class="rqstfrminput fulwidthm left" id="reqphno" type="text" placeholder="Contact Number" value="<?= (Auth::check())?Auth::user()->phone:''; ?>">
-                <div class="erorshown fulwidthm  left" id="phnreqerr">Please Enter Your First Name</div>
+                <input class="rqstfrminput fulwidthm left" id="reqemail" name="email" type="email" required="required" placeholder="Your Email" value="<?= (Auth::check())?Auth::user()->email:''; ?> ">
               </div>
               <div class="rqstfrmrow fulwidthm left mgnB15">
-                <textarea class="rqstfrminput fulwidthm left" id="reqmess" placeholder="Your Message"></textarea>
-                <div class="erorshown fulwidthm  left" id="msgreqerr">Please Enter Your First Name</div>
+                <input class="rqstfrminput fulwidthm left" id="reqphno" name="phone" type="tel" required="required" placeholder="Contact Number" value="<?= (Auth::check())?Auth::user()->phone:''; ?>">
+              </div>
+              <div class="rqstfrmrow fulwidthm left mgnB15">
+                <textarea class="rqstfrminput fulwidthm left" name="message" id="reqmess" required="required" placeholder="Your Message"></textarea>
               </div>
               <div title="Book NOw" style="padding-bottom: 12px;">
-                <select class="form-control" name="bookingStatus" required>
-                  <option selected="selected">Select a Booking Status</option>
+                <select class="form-control" name="bookingStatus" required="required">
                   <option value="1">Book Now</option>
                   <option value="0">Book Later</option>
                 </select>
               </div>
               <div style="padding-bottom: 12px;">
-                <input type="date" class="robotoregular fontsize16" id="" placeholder="Schedual to Visit"/>
+                <input type="date" class="robotoregular fontsize16" id="" value="<?php echo date('Y-m-d',strtotime(date('y-m-d'))) ?>" required="required" placeholder="Schedual to Visit"/>
               </div>
               <div class="rqstfrmrow fulwidthm left mgnB15">
                 <button class="lblue_bg fulwidthm left pdgTB10 fontsize18 reqstinfopoopen" id="requestbut">Request Info</button>
@@ -409,6 +404,7 @@
     </div>
     
     <div class="detilwishlistbtn transition2 mgnB15 whitetext  text-center fulwidthm left whishorngnebtn" id="wishlistttt_3" title="Save to Wishlist">
+     <a href="{{ url('search/preview/'.$data->id) }}"></a>
       <span id="wishlist_3" class="hearlike wishlistopen "> <i class="flaticon-heart297"></i> </span>
       <h3 class="whsilisttile  robotoregular fontsize16">Save to WishList</h3>
     </div>
@@ -420,78 +416,81 @@
       });
     </script>
     <!-------School Map Start-------->
-    <div class="col-md-4" style="width: 100%;" >
-     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBRYGewN8AZljJsCC-vWzJrO2ZQr7ZR-og&libraries=places&callback=initMap" async defer></script>
-    <style>
-      /* Always set the map height explicitly to define the size of the div
-       * element that contains the map. */
-      #map { height: 100%;}
-      /* Optional: Makes the sample page fill the window. */
-      html, body { height: 100%;margin: 0;padding: 0;}
-    </style>
-    <script type="text/javascript">
-      // This example requires the Places library. Include the libraries=places
-      // parameter when you first load the API. For example:
-      // <script src="https://maps.googleapis.com/maps/api/js?libraries=places">
-
-      var map;
-      var infowindow;
-
-      function initMap() {
-        var pyrmont = {lat: 33.6516295, lng: 73.0804872 };
-
-        map = new google.maps.Map(document.getElementById('map'), {
-          center: pyrmont,
-          zoom: 15
-        });
-
-        infowindow = new google.maps.InfoWindow();
-        var service = new google.maps.places.PlacesService(map);
-        service.nearbySearch({
-          location: pyrmont,
-          radius: 1500,
-          type: ['school']
-        }, schoolCallback);
-		
-		
-
-      }
-
-      function schoolCallback(results, status) {
-        if (status === google.maps.places.PlacesServiceStatus.OK) {
-          for (var i = 0; i < results.length; i++) {
-            createSchoolMarker(results[i]); //results doesn't contain anything related to type (school,store,etc)
+    <div class="col-md-4" style="width: 100%;">
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBRYGewN8AZljJsCC-vWzJrO2ZQr7ZR-og&libraries=places&callback=initMap" async defer></script>
+      <style>
+        /* Always set the map height explicitly to define the size of the div
+         * element that contains the map. */
+        #map {
+          height: 100%;
+        }
+        
+        /* Optional: Makes the sample page fill the window. */
+        html, body {
+          height: 100%;
+          margin: 0;
+          padding: 0;
+        }
+      </style>
+      <script type="text/javascript">
+        // This example requires the Places library. Include the libraries=places
+        // parameter when you first load the API. For example:
+        // <script src="https://maps.googleapis.com/maps/api/js?libraries=places">
+        
+        var map;
+        var infowindow;
+        
+        function initMap() {
+          var pyrmont = {lat: <?= $data->latitude ?>, lng: <?= $data->longitude ?>};
+//          var pyrmont = {lat: 33.6516295, lng: 73.0804872};
+          
+          map = new google.maps.Map(document.getElementById('map'), {
+            center: pyrmont,
+            zoom: 15
+          });
+          
+          infowindow = new google.maps.InfoWindow();
+          var service = new google.maps.places.PlacesService(map);
+          service.nearbySearch({
+            location: pyrmont,
+            radius: 1500,
+            type: ['school']
+          }, schoolCallback);
+          
+          
+        }
+        
+        function schoolCallback(results, status) {
+          if (status === google.maps.places.PlacesServiceStatus.OK) {
+            for (var i = 0; i < results.length; i++) {
+              createSchoolMarker(results[i]); //results doesn't contain anything related to type (school,store,etc)
+            }
           }
         }
-      }
-	  
-	  
-
-      function createSchoolMarker(place) {
-        var placeLoc = place.geometry.location;
-        var marker = new google.maps.Marker({
-        icon:"http://icons.iconarchive.com/icons/icons8/windows-8/16/Science-School-icon.png",
-          map: map,
-          position: place.geometry.location
-        });
-
-		
-        google.maps.event.addListener(marker, 'click', function() {
-          infowindow.setContent(place.name);
-          infowindow.open(map, this);
-        });
-      }
-	  
-	  
-	   
-    </script>
-  
- 
-    <div id="map"></div>
- 
-
-
-     
+        
+        
+        function createSchoolMarker(place) {
+          var placeLoc = place.geometry.location;
+          var marker = new google.maps.Marker({
+            icon: "http://icons.iconarchive.com/icons/icons8/windows-8/16/Science-School-icon.png",
+            map: map,
+            position: place.geometry.location
+          });
+          
+          
+          google.maps.event.addListener(marker, 'click', function () {
+            infowindow.setContent(place.name);
+            infowindow.open(map, this);
+          });
+        }
+      
+      
+      </script>
+      
+      
+      <div id="map"></div>
+    
+    
     </div>
     <!----------map end---------------->
   </div>

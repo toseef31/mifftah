@@ -1,80 +1,198 @@
-<!-- START SIDEBAR -->
-<div class="app-sidebar app-navigation app-navigation-style-default app-navigation-open-hover dir-left" data-type="close-other">
-  <a href="#" class="app-navigation-logo">
-    Welcome to bitcoin4u
-    <button class="app-navigation-logo-button mobile-hidden" data-sidepanel-toggle=".app-sidepanel"><span class="icon-alarm"></span>
+<div class="col-md-3 left_col">
+  <div class="left_col scroll-view" style="overflow: hidden; outline: none; cursor: -webkit-grab;" tabindex="5000">
     
-    </button>
-  </a>
-  <nav>
-    <ul>
-      
-      <li><a href="{{ url('/admin/dashboard') }}"><span class="icon-laptop-phone"></span> Dashboard</a></li>
-      
-      <li>
-        <a href="#"><span class="icon-bubble-user"></span>Manage Users</a>
-        <ul>
-          <li><a href="{{ url('/admin/getall') }}"><span class="icon-users-plus"></span>All Users</a></li>
-          <li><a href="{{ url('/admin/searchuser/') }}"><span class="icon-file-search"></span>Search Users</a></li>
-        </ul>
-      </li>
-      <li>
-        <a href="#"><span class="icon-users-minus"></span>Manage Agents</a>
-        <ul>
-          <li><a href="{{ url('/admin/getallagents') }}"><span class="icon-users-plus"></span>Manage Agents</a></li>
-          <li><a href="{{ url('/admin/searchagents/') }}"><span class="icon-file-search"></span>Search Agents</a></li>
-        </ul>
-      </li>
-      
-      <li>
-        <a href="#"><span class="icon-accessibility"></span>Manage Agent Accounts</a>
-        <ul>
-          <li><a href="#"><span class="icon-use"></span>Manage My Agent Accounts</a></li>
-        </ul>
-      </li>
-      
-      <li>
-        <a href="#"><span class="icon-home"></span>Manage Leads</a>
-        <ul>
-          <li><a href="#"><span class="icon-use"></span>Manage Requests Received</a></li>
-          <li><a href="#"><span class="icon-use"></span>Manage Requests Sent</a></li>
-          <li><a href="{{ url('admin/manageLeads/') }}"><span class="icon-use"></span>Manage Active Leads</a></li>
-        </ul>
-      </li>
-      
-      <li>
-        <a href="#"><span class="icon-percent-square"></span>Admin Listing </a>
-        <ul>
-          <li><a href="{{ url('/admin/addlead') }}"><span class="icon-use"></span>Add new Listing</a></li>
-          <li><a href="{{ url('admin/manageAdminLeads') }}"><span class="icon-use"></span>Manage My Listing</a></li>
-          <li><a href="{{ url('/admin/updateadmin/'  . Auth::user()->id ) }}"><span class="icon-use"></span>Edit my Profile</a></li>
-          <li><a href="#"><span class="icon-use"></span>My lead Requests</a></li>
-        </ul>
-      </li>
-      
-      <li>
-        <a href="#"><span class="icon-cash-dollar"></span>User Payments</a>
-        <ul>
-          <li><a href="#"><span class="icon-use"></span>Bank Payment Requests</a></li>
-          <li><a href="#"><span class="icon-use"></span>View Payment transactions</a></li>
-          <li><a href="#"><span class="icon-use"></span>My lead Requests</a></li>
-        </ul>
-      </li>
-      
-      <li>
-        <a href="#"><span class="icon-cash-dollar"></span>Other Settings</a>
-        <ul>
-          <li><a href="#"><span class="icon-use"></span>Setting one</a></li>
-          <li><a href="#"><span class="icon-use"></span>Setting Two</a></li>
-          <li><a href="#"><span class="icon-use"></span>Setting Three</a></li>
-        </ul>
-      </li>
+    <div class="navbar nav_title" style="border: 0;">
+      <a class="site_title" href="#">
+        <div class="logoddd"><img src="{{ asset('Power-Realtor_files/logo.png') }}" alt="For Sale Network"></div>
+      </a>
+    </div>
+    <div class="clearfix"></div>
     
     
-    </ul>
-  </nav>
+    <!-- sidebar menu -->
+    <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+      
+      <div class="menu_section">
+        
+        <ul class="nav side-menu">
+          <li class="active"><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
+            <ul class="nav child_menu">
+              
+              <li class="current-page"><a href="<?= url('admin/dashboard') ?>">Dashboard</a></li>
+              <li><a href="#">Notice Board</a></li>
+              
+              <li><a href="#">Need Some Help <i class="fa fa-question-circle" style="font-size: 13px;"></i>
+                </a></li>
+            </ul>
+          </li>
+          <li><a><i class="fa fa-users"></i> Manage Users <span class="fa fa-chevron-down"></span></a>
+            <ul class="nav child_menu" style="display: none;">
+              <li><a href="{{ url('/admin/getall') }}">Manage Users</a></li>
+              <li><a href="{{ url('/admin/searchuser/') }}">Search User</a></li>
+              <li><a href="#">Need Some Help <i class="fa fa-question-circle" style="font-size: 13px;"></i>
+                </a></li>
+            </ul>
+          </li>
+          <li><a><i class="fa fa-briefcase"></i>Manage Agents <span class="fa fa-chevron-down"></span></a>
+            <ul class="nav child_menu" style="display: none;">
+              <li><a href="{{ url('/admin/getallagents') }}">Manage Agents</a></li>
+              <li><a href="{{ url('/admin/searchagents/') }}">Search Agents</a></li>
+              <li><a href="#">Need Some Help <i class="fa fa-question-circle" style="font-size: 13px;"></i>
+                </a></li>
+            </ul>
+          </li>
+          
+          <li><a><i class="fa fa-user"></i>Manage Agent Account <span class="fa fa-chevron-down"></span></a>
+            <ul class="nav child_menu" style="display: none;">
+              <li><a href="{{ url('/admin/getallagents') }}">Manage My Agent Account</a></li>
+              <li><a href="#">Need Some Help <i class="fa fa-question-circle" style="font-size: 13px;"></i>
+                </a></li>
+            </ul>
+          </li>
+          
+          <li><a><i class="fa fa-link"></i>Manage Leads<span class="fa fa-chevron-down"></span></a>
+            <ul class="nav child_menu" style="display: none;">
+              <li><a href="#">Manage Requests Received</a></li>
+              <li><a href="#">Manage Requests Sent</a></li>
+              <li><a href="{{ url('admin/manageLeads/') }}">Manage Active Leads</a></li>
+              <li><a href="#">Search Leads</a></li>
+              
+              <li><a href="#">Need Some Help <i class="fa fa-question-circle" style="font-size: 13px;"></i>
+                </a></li>
+            </ul>
+          </li>
+          
+          
+          <li><a><i class="fa fa-list"></i> User Listings<span class="fa fa-chevron-down"></span></a>
+            <ul class="nav child_menu" style="display: none;">
+              
+              <li><a href="#">Manage User Listings</a></li>
+              
+              <li><a href="#">Search Listing</a></li>
+              <li><a href="#">Need Some Help <i class="fa fa-question-circle" style="font-size: 13px;"></i>
+                </a></li>
+            </ul>
+          </li>
+          <li><a><i class="fa fa-bars"></i>Admin Listings<span class="fa fa-chevron-down"></span></a>
+            <ul class="nav child_menu" style="display: none;">
+              <li><a href="{{ url('/admin/addlead') }}">Add New Listing</a></li>
+              <li><a href="{{ url('admin/manageAdminLeads') }}">Manage My Listings</a></li>
+              <li><a href="{{ url('/admin/updateadmin/'  . Auth::user()->id ) }}">Edit My Profile</a></li>
+              <li><a href="#">My Lead Requests</a></li>
+              
+              
+              <li><a href="#">Need Some Help <i class="fa fa-question-circle" style="font-size: 13px;"></i>
+                </a></li>
+            </ul>
+          </li>
+          
+          
+          <li><a><i class="fa fa-credit-card"></i>User Payments<span class="fa fa-chevron-down"></span></a>
+            <ul class="nav child_menu" style="display: none;">
+              
+              
+              <li><a href="#">Bank Payment Requests</a></li>
+              <li><a href="#">View Payment Transactions</a></li>
+              
+              
+              <li><a href="#">Need Some Help <i class="fa fa-question-circle" style="font-size: 13px;"></i>
+                </a></li>
+            </ul>
+          </li>
+          
+          
+          <li><a><i class="fa fa-file-image-o"></i> Email Templates<span class="fa fa-chevron-down"></span></a>
+            <ul class="nav child_menu" style="display: none;">
+              
+              <li><a href="#">Manage Email Templates</a></li>
+              
+              
+              <li><a href="#">Need Some Help <i class="fa fa-question-circle" style="font-size: 13px;"></i>
+                </a></li>
+            </ul>
+          </li>
+          
+          <li><a><i class="fa fa-pencil-square-o"></i>Manage Ads<span class="fa fa-chevron-down"></span></a>
+            <ul class="nav child_menu" style="display: none;">
+              
+              
+              <li><a href="#">Manage AdCodes</a></li>
+              
+              
+              <li><a href="#">Need Some Help <i class="fa fa-question-circle" style="font-size: 13px;"></i>
+                </a></li>
+            </ul>
+          </li>
+          <li><a><i class="fa fa-list-alt"></i>Site Contents<span class="fa fa-chevron-down"></span></a>
+            <ul class="nav child_menu" style="display: none;">
+              <li><a href="#">Logo &amp; Meta Contents
+                </a>
+              </li>
+              <li><a href="#">Manage Tile Images</a>
+              </li>
+              <li><a href="#">Manage Slide Images</a>
+              </li>
+              <li><a href="#">Need Some Help <i class="fa fa-question-circle" style="font-size: 13px;"></i>
+                </a></li>
+            
+            
+            </ul>
+          </li>
+          <li><a><i class="fa fa-cog"></i> Settings<span class="fa fa-chevron-down"></span></a>
+            <ul class="nav child_menu" style="display: none;">
+              
+              <li><a href="#">Basic Settings</a>
+              </li>
+              <li><a href="#">Advanced Settings</a>
+              </li>
+              <li><a href="#">Payment Settings</a>
+              </li>
+              <li><a href="#">Social Media Links</a>
+              </li>
+              <li><a href="#">SMTP Settings</a>
+              </li>
+              <li><a href="#">Need Some Help <i class="fa fa-question-circle" style="font-size: 13px;"></i>
+                </a></li>
+            
+            
+            </ul>
+          </li>
+          <li><a><i class="fa fa-check"></i>Custom Options<span class="fa fa-chevron-down"></span></a>
+            <ul class="nav child_menu" style="display: none;">
+              
+              <li><a href="#">Manage Options</a>
+              </li>
+              
+              <li><a href="#">Need Some Help <i class="fa fa-question-circle" style="font-size: 13px;"></i></a></li>
+            </ul>
+          </li>
+          <li><a><i class="fa fa-language"></i>Manage Languages<span class="fa fa-chevron-down"></span></a>
+            <ul class="nav child_menu" style="display: none;">
+              <li><a href="#">Add New Language</a></li>
+              <li><a href="#">Manage Languages</a></li>
+              <li><a href="{{url('admin/updateLanguage') }}">Edit Messages</a></li>
+              <li><a href="#">Need Some Help <i class="fa fa-question-circle" style="font-size: 13px;"></i> </a></li>
+            </ul>
+          </li>
+          <li><a><i class="fa fa-bar-chart"></i>System Statistics<span class="fa fa-chevron-down"></span></a>
+            <ul class="nav child_menu" style="display: none;">
+              <li><a href="#">Overall Statistics</a></li>
+              <li><a href="#">Revenue Details</a></li>
+              <li><a href="#">Need Some Help <i class="fa fa-question-circle" style="font-size: 13px;"></i>
+                </a>
+              </li>
+            </ul>
+          </li>
+        
+        </ul>
+      </div>
+    
+    
+    </div>
+    <!-- /sidebar menu -->
+    
+    <!-- /menu footer buttons -->
+    
+    <!-- /menu footer buttons -->
+  </div>
 </div>
-<!-- END SIDEBAR -->
-
-<!-- START APP CONTENT -->
-<div class="app-content app-sidebar-left">

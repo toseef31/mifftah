@@ -1,0 +1,132 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+/* ......................................  new public style Starts ..................*/
+@media screen and (max-width: 1200px){
+.l_dmenuli {
+    border-bottom: 1px solid #2e475d;
+    border-left: medium none;
+    border-right: 1px solid #2e475d;
+    float: left;
+    margin: 0;
+    width: 50%;
+}
+.l_dmenuul, .listingd_menu {
+    float: left;
+    width: 100%;
+}
+
+}
+@media screen and (max-width: 991px){
+	.eachaminiti {
+    width: 33.3333%;
+}
+
+/* TABLE RESPONSIVE */
+
+/* Force table to not be like tables anymore */
+#no-more-tables table,
+#no-more-tables thead,
+#no-more-tables tbody,
+#no-more-tables th,
+#no-more-tables td,
+#no-more-tables tr {
+display: block;
+}
+ 
+/* Hide table headers (but not display: none;, for accessibility) */
+#no-more-tables thead tr {
+position: absolute;
+top: -9999px;
+left: -9999px;
+}
+ 
+#no-more-tables tr { border: 1px solid #ccc; }
+ 
+#no-more-tables td {
+/* Behave like a "row" */
+border: none;
+border-bottom: 1px solid #eee;
+position: relative;
+padding-left: 50%;
+white-space: normal;
+text-align:left;
+}
+ 
+#no-more-tables td:before {
+/* Now like a table header */
+position: absolute;
+/* Top/left values mimic padding */
+top: 6px;
+left: 6px;
+width: 45%;
+padding-right: 10px;
+white-space: nowrap;
+text-align:left;
+font-weight: 700;
+}
+ 
+/*
+Label the data
+*/
+#no-more-tables td:before { content: attr(data-title); }
+
+/* TABLE RESPONSIVE ENDS */
+
+
+
+}
+/* ......................................  new public style ends ..................*/
+@media screen and (max-width: 768px){
+	
+	.clm3{
+		
+	column-count:2;
+	-moz-column-count:2;
+	-webkit-column-count:2;
+	-ms-column-count:2;
+	-o-column-count:2;		
+		
+	}
+	.message-item .summary {
+    display: block;
+    margin: 8px 0 0 32px;
+    max-width: 95%;
+    min-width: 0;
+}
+/* ......................... new public style .................... */
+
+.listingcol {
+    margin-bottom: 20px;
+    padding: 0 !important;
+}
+.eachaminiti {
+    width: 50%;
+}
+.calndergboxouter, .bookingboxouter, .cladnerouter{
+	padding:0px;
+}
+
+
+/* ...............  new public style ends ....................... */
+
+}
+@media screen and (max-width: 520px){
+	
+		.clm3{
+	column-count:1;
+	-moz-column-count:1;
+	-webkit-column-count:1;
+	-ms-column-count:1;
+	-o-column-count:1;		
+		
+	}
+	.eachaminiti {
+    width: 100%;
+}
+.upimageouter{
+	width:100%;
+}
+
+}

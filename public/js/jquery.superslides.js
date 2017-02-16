@@ -36,7 +36,7 @@ Superslides = function(el, options) {
     multiplier = that._findMultiplier();
 
     that.$el.on('click', that.options.elements.nav + " a", function(e) {
-      e.preventDefault();
+      // e.preventDefault();
 
       that.stop();
       if ($(this).hasClass('next')) {
@@ -395,7 +395,7 @@ var pagination = {
   },
   _events: function() {
     that.$el.on('click', that.options.elements.pagination + ' a', function(e) {
-      e.preventDefault();
+      // e.preventDefault();
 
       var hash  = that._parseHash(this.hash),
           index = that._upcomingSlide(hash - 1);

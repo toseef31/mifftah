@@ -22,7 +22,7 @@
           <li class="subdashmenuli"><a href="{{ url('/user/deadleads') }}" class="subdashmenu_a">Manage Deactive Leads</a></li>
           <li class="subdashmenuli"><a href="{{ url('/user/requestsleads') }}" class="subdashmenu_a">Manage Lead Requests Received</a></li>
           {{--<li class="subdashmenuli"><a href="{{ url('/user/requestsleads/send') }}" class="subdashmenu_a">Manage Lead Requests Sent</a></li>--}}
-          <li class="subdashmenuli"><a href="{{ url('/user/requestsleads/search') }}" class="subdashmenu_a">Search Leads</a></li>
+          {{--<li class="subdashmenuli"><a href="{{ url('/user/requestsleads/search') }}" class="subdashmenu_a">Search Leads</a></li>--}}
         </ul>
       {{--<li class="dashmenuli"><a href="{{ url('/user/requestsleads/admin') }}" class="dashmenua"><i class="fa fa-shield dashlefticon"></i> Manage Lead Requests (Owner)</a></li>--}}
       <?php } ?>

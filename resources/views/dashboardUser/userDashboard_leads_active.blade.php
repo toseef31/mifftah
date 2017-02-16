@@ -16,7 +16,7 @@
             <th class="numeric robotomedium">Image</th>
             <th class="numeric robotomedium">Listing Address</th>
             <th class="numeric robotomedium">Type</th>
-            <th class="numeric robotomedium">Featured</th>
+            {{--<th class="numeric robotomedium">Featured</th>--}}
             <th class="numeric robotomedium">Status</th>
             <th class="numeric robotomedium">Action</th>
           </tr>
@@ -26,21 +26,32 @@
           <tr class="cpntr robotoregular graytext">
             <td data-title="Image" valign="middle">
               <div class="listingiamgetable">
+                <?php
+                if(!empty($row->imagedata)){
+                foreach ($row->imagedata as $singleimg) {
+                ?>
+                <img src="{{ asset('uploads/' . $singleimg->name) }}" alt="userimage">
+                <?php
+                break;}
+                }else{?>
                 <img src="{{ asset('userdata/List/Thumb/0/34/Chrysanthemum.jpg') }}" alt="userimage">
+                <?php
+                }
+                ?>
               </div>
             </td>
             <td data-title="Listing Address" valign="top"><span class="fontsize13">{{ $row->region }}</span></td>
             <td data-title="Type" valign="top"><span class="fontsize13">For {{ $row->type }}</span></td>
-            <td data-title="Featured" valign="middle" align="center"><i class="fa fa-times-circle rederror fontsize16"></i></td>
+            {{--<td data-title="Featured" valign="middle" align="center"><i class="fa fa-times-circle rederror fontsize16"></i></td>--}}
             <td data-title="Status" valign="middle" align="center">
-              <?php ($row->availability == 1)?$var='success':$var='danger'; ?>
-              <span class="label label-<?= $var ?> robotoregular"><?= ($row->availability == 1)?'Available':'Not Available'; ?></span>
+              <?php ($row->availability == 1) ? $var = 'success' : $var = 'danger'; ?>
+              <span class="label label-<?= $var ?> robotoregular"><?= ($row->availability == 1) ? 'Available' : 'Not Available'; ?></span>
             </td>
             <td data-title="Action" valign="middle" align="center">
               <div class="btn-group">
-                <a href="#" class="btn btn-info" title="View Listing"><i class="fa fa-eye"></i></a>
-                <button id="delete_20" onclick="deleterequest(20, 34);" type="button" class="btn btn-danger" title="Delete Lead"><i class="fa fa-times"></i></button>
-                <button type="button" id="contactusr_0" class="btn btn-warning msgleadclick" title="Contact Owner"><i class="fa fa-envelope"></i></button>
+                <a href="{{ url('search/preview/'.$row['id']) }}" class="btn btn-info" title="View Listing"><i class="fa fa-eye"></i></a>
+                <a href="{{ url('admin/deletelead/'.$row['id']) }}" class="btn btn-danger" title="Delete Lead"><i class="fa fa-times"></i></a>
+                {{--<button type="button" id="contactusr_0" class="btn btn-warning msgleadclick" title="Contact Owner"><i class="fa fa-envelope"></i></button>--}}
               </div>
             </td>
           </tr>

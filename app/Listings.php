@@ -56,5 +56,10 @@ class Listings extends Model {
 		'naturalAir',
 		'garagetype',
 		'buildingview',
+		'status',
 	];
+	
+	public function imagedata() {
+		return $this->hasMany(Images::class, 'listID', 'id');
+	}
 }

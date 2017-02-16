@@ -1,0 +1,12 @@
+<?xml version="1.0"?><svg width="640" height="480" xmlns="http://www.w3.org/2000/svg">
+ <g>
+  <title>Layer 1</title>
+  <g opacity="0.85" id="layer1">
+   <g id="g2423">
+    <rect transform="matrix(2.8615077757651783,0,0,2.4808751926932664,-668.6317714471734,-1491.5662733427039) " height="100" id="rect2398" rx="3" ry="3" width="158" x="265.548019" y="651.621622" stroke-dashoffset="0" stroke-miterlimit="4" stroke-linejoin="round" stroke-linecap="round" stroke-width="4" stroke="#ffffff" fill="#422407"/>
+    <path d="m96.958969,368.151428l217.474625,-138.929001l228.920593,143.890762" id="path2400" stroke-miterlimit="4" stroke-linejoin="round" stroke-width="4" stroke="#ffffff" fill-rule="evenodd" fill-opacity="0.75" fill="#422407"/>
+    <path d="m96.773239,126.731995l216.813339,148.773193l224.044586,-150.398064l-440.857925,1.62487l0,0z" id="path2402" stroke-miterlimit="4" stroke-linejoin="round" stroke-width="4" stroke="#ffffff" fill-rule="evenodd" fill="#422407"/>
+   </g>
+  </g>
+ </g>
+</svg>
