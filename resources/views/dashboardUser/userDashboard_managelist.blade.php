@@ -2,8 +2,8 @@
 @section('content')
   <div class="dashleft  col-lg-9 col-md-9 col-sm-12 col-xs-12 nopadding">
     <div class="mlistbtn_btnwrp text-capitalize">
-      <div class="mlisttab_btn active">Active Listings</div>
-      <div class="mlisttab_btn"> Inactive Listings</div>
+      <div class="mlisttab_btn active"><?= $lang[225][$current] ?></div>
+      <div class="mlisttab_btn"> <?= $lang[483][$current] ?></div>
     </div>
     <div class="mltabfullwrp">
       <div id="activelisttdiv" class="mlistingtab active">
@@ -56,16 +56,16 @@
                 <div class="mangeactionwrp">
                   <ul class="mangeactnbtnul">
                     <li class="mangeactbtnli left">
-                      <a class="mangactnbtn dblue_bg pdg10" href="{{ url('user/newlistupdate/' . $active_users->id) }}"> Manage List
+                      <a class="mangactnbtn dblue_bg pdg10" href="{{ url('user/newlistupdate/' . $active_users->id) }}"> <?= $lang[297][$current] ?>
                         {{--<i class="fa fa-angle-down"></i>--}}
                       </a>
                       <div class="mangeactnlistwrp mangeactnlistwrp1">
                         <ul class="mangeactionul">
-                          <li class="mangeactionli"><a href="" class="mangeaction_a"><i class="fa fa-angle-double-right"></i>Edit Listing</a></li>
-                          <li class="mangeactionli"><a id="removelist_8" href="#" class="mangeaction_a removelist"><i class="fa fa-angle-double-right"></i>Remove Listing</a></li>
-                          <li class="mangeactionli"><a href="#" class="mangeaction_a"><i class="fa fa-angle-double-right"></i>View Statistics</a></li>
-                          <li class="mangeactionli"><a style="cursor:pointer;" id="unlist_8" class="mangeaction_a unlistnow"><i class="fa fa-angle-double-right"></i>Unlist Now</a></li>
-                          <li class="mangeactionli"><a style="cursor:pointer;" id="unfeatured_8" class="mangeaction_a markunfeatured"><i class="fa fa-angle-double-right"></i>Remove Featured Status
+                          <li class="mangeactionli"><a href="" class="mangeaction_a"><i class="fa fa-angle-double-right"></i><?= $lang[485][$current] ?></a></li>
+                          <li class="mangeactionli"><a id="removelist_8" href="#" class="mangeaction_a removelist"><i class="fa fa-angle-double-right"></i><?= $lang[486][$current] ?></a></li>
+                          <li class="mangeactionli"><a href="#" class="mangeaction_a"><i class="fa fa-angle-double-right"></i><?= $lang[494][$current] ?></a></li>
+                          <li class="mangeactionli"><a style="cursor:pointer;" id="unlist_8" class="mangeaction_a unlistnow"><i class="fa fa-angle-double-right"></i><?= $lang[487][$current] ?></a></li>
+                          <li class="mangeactionli"><a style="cursor:pointer;" id="unfeatured_8" class="mangeaction_a markunfeatured"><i class="fa fa-angle-double-right"></i><?= $lang[489][$current] ?>
                             </a></li>
                         </ul>
                       </div>
@@ -139,14 +139,14 @@
                 <div class="mangeactionwrp">
                   <ul class="mangeactnbtnul">
                     <li class="mangeactbtnli left">
-                      <a class="mangactnbtn dblue_bg pdg10" style="margin-right: 10px; " href="{{ url('user/newlistupdate/' . $inactiveactive_users->id) }}">Complete and Publish List</a>
+                      <a class="mangactnbtn dblue_bg pdg10" style="margin-right: 10px; " href="{{ url('user/newlistupdate/' . $inactiveactive_users->id) }}"><?= $lang[1020][$current] ?></a>
                       <div class="mangeactnlistwrp mangeactnlistwrp1">
                         <ul class="mangeactionul">
-                          <li class="mangeactionli"><a href="" class="mangeaction_a"><i class="fa fa-angle-double-right"></i>Edit Listing</a></li>
-                          <li class="mangeactionli"><a id="removelist_8" href="#" class="mangeaction_a removelist"><i class="fa fa-angle-double-right"></i>Remove Listing</a></li>
-                          <li class="mangeactionli"><a href="#" class="mangeaction_a"><i class="fa fa-angle-double-right"></i>View Statistics</a></li>
-                          <li class="mangeactionli"><a style="cursor:pointer;" id="unlist_8" class="mangeaction_a unlistnow"><i class="fa fa-angle-double-right"></i>Unlist Now</a></li>
-                          <li class="mangeactionli"><a style="cursor:pointer;" id="unfeatured_8" class="mangeaction_a markunfeatured"><i class="fa fa-angle-double-right"></i>Remove Featured Status
+                          <li class="mangeactionli"><a href="" class="mangeaction_a"><i class="fa fa-angle-double-right"></i><?= $lang[485][$current] ?></a></li>
+                          <li class="mangeactionli"><a id="removelist_8" href="#" class="mangeaction_a removelist"><i class="fa fa-angle-double-right"></i><?= $lang[486][$current] ?></a></li>
+                          <li class="mangeactionli"><a href="#" class="mangeaction_a"><i class="fa fa-angle-double-right"></i><?= $lang[494][$current] ?></a></li>
+                          <li class="mangeactionli"><a style="cursor:pointer;" id="unlist_8" class="mangeaction_a unlistnow"><i class="fa fa-angle-double-right"></i><?= $lang[487][$current] ?></a></li>
+                          <li class="mangeactionli"><a style="cursor:pointer;" id="unfeatured_8" class="mangeaction_a markunfeatured"><i class="fa fa-angle-double-right"></i><?= $lang[489][$current] ?>
                             </a></li>
                         </ul>
                       </div>

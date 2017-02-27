@@ -164,30 +164,30 @@
    <div class="cal_tabwrp fulwidthm left"> 
     <div class="cal_tabbox active">
      <div class="cal_tabbox_in ">
-      <h3 class="robotolight fontsize24 mgnB20">Mortgage Calculator</h3>     
-      <p class="tabsp lgraytext font-size14">Use this calculator to estimate your monthly mortgage payment, excluding taxes and insurance. Simply enter the price of the home, your down payment, and details about the loan tenure to calculate your monthly payment.</p>  
+      <h3 class="robotolight fontsize24 mgnB20"><?= $lang[359][$current] ?></h3>     
+      <p class="tabsp lgraytext font-size14"><?= $lang[361][$current] ?></p>  
       <div class="clearfix"></div>
       <div class="row mgnT60">
        <div class="calculatorleft col-sm-4 col-xs-12">
 
         <div class="calrow fulwidthm left mgnB20">
-         <label class="callabel robotoregular fontsize16 mgnB10 graytext"> Mortgage Amount (₪)</label>
+         <label class="callabel robotoregular fontsize16 mgnB10 graytext"> <?= $lang[351][$current] ?></label>
          <input id="mortageamt" class="gcinput fulwidthm left" type="text" value="520000">
          <div class=" rederror fulwidthm left" id="er1" style="visiblity:hidden;"></div>
         </div>
         <div class="calrow fulwidthm left mgnB20">
-         <label class="callabel robotoregular fontsize16 mgnB10 graytext"> Down Payment (₪)</label>
+         <label class="callabel robotoregular fontsize16 mgnB10 graytext">  <?= $lang[348][$current] ?></label>
          <input id="dwnpay" class="gcinput fulwidthm left" type="text" value="20000">
          <div class=" rederror fulwidthm left" id="er2" style="visiblity:hidden;"></div>
         </div>
         <div class="calrow fulwidthm left mgnB20">
-         <label class="callabel robotoregular fontsize16 mgnB10 graytext"> Rate of Interest (%)</label>
+         <label class="callabel robotoregular fontsize16 mgnB10 graytext">  <?= $lang[349][$current] ?></label>
          <input id="mortagerateintrst" class="gcinput fulwidthm left" type="text" value="3.98">
          <div class=" rederror fulwidthm left" id="er3" style="visiblity:hidden;"></div>
         </div>
 
         <div class="calrow fulwidthm left mgnB20">
-         <label class="callabel robotoregular fontsize16 mgnB10 graytext">No of Years</label>
+         <label class="callabel robotoregular fontsize16 mgnB10 graytext"> <?= $lang[350][$current] ?></label>
          <select id="noofyearsmor" class="formselect" style="width:100%">
           <option value="5">5 </option>
           <option value="10">10 </option>
@@ -200,16 +200,16 @@
          <div class=" rederror fulwidthm left"></div>
         </div>
         <div class="calrow fulwidthm left mgnB20">
-         <button id="mortgagecalbut" class="whitetext lblue_bg fontsize16 border-radius3 pdg10 clacluatebtn fulwidthm left">Calculate</button>
+         <button id="mortgagecalbut" class="whitetext lblue_bg fontsize16 border-radius3 pdg10 clacluatebtn fulwidthm left"> <?= $lang[356][$current] ?></button>
         </div>
        </div>
        <div class="calcuright col-sm-7 col-xs-12 pull-right">
         <div class="clacicon dblue_bg whitetext"><i class="flaticon-home153"></i></div>
         <div class="calcuright_in graybg pdg20">
          <div class="clacamountwrp text-center">
-          <p class="fontsize18 graytext robotoregular"> Your Monthly Payment</p> 
+          <p class="fontsize18 graytext robotoregular">  <?= $lang[98][$current] ?>/p> 
           <h2 class="amountcal fontsize30 robotoregular" id="amtmotgagemonth">₪ 2,381</h2>
-          <p class="robotoregular fontsize13 mgnTB20">Based on your mortgage amount, you should pay this amount monthly for the loan period</p>
+          <p class="robotoregular fontsize13 mgnTB20"> <?= $lang[99][$current] ?></p>
           <div class=" clearfix"></div>
           <div class="indexcalpricerange">
            <div class="indexcalpricerangeimgs fulwidthm left mgnB10">

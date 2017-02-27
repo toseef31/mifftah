@@ -63,8 +63,6 @@
             <div class="copyrightwrp text-center left fulwidthm fontsize12 lgraytxt"> Copyright &copy; 2016 For Sale Network. All Rights Reserved.</div>
             <div style="display:none;"> ls</div>
           </div>
-          
-          
           <!-- Footerboxeachends-->
         </div>
       </div>
@@ -182,6 +180,18 @@
 
 </script>
 
+
+<!-- map multiple markers -->
+<style>
+  #map_wrapper {
+    height: 400px;
+  }
+  
+  #map_canvas {
+    width: 100%;
+    height: 100%;
+  }
+</style>
 <!--    error div -->
 </body>
 </html>

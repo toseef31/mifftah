@@ -758,8 +758,8 @@
    <div class="cal_tabwrp fulwidthm left">
     <div class="cal_tabbox active">
 
-     <h3 class="robotolight fontsize24 mgnB20">Home Affordability Calculator</h3>           
-     <p class="tabsp lgraytext font-size14">Use this calculator to determine the price limit of a house you can afford. By entering details about your monthly affordable payment, down payment, and  loan tenure. you can estimate the maximum budget you can afford by these calculations.</p>
+     <h3 class="robotolight fontsize24 mgnB20"><?= $lang[358][$current] ?></h3>           
+     <p class="tabsp lgraytext font-size14"><?= $lang[364][$current] ?></p>
 
      <div class="clearfix"></div>
      <div class="row mgnT60">
@@ -767,23 +767,23 @@
       <div class="calculatorleft col-sm-4 col-xs-12">
 
        <div class="calrow fulwidthm left mgnB20">
-        <label class="callabel robotoregular fontsize16 mgnB10 graytext">Monthly  Payment (₪)</label>
+        <label class="callabel robotoregular fontsize16 mgnB10 graytext"><?= $lang[347][$current] ?></label>
         <input id="monthlypayment" class="gcinput fulwidthm left" type="text" value="2000">
         <div class=" rederror fulwidthm left" id="err1" style="visiblity:hidden;"></div>
        </div>
        <div class="calrow fulwidthm left mgnB20">
-        <label class="callabel robotoregular fontsize16 mgnB10 graytext"> Down Payment (₪)</label>
+        <label class="callabel robotoregular fontsize16 mgnB10 graytext"> <?= $lang[348][$current] ?></label>
         <input id="downpayment" class="gcinput fulwidthm left" type="text" value="20000">
         <div class=" rederror fulwidthm left" id="err2" style="visiblity:hidden;"></div>
        </div>
 
        <div class="calrow fulwidthm left mgnB20">
-        <label class="callabel robotoregular fontsize16 mgnB10 graytext"> Rate of Interest (%)</label>
+        <label class="callabel robotoregular fontsize16 mgnB10 graytext"> <?= $lang[349][$current] ?></label>
         <input id="rateofinterest" class="gcinput fulwidthm left" type="text" value="3.98">
         <div class=" rederror fulwidthm left" id="err3" style="visiblity:hidden;"></div>
        </div>
        <div class="calrow fulwidthm left mgnB20">
-        <label class="callabel robotoregular fontsize16 mgnB10 graytext">No of Years</label>
+        <label class="callabel robotoregular fontsize16 mgnB10 graytext"> <?= $lang[350][$current] ?></label>
         <select id="noofyears" class="formselect" style="width:100%">
          <option value="5">5 </option>
          <option value="10">10 </option>
@@ -803,9 +803,9 @@
        <div class="clacicon dblue_bg whitetext"><i class="flaticon-home153"></i></div>
        <div class="calcuright_in graybg pdg20">
         <div class="clacamountwrp text-center">
-         <p class="fontsize18 graytext robotoregular">You can afford a house up to </p> 
+         <p class="fontsize18 graytext robotoregular"><?= $lang[362][$current] ?> </p> 
          <h2 class="amountcal fontsize30 robotoregular" id="amthomeafford">₪ 439,936</h2>
-         <p class="robotoregular fontsize13 mgnTB20">Based on your income, a house at this price should fit comfortably within your budget.</p>
+         <p class="robotoregular fontsize13 mgnTB20"><?= $lang[363][$current] ?></p>
          <div class=" clearfix"></div>
          <div class="indexcalpricerange">
           <div class="indexcalpricerangeimgs fulwidthm left mgnB10">

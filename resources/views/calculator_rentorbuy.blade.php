@@ -11,8 +11,8 @@
 
     <div class="cal_tabbox active">
      <div class="cal_tabbox_in ">
-      <h3 class="robotolight fontsize24 mgnB20">Rent Vs Buy Calculator</h3>     
-      <p class="tabsp lgraytext font-size14">Use this calculator to help make a vice decision about renting or buying is better. If you are looking for a long term stay, most cases buying will be better.</p>      
+      <h3 class="robotolight fontsize24 mgnB20"><?= $lang[360][$current] ?></h3>     
+      <p class="tabsp lgraytext font-size14"><?= $lang[365][$current] ?></p>      
       <div class="clearfix"></div>
       <div class="row mgnT60">
 
@@ -20,26 +20,26 @@
        <div class="calculatorleft col-sm-4 col-xs-12">
 
         <div class="calrow fulwidthm left mgnB20">
-         <label class="callabel robotoregular fontsize16 mgnB10 graytext"> Desired Home Price (₪)</label>
+         <label class="callabel robotoregular fontsize16 mgnB10 graytext"> <?= $lang[352][$current] ?></label>
          <input id="desiredhomeprice" class="gcinput fulwidthm left" type="text" value="800000">
          <div class=" rederror fulwidthm left" id="e1" ></div>
         </div>
         <div class="calrow fulwidthm left mgnB20">
-         <label class="callabel robotoregular fontsize16 mgnB10 graytext"> Desired Monthly Rent (₪)</label>
+         <label class="callabel robotoregular fontsize16 mgnB10 graytext"> <?= $lang[353][$current] ?></label>
          <input id="desiredrent" class="gcinput fulwidthm left" type="text" value="8000">
          <div class=" rederror fulwidthm left" id="e2"></div>
         </div>
 
 
         <div class="calrow fulwidthm left mgnB20">
-         <button id="rentbuycalbut" class="whitetext lblue_bg fontsize16 border-radius3 pdg10 clacluatebtn fulwidthm left">Calculate</button>
+         <button id="rentbuycalbut" class="whitetext lblue_bg fontsize16 border-radius3 pdg10 clacluatebtn fulwidthm left"><?= $lang[356][$current] ?></button>
         </div>
        </div>
        <div class="calcuright col-sm-7 col-xs-12 pull-right">
         <div class="clacicon dblue_bg whitetext"><i class="flaticon-home153"></i></div>
         <div class="calcuright_in graybg pdg20">
          <div class="clacamountwrp text-center">
-          <p class="fontsize18 graytext robotoregular" id="nomonthsbuy"> Buying will be better than rent after 8 Years and 4 Months</p>  
+          <p class="fontsize18 graytext robotoregular" id="nomonthsbuy"> <?= $lang[354][$current] ?></p>  
           <div class=" clearfix"></div> 
          </div>
         </div>

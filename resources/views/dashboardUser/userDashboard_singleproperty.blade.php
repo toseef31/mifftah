@@ -12,7 +12,7 @@
     <section class="detailsection mgnB20 fulwidthm whitebg left pdg15">
      <div class="detailshead fulwidthm left">
       <div class="headleft left">
-       <h6 class="detailsprpse lbluetext font-size14">Single Family Property For  Sale </h6>
+       <h6 class="detailsprpse lbluetext font-size14"><?= $lang[129][$current] ?></h6>
        <h4 class="dname fontsize20 graytext">234/45  </h4>
        <div class="locationlist lgraytext"><i class="fa fa-map-marker"></i>&nbsp;New York, NY 1202223</div>
       </div>
@@ -49,22 +49,22 @@
     </section>
     <section class="detailsection mgnB20 fulwidthm whitebg left pdg15">
      <div class="ca_tb_btnwrp">
-      <div class="cal_tab_btn active"> Overview </div>
-      <div class="cal_tab_btn"> Photos </div>
-      <div class="cal_tab_btn" id="xcxc"> Location </div>
+      <div class="cal_tab_btn active"> <?= $lang[179][$current] ?> </div>
+      <div class="cal_tab_btn"> <?= $lang[158][$current] ?> </div>
+      <div class="cal_tab_btn" id="xcxc"> <?= $lang[181][$current] ?> </div>
      </div>
      <div class="cal_tabwrp fulwidthm left">
       <div class="cal_tabbox active">
        <div class="cal_tabbox_in pdgTB30">
         <div class="detlboxs  fulwidthm left ">
-         <div class=" detlhead detlheadclick robotoregular fontsize18 graytext active"> About this Property </div>
+         <div class=" detlhead detlheadclick robotoregular fontsize18 graytext active"> <?= $lang[182][$current] ?> </div>
          <div class="detlcontent fulwidthm left " style="display: block;">
           <p class=" font-size14 paragrphtext robotoregular graytext"> fhhfhf520 </p>
          </div>
         </div>
         <!-- detal box ends -->
         <div class="detlboxs  fulwidthm left ">
-         <div class="detlhead detlheadclick robotoregular fontsize18 graytext "> General Informations </div>
+         <div class="detlhead detlheadclick robotoregular fontsize18 graytext "> <?= $lang[183][$current] ?> </div>
          <div class="detlcontent  fulwidthm left ">
           <ul class="detillistingul ">
            <li class="detaillistingli left mgnB20"> <span class="detaillititle col-sm-6 col-xs-6 nopaddingL lgraytext"><i class="flaticon-beds5"></i> Beds</span> <span class="detaillititledis col-sm-6 col-xs-6 nopaddingR robotomedium">5 Beds</span> </li>
@@ -80,43 +80,43 @@
         <!-- detal box ends -->
         <!-- detal box ends -->
         <div class="detlboxs  fulwidthm left ">
-         <div class="detlhead detlheadclick robotoregular fontsize18 graytext "> Other Property Informations </div>
+         <div class="detlhead detlheadclick robotoregular fontsize18 graytext "> <?= $lang[195][$current] ?> </div>
          <div class="detlcontent  fulwidthm left ">
           <ul class="detillistingul ">
        
-           <li class="detaillistingli fulwidthm left lgraytext mgnB10"><i class="aminti_icon flaticon-house112"></i> <span class="aminidis">Colonial</span>
+           <li class="detaillistingli fulwidthm left lgraytext mgnB10"><i class="aminti_icon flaticon-house112"></i> <span class="aminidis"><?= $lang[412][$current] ?></span>
            </li>
-           <li class="detaillistingli fulwidthm left lgraytext mgnB10"><i class="aminti_icon flaticon-home97"></i> <span class="aminidis">Family</span>
+           <li class="detaillistingli fulwidthm left lgraytext mgnB10"><i class="aminti_icon flaticon-home97"></i> <span class="aminidis"><?= $lang[400][$current] ?></span>
            </li>
-           <li class="detaillistingli fulwidthm left lgraytext mgnB10"><i class="aminti_icon flaticon-hands17"></i> <span class="aminidis">Guest</span>
+           <li class="detaillistingli fulwidthm left lgraytext mgnB10"><i class="aminti_icon flaticon-hands17"></i> <span class="aminidis"><?= $lang[402][$current] ?></span>
            </li>
-           <li class="detaillistingli fulwidthm left lgraytext mgnB10"><i class="aminti_icon flaticon-flatscreen"></i> <span class="aminidis">Cable TV</span>
+           <li class="detaillistingli fulwidthm left lgraytext mgnB10"><i class="aminti_icon flaticon-flatscreen"></i> <span class="aminidis"><?= $lang[403][$current] ?></span>
            </li>
-           <li class="detaillistingli fulwidthm left lgraytext mgnB10"><i class="aminti_icon flaticon-globe41"></i> <span class="aminidis">Internet</span>
+           <li class="detaillistingli fulwidthm left lgraytext mgnB10"><i class="aminti_icon flaticon-globe41"></i> <span class="aminidis"><?= $lang[405][$current] ?></span>
            </li>
-           <li class="detaillistingli fulwidthm left lgraytext mgnB10"><i class="aminti_icon flaticon-locked61"></i> <span class="aminidis">Security System</span>
+           <li class="detaillistingli fulwidthm left lgraytext mgnB10"><i class="aminti_icon flaticon-locked61"></i> <span class="aminidis"><?= $lang[406][$current] ?></span>
            </li>
-           <li class="detaillistingli fulwidthm left lgraytext mgnB10"><i class="aminti_icon flaticon-terrace"></i> <span class="aminidis">Balcony</span>
+           <li class="detaillistingli fulwidthm left lgraytext mgnB10"><i class="aminti_icon flaticon-terrace"></i> <span class="aminidis"><?= $lang[407][$current] ?></span>
            </li>
-           <li class="detaillistingli fulwidthm left lgraytext mgnB10"><i class="aminti_icon flaticon-swimming22"></i> <span class="aminidis">Pool</span>
+           <li class="detaillistingli fulwidthm left lgraytext mgnB10"><i class="aminti_icon flaticon-swimming22"></i> <span class="aminidis"><?= $lang[408][$current] ?></span>
            </li>
-           <li class="detaillistingli fulwidthm left lgraytext mgnB10"><i class="aminti_icon flaticon-grass"></i> <span class="aminidis">lawn</span>
+           <li class="detaillistingli fulwidthm left lgraytext mgnB10"><i class="aminti_icon flaticon-grass"></i> <span class="aminidis"><?= $lang[409][$current] ?></span>
            </li>
-           <li class="detaillistingli fulwidthm left lgraytext mgnB10"><i class="aminti_icon flaticon-home97"></i> <span class="aminidis">Garden</span>
+           <li class="detaillistingli fulwidthm left lgraytext mgnB10"><i class="aminti_icon flaticon-home97"></i> <span class="aminidis"><?= $lang[410][$current] ?></span>
            </li>
-           <li class="detaillistingli fulwidthm left lgraytext mgnB10"><i class="aminti_icon flaticon-fence14"></i> <span class="aminidis">Fence</span>
+           <li class="detaillistingli fulwidthm left lgraytext mgnB10"><i class="aminti_icon flaticon-fence14"></i> <span class="aminidis"><?= $lang[411][$current] ?></span>
            </li>
-           <li class="detaillistingli fulwidthm left lgraytext mgnB10"><i class="aminti_icon flaticon-dining9"></i> <span class="aminidis">Carpet</span>
+           <li class="detaillistingli fulwidthm left lgraytext mgnB10"><i class="aminti_icon flaticon-dining9"></i> <span class="aminidis"><?= $lang[416][$current] ?></span>
            </li>
-           <li class="detaillistingli fulwidthm left lgraytext mgnB10"><i class="aminti_icon flaticon-floor"></i> <span class="aminidis">Hardwood</span>
+           <li class="detaillistingli fulwidthm left lgraytext mgnB10"><i class="aminti_icon flaticon-floor"></i> <span class="aminidis"><?= $lang[418][$current] ?></span>
            </li>
-           <li class="detaillistingli fulwidthm left lgraytext mgnB10"><i class="aminti_icon flaticon-tool225"></i> <span class="aminidis">Heater</span>
+           <li class="detaillistingli fulwidthm left lgraytext mgnB10"><i class="aminti_icon flaticon-tool225"></i> <span class="aminidis"><?= $lang[420][$current] ?></span>
            </li>
-           <li class="detaillistingli fulwidthm left lgraytext mgnB10"><i class="aminti_icon flaticon-river3"></i> <span class="aminidis">Natural Air</span>
+           <li class="detaillistingli fulwidthm left lgraytext mgnB10"><i class="aminti_icon flaticon-river3"></i> <span class="aminidis"><?= $lang[421][$current] ?></span>
            </li>
-           <li class="detaillistingli fulwidthm left lgraytext mgnB10"><i class="aminti_icon flaticon-vehicle34"></i> <span class="aminidis">Garage Detached</span>
+           <li class="detaillistingli fulwidthm left lgraytext mgnB10"><i class="aminti_icon flaticon-vehicle34"></i> <span class="aminidis"><?= $lang[422][$current] ?></span>
            </li>
-           <li class="detaillistingli fulwidthm left lgraytext mgnB10"><i class="aminti_icon flaticon-home97"></i> <span class="aminidis">Mountain View</span>
+           <li class="detaillistingli fulwidthm left lgraytext mgnB10"><i class="aminti_icon flaticon-home97"></i> <span class="aminidis"><?= $lang[1030][$current] ?></span>
            </li>
           </ul>
          </div>
@@ -194,7 +194,7 @@
    </script>
    <div class="detailsfullright  col-lg-4 col-md-4 col-sm-12 col-xs-12 ">
     <div class="reqstinfowrp fulwidthm left mgnB15">
-     <div class="rqstinfotitle dblue_bg pdg15 fulwidthm fontsize16 left whitetext">Tell Me More About This Property</div>
+     <div class="rqstinfotitle dblue_bg pdg15 fulwidthm fontsize16 left whitetext"><?= $lang[200][$current] ?></div>
      <div class="reqstinfowrp_in fulwidthm left  whitebg">
       <div class="rqstinfobrkerlist" style="overflow-y: hidden; outline: none;" tabindex="5000">
        <div class="rqstinfobrkerlistin pdg15">
@@ -204,9 +204,9 @@
            <input type="checkbox" class="brkerinput left" value="0">
            <div class="brokerimg left"> <img src="{{ asset('userdata/Profile/0/alienware-chrome-phone-wallpaper.png') }}" alt=""> </div>
           </div>
-          <div class="brokerright"> <a href="" class="borkerRname fontsize16 dbluetext robotoregular"> Steve James</a>
+          <div class="brokerright"> <a href="" class="borkerRname fontsize16 dbluetext robotoregular"> <?= $lang[984][$current] ?></a>
            <div class="brokerrating"> <i class="fa fa-star ratingyellow"></i><i class="fa fa-star ratingyellow"></i><i class="fa fa-star ratingyellow"></i><i class="fa fa-star ratingyellow"></i><i class="fa fa-star ratingyellow"></i> <span class=" fontsize12">(1)</span> </div>
-           <div class="brkerRbottom fontsize12"> <span class="brkRsalec lgraytext">1 Recent Sales</span> &nbsp;|&nbsp; <span class="brkRstsc lbluetext">Premium Agent</span>
+           <div class="brkerRbottom fontsize12"> <span class="brkRsalec lgraytext"><?= $lang[201][$current] ?></span> &nbsp;|&nbsp; <span class="brkRstsc lbluetext"><?= $lang[217][$current] ?></span>
            </div>
           </div>
          </li>
@@ -215,9 +215,9 @@
            <input type="checkbox" class="brkerinput left" value="1">
            <div class="brokerimg left"> <img src="{{ asset('userdata/Profile/1/girl-1252995_1920.png') }}" alt=""> </div>
           </div>
-          <div class="brokerright"> <a href="" class="borkerRname fontsize16 dbluetext robotoregular"> Steve James</a>
+          <div class="brokerright"> <a href="" class="borkerRname fontsize16 dbluetext robotoregular"> <?= $lang[984][$current] ?></a>
            <div class="brokerrating"> <i class="fa fa-star ratingyellow"></i><i class="fa fa-star ratingyellow"></i><i class="fa fa-star ratingyellow"></i><i class="fa fa-star ratingyellow"></i><i class="fa fa-star"></i> <span class=" fontsize12">(1)</span> </div>
-           <div class="brkerRbottom fontsize12"> <span class="brkRsalec lgraytext">2 Recent Sales</span> &nbsp;|&nbsp; <span class="brkRstsc lbluetext">Premium Agent</span>
+           <div class="brkerRbottom fontsize12"> <span class="brkRsalec lgraytext"><?= $lang[201][$current] ?></span> &nbsp;|&nbsp; <span class="brkRstsc lbluetext"><?= $lang[217][$current] ?></span>
            </div>
           </div>
          </li>
@@ -226,9 +226,9 @@
            <input type="checkbox" class="brkerinput left" value="47">
            <div class="brokerimg left"> <img src="{{ asset('userdata/Profile/47/00fd612653a15c95c0080da520ede4591435913737.pnguserdata/Profile/47/00fd612653a15c95c0080da520ede4591435913737.png') }}" alt=""> </div>
           </div>
-          <div class="brokerright"> <a href="" class="borkerRname fontsize16 dbluetext robotoregular"> Newagent Newuser</a>
+          <div class="brokerright"> <a href="" class="borkerRname fontsize16 dbluetext robotoregular"> <?= $lang[1031][$current] ?></a>
            <div class="brokerrating"> <span class=" fontsize12"></span> </div>
-           <div class="brkerRbottom fontsize12"> <span class="brkRsalec lgraytext">0 Recent Sales</span> &nbsp;|&nbsp; <span class="brkRstsc lbluetext">Premium Agent</span>
+           <div class="brkerRbottom fontsize12"> <span class="brkRsalec lgraytext"><?= $lang[201][$current] ?></span> &nbsp;|&nbsp; <span class="brkRstsc lbluetext"><?= $lang[217][$current] ?></span>
            </div>
           </div>
          </li>
@@ -240,31 +240,31 @@
        <div class="pdg15 fulwidthm left rqstinfoformswrp_in">
         <div class="rqstfrmrow fulwidthm left mgnB15">
          <input class="rqstfrminput fulwidthm left" id="reqname" type="text" placeholder="Your Name">
-         <div class="erorshown fulwidthm  left" id="namereqerr">Please Enter Your First Name</div>
+         <div class="erorshown fulwidthm  left" id="namereqerr"><?= $lang[302][$current] ?></div>
         </div>
         <div class="rqstfrmrow fulwidthm left mgnB15">
          <input class="rqstfrminput fulwidthm left" id="reqemail" type="email" placeholder="Your Email">
-         <div class="erorshown fulwidthm  left" id="emailreqerr">Please Enter Your First Name</div>
+         <div class="erorshown fulwidthm  left" id="emailreqerr"><?= $lang[302][$current] ?></div>
         </div>
         <div class="rqstfrmrow fulwidthm left mgnB15">
          <input class="rqstfrminput fulwidthm left" id="reqphno" type="text" placeholder="Contact Number">
-         <div class="erorshown fulwidthm  left" id="phnreqerr">Please Enter Your First Name</div>
+         <div class="erorshown fulwidthm  left" id="phnreqerr"><?= $lang[302][$current] ?></div>
         </div>
         <div class="rqstfrmrow fulwidthm left mgnB15">
          <textarea class="rqstfrminput fulwidthm left" id="reqmess" placeholder="Your Message"></textarea>
-         <div class="erorshown fulwidthm  left" id="msgreqerr">Please Enter Your First Name</div>
+         <div class="erorshown fulwidthm  left" id="msgreqerr"><?= $lang[302][$current] ?></div>
         </div>
         <div class="rqstfrmrow fulwidthm left mgnB15">
-         <button class="lblue_bg fulwidthm left pdgTB10 fontsize18 reqstinfopoopen" id="requestbut">Request Info</button>
+         <button class="lblue_bg fulwidthm left pdgTB10 fontsize18 reqstinfopoopen" id="requestbut"><?= $lang[199][$current] ?></button>
         </div>
-        <div class="tremsRs lgraytext left fulwidthm  fontsize12 "><span style="color:red;">*This is a Demo Version, Mail will not be send.</span>
+        <div class="tremsRs lgraytext left fulwidthm  fontsize12 "><span style="color:red;"><?= $lang[1032][$current] ?></span>
         </div>
        </div>
       </div>
      </div>
     </div>
     <div class="detilwishlistbtn transition2 mgnB15 whitetext  text-center fulwidthm left whishorngnebtn" id="wishlistttt_101" title="Save to Wishlist"> <span class="hearlike hearliked"> <i class="flaticon-heart297"></i> </span>
-     <h3 class="whsilisttile  robotoregular fontsize16">Save to WishList</h3> </div>
+     <h3 class="whsilisttile  robotoregular fontsize16"><?= $lang[197][$current] ?></h3> </div>
     <!--
 
 <div class="contacthostopen">Msg</div>

@@ -90,28 +90,28 @@
                     
                     <div class="mfrow mgnTB10 pdgTB10 graybg fulwidthm left">
                       <div class="mfsection col-xs-12" id="htype">
-                        <div class="mfsectionhead mgnB20 graytext fontsize20">Home Type</div>
+                        <div class="mfsectionhead mgnB20 graytext fontsize20"><?= $lang[132][$current] ?></div>
                         <div class="filterechwrp">
                           <div class="echfilter">
                             <div class="icheckbox_flat-green" style="position: relative;"><input type="checkbox" class="flat" value="1" name="hometype" style="position: absolute; opacity: 0;">
                               <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
                             </div>
-                            <span class=" pdgS05 robotomedium font-size14 graytext  aminitname">Single Family</span></div>
+                            <span class=" pdgS05 robotomedium font-size14 graytext  aminitname"><?= $lang[133][$current] ?></span></div>
                           <div class="echfilter">
                             <div class="icheckbox_flat-green" style="position: relative;"><input type="checkbox" class="flat" value="2" name="hometype" style="position: absolute; opacity: 0;">
                               <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
                             </div>
-                            <span class=" pdgS05 robotomedium font-size14 graytext  aminitname">Multi Family</span></div>
+                            <span class=" pdgS05 robotomedium font-size14 graytext  aminitname"><?= $lang[134][$current] ?></span></div>
                           <div class="echfilter">
                             <div class="icheckbox_flat-green" style="position: relative;"><input type="checkbox" class="flat" value="3" name="hometype" style="position: absolute; opacity: 0;">
                               <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
                             </div>
-                            <span class=" pdgS05 robotomedium font-size14 graytext  aminitname"> Apartment  </span></div>
+                            <span class=" pdgS05 robotomedium font-size14 graytext  aminitname"> <?= $lang[135][$current] ?>  </span></div>
                           <div class="echfilter">
                             <div class="icheckbox_flat-green" style="position: relative;"><input type="checkbox" class="flat" value="4" name="hometype" style="position: absolute; opacity: 0;">
                               <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
                             </div>
-                            <span class=" pdgS05 robotomedium font-size14 graytext  aminitname"> Vacant Land</span></div>
+                            <span class=" pdgS05 robotomedium font-size14 graytext  aminitname"><?= $lang[136][$current] ?></span></div>
                         
                         
                         </div>
@@ -119,29 +119,29 @@
                     </div>
                     <div class="mfrow mgnTB10 pdgTB10 graybg fulwidthm left">
                       <div class="mfsection col-xs-12 ">
-                        <div class="mfsectionhead mgnB20 graytext fontsize20"> Activities</div>
+                        <div class="mfsectionhead mgnB20 graytext fontsize20"> <?= $lang[137][$current] ?></div>
                         <div class="filterechwrp">
                           <div class="echfilter">
                             <div class="icheckbox_flat-green" style="position: relative;"><input type="checkbox" class="flat" id="open" name="open" style="position: absolute; opacity: 0;">
                               <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
                             </div>
-                            <span class=" pdgS05 robotomedium font-size14 graytext  aminitname">Open House</span></div>
+                            <span class=" pdgS05 robotomedium font-size14 graytext  aminitname"><?= $lang[138][$current] ?></span></div>
                           <div class="echfilter">
                             <div class="icheckbox_flat-green" style="position: relative;"><input type="checkbox" class="flat" id="newlist" name="newlist" style="position: absolute; opacity: 0;">
                               <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
                             </div>
-                            <span class=" pdgS05 robotomedium font-size14 graytext  aminitname">New Listing</span></div>
+                            <span class=" pdgS05 robotomedium font-size14 graytext  aminitname"><?= $lang[139][$current] ?></span></div>
                           <div class="echfilter">
                             <div class="icheckbox_flat-green" style="position: relative;"><input type="checkbox" class="flat" id="pricered" name="pricered" style="position: absolute; opacity: 0;">
                               <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
                             </div>
-                            <span class=" pdgS05 robotomedium font-size14 graytext  aminitname"> Price Reduced </span></div>
+                            <span class=" pdgS05 robotomedium font-size14 graytext  aminitname"><?= $lang[140][$current] ?> </span></div>
                           
                           <div class="echfilter">
                             <div class="icheckbox_flat-green" style="position: relative;"><input type="checkbox" class="flat" id="forclosure" name="forclosure" style="position: absolute; opacity: 0;">
                               <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
                             </div>
-                            <span class=" pdgS05 robotomedium font-size14 graytext  aminitname"> Foreclosure </span></div>
+                            <span class=" pdgS05 robotomedium font-size14 graytext  aminitname"> <?= $lang[141][$current] ?></span></div>
                         
                         
                         </div>
@@ -156,7 +156,7 @@
                       </div>
                       <div class="morfright onmoblefilter left">
                         <select id="beds1" class="priceselect filterselect xo" style="width: 100%; display: none;" tabindex="-1">
-                          <option value="">All Beds</option>
+                          <option value=""><?= $lang[142][$current] ?></option>
                           <option value="0">0 Bed</option>
                           <option value="1">1 Beds</option>
                           <option value="2">2 Beds</option>
@@ -177,27 +177,27 @@
                       </div>
                       <div class="morfright left">
                         <select id="bathrooms" class="bathfilter filterselect xo" style="width: 100%; display: none;" tabindex="-1">
-                          <option value="">Bathrooms</option>
-                          <option value="0">0 Bathroom</option>
-                          <option value="1">1 Bathrooms</option>
-                          <option value="2">2 Bathrooms</option>
-                          <option value="3">3 Bathrooms</option>
-                          <option value="4">4 Bathrooms</option>
-                          <option value="5">5 Bathrooms</option>
-                          <option value="6">6 Bathrooms</option>
-                          <option value="6">7+ Bathrooms</option>
+                          <option value=""><?= $lang[144][$current] ?></option>
+                          <option value="0"><?= $lang[143][$current] ?></option>
+                          <option value="1"><?= $lang[144][$current] ?></option>
+                          <option value="2"><?= $lang[144][$current] ?></option>
+                          <option value="3"><?= $lang[144][$current] ?></option>
+                          <option value="4"><?= $lang[144][$current] ?></option>
+                          <option value="5"><?= $lang[144][$current] ?></option>
+                          <option value="6"><?= $lang[144][$current] ?></option>
+                          <option value="6"><?= $lang[144][$current] ?></option>
                         </select>
                         <!--<span class="select2 select2-container select2-container--default" dir="ltr" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-autocomplete="list" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-bathrooms-container"><span class="select2-selection__rendered" id="select2-bathrooms-container" title="Bathrooms">Bathrooms</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>-->
                       </div>
                     </div>
                     <div class="mfrow mgnTB10 pdg10 graybg fulwidthm left">
                       <div class="morfleft left">
-                        <h3 class="morflefttilte graytext fontsize16">Square Feet</h3>
+                        <h3 class="morflefttilte graytext fontsize16"><?= $lang[146][$current] ?></h3>
                       </div>
                       <div class="morfright left">
                         <select id="homesize" class="bathfilter filterselect xo" style="width: 100%; display: none;" tabindex="-1">
                           
-                          <option value="">Any Home Size</option>
+                          <option value=""><?= $lang[145][$current] ?></option>
                           <option value="500">500 sqft</option>
                           <option value="750">750 sqft</option>
                           <option value="1000">1,000 sqft</option>
@@ -216,11 +216,11 @@
                     
                     <div class="mfrow mgnTB10 pdg10 graybg fulwidthm left">
                       <div class="morfleft left">
-                        <h3 class="morflefttilte graytext fontsize16">Year Build</h3>
+                        <h3 class="morflefttilte graytext fontsize16"><?= $lang[147][$current] ?></h3>
                       </div>
                       <div class="morfright left">
                         <select id="yearbuilt" class="priceselect filterselect xo" style="width: 100%; display: none;" tabindex="-1">
-                          <option value="">All</option>
+                          <option value=""><?= $lang[148][$current] ?></option>
                           <option value="1850">1850</option>
                           <option value="1851">1851</option>
                           <option value="2008">2008</option>
@@ -240,67 +240,61 @@
                     
                     <div class="mfrow mgnTB10 pdg10 graybg fulwidthm left">
                       <div class="morfleft left">
-                        <h3 class="morflefttilte graytext fontsize16">Days on For Sale Network</h3>
+                        <h3 class="morflefttilte graytext fontsize16"><?= $lang[989][$current] ?></h3>
                       </div>
                       <div class="morfright left">
                         <select id="dayss" class="bathfilter filterselect xo" style="width: 100%; display: none;" tabindex="-1">
-                          <option value="">All</option>
-                          <option value="1">1 Month</option>
-                          <option value="3">3 Months</option>
-                          <option value="6">6 Months</option>
-                          <option value="9">9 Months</option>
-                          <option value="12">12 Months</option>
-                          <option value="15">15 Months</option>
-                          <option value="18">18 Months</option>
-                          <option value="21">21 Months</option>
-                          <option value="24">24 Months</option>
-                        
+                          <option value=""><?= $lang[148][$current] ?></option>
+                          <option value="1"><?= $lang[149][$current] ?></option>
+                          <option value="3"><?= $lang[150][$current] ?></option>
+                          <option value="6"><?= $lang[150][$current] ?></option>
+                          <option value="9"><?= $lang[150][$current] ?></option>
+                          <option value="12"><?= $lang[150][$current] ?></option>
+                          <option value="15"><?= $lang[150][$current] ?></option>
+                          <option value="18"><?= $lang[150][$current] ?></option>
+                          <option value="21"><?= $lang[150][$current] ?></option>
+                          <option value="24"><?= $lang[150][$current] ?></option>
                         </select>
                       </div>
                     </div>
-                  
                   </div>
                 </div>
-                
                 <!-- bottom fixed button -->
                 <div class="bottomfixedfilter pdg10 whitebg">
                   <div class="pull-right">
-                    <button class="morefiltercancel btn dblue_bg">Cancel</button>
-                    <button class="morefilteraply btn lblue_bg" id="advancefil" disabled=""> Apply Filter</button>
+                    <button class="morefiltercancel btn dblue_bg"><?= $lang[171][$current] ?></button>
+                    <button class="morefilteraply btn lblue_bg" id="advancefil" disabled=""> <?= $lang[170][$current] ?></button>
                   </div>
                 </div>
                 <!-- Bottom fixed buttons ends -->
               </div>
             </div>
-            
             <!-- third filter -->
             <div id="showhide" class="firstfilter left col-md-4 col-sm-4 col-xs-10  nopadding">
               <div class="pricefilter  left col-sm-6 col-md-6 col-xs-12 nopaddingLR">
                 <div class="pricefilterhalf ">
                   <select id="" class="priceselect filterselect" style="width: 100%; display: none;" tabindex="-1" name="minprice">
-                    <option selected>Select a Property Type</option>
-                    <option value="all">All</option>
-                    <option value="rent">rent</option>
-                    <option value="buy">Buy</option>
+                    <option selected><?= $lang[990][$current] ?></option>
+                    <option value="all"><?= $lang[216][$current] ?></option>
+                    <option value="rent"><?= $lang[500][$current] ?></option>
+                    <option value="buy"><?= $lang[12][$current] ?></option>
                   </select>
                 </div>
-                
                 <div class="pricefilterhalf ">
                   <select id="" class="priceselect filterselect" style="width: 100%; display: none;" tabindex="-1" name="maxprice">
-                    <option selected>Select a Property type</option>
-                    <option value="all">Select a type</option>
-                    <option value="Single Family">Single Family</option>
-                    <option value="Multi Family">Multi Family</option>
-                    <option value="Apartment">Apartment</option>
-                    <option value="Vacant Land">Vacant Land</option>
-                    <option value="apartamente">apartamente</option>
-                    <option value="Pocket Listings">Pocket Listings</option>
-                    <option value="Farm">Farm</option>
+                    <option selected><?= $lang[990][$current] ?></option>
+                    <option value="all"><?= $lang[991][$current] ?></option>
+                    <option value="Single Family"><?= $lang[133][$current] ?></option>
+                    <option value="Multi Family"><?= $lang[134][$current] ?></option>
+                    <option value="Apartment"><?= $lang[135][$current] ?></option>
+                    <option value="Vacant Land"><?= $lang[136][$current] ?></option>
+                    <option value="apartamente"><?= $lang[135][$current] ?></option>
+                    <option value="Pocket Listings"><?= $lang[992][$current] ?></option>
+                    <option value="Farm"><?= $lang[993][$current] ?></option>
                   </select>
                 </div>
               </div>
             </div>
-          
           </form>
         </div>
       </div>
@@ -310,12 +304,11 @@
           <div class="resultwraper">
             <div class="resultlistingfull relsonly" style="min-height: 219px;">
               <div class="whitebg fulwidthm left pdg10">
-                {{--<div class="resultplace col-sm-8 col-xs-12 mgnTB05" id="abovedivpage">To Matched Total   results</div>--}}
                 <div class="reultasoart  pull-right col-sm-4 col-xs-12">
                   <select id="sortby" class="filterselect " style="width: 100%; display: none;" tabindex="-1">
-                    <option value="1">Sort by Featured</option>
-                    <option value="2">Sort by Price Low to High</option>
-                    <option value="3">Sort by Price High to Low</option>
+                    <option value="1"><?= $lang[155][$current] ?></option>
+                    <option value="2"><?= $lang[157][$current] ?></option>
+                    <option value="3"><?= $lang[156][$current] ?></option>
                   </select>
                 </div>
               </div>
@@ -333,9 +326,8 @@
                         <a href="{{ url('/search/preview/'.$property->id ) }}">
                           <div class="resultn_image" style="background: url('<?= asset('uploads/' . $image->name) ?>') no-repeat;">
                             <div class="featuredim">
-                              {{--<img src="{{ asset('uploads/'. $image->name) }}" title="Featured Property">--}}
                             </div>
-                            <div class="photocount"><?= count($property->imagedata) ?> Photos</div>
+                            <div class="photocount"><?= count($property->imagedata) ?> <?= $lang[158][$current] ?></div>
                           </div>
                         </a>
                         <?php
@@ -370,14 +362,13 @@
                   </div>
                 @endforeach
                 <?php }else{ ?>
-                <h2>Sorry No listing found according to your Search </h2>
+                <h2><?= $lang[995][$current] ?> </h2>
                 <?php }?>
               </div>
               <!-- Each result ends -->
             </div>
             <div class="pagination_gc">
               <div class="col-xs-12">
-                {{--<div id="valpagediv" class="results_count col-xs-12 mgnTB10"> Showing 1 – 12 of 12 Homes</div>--}}
                 <div class="paginationnumber">
                   {{ $data->links() }}
                 </div>
@@ -398,9 +389,9 @@
                 </div>
                 <div class="clearfix"></div>
                 <div style="width: 100%;">
-                  <div align="center" class="mgnTB20 text-center fontsize12 graytext"><b>Please Note - </b>The labels marked on the Map are slightly changed from its original positions.</div>
+                  <div align="center" class="mgnTB20 text-center fontsize12 graytext"><b><?= $lang[996][$current] ?> </b><?= $lang[997][$current] ?></div>
                 </div>
-                <div class="text-capitalize text-center graytext fontsize13 robotoregular fulwidthm mgnB30">Copyright © 20<?= date('y') ?> For Sale Network. All Rights Reserved.</div>
+                <div class="text-capitalize text-center graytext fontsize13 robotoregular fulwidthm mgnB30"><?= $lang[45][$current] ?><?= date('y') ?> <?= $lang[998][$current] ?></div>
               </div>
             </div>
             <!-- Footer section Ends -->
@@ -410,7 +401,7 @@
             <script type="text/javascript" src="js/simpledatpiker/datepiker.js"></script>
             <!-- Date Range Picker Ends -->
             <!--  Menuu -->
-         
+            
             <!-- animation and select -->
             <script type="text/javascript" src="js/animate/animate.js"></script>
             <script type="text/javascript" src="js/animate/wow.js"></script>
@@ -431,7 +422,7 @@
           <!-- Results Ends -->
         </div>
         <!-- Result side bar ends -->
-        <div class="resultmap">
+        <div class="resultmap ui-widget-content" id="resizable" >
           <div id="map" style="width: 100%; height: 576px;"></div>
         </div>
       </div>
@@ -441,9 +432,7 @@
   
   <script src="http://maps.googleapis.com/maps/api/js" type="text/javascript"></script>
   <script type="text/javascript">
-    
     "use strict";
-    
     // variable to hold a map
     var map;
     
@@ -457,9 +446,9 @@
       
       // map options - lots of options available here
       var mapOptions = {
-        zoom: 2,
+        zoom: 9,
         draggable: true,
-        center: new google.maps.LatLng(46.2276, 2.2137),
+        center: new google.maps.LatLng(<?= $data[0]->latitude; ?>,<?= $data[0]->longitude; ?>),
         mapTypeId: google.maps.MapTypeId.ROADMAP
       };
       

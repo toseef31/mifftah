@@ -100,6 +100,11 @@ class PagesController extends Controller {
 				$q->orWhere('region', 'like', '%' . lcfirst($request->citysearch) . '%');
 				$q->orWhere('region', 'like', '%' . strtolower($request->citysearch) . '%');
 				$q->orWhere('region', 'like', '%' . strtoupper($request->citysearch) . '%');
+				
+				$q->orWhere('title', 'like', '%' . ucfirst($request->citysearch) . '%');
+				$q->orWhere('title', 'like', '%' . lcfirst($request->citysearch) . '%');
+				$q->orWhere('title', 'like', '%' . strtolower($request->citysearch) . '%');
+				$q->orWhere('title', 'like', '%' . strtoupper($request->citysearch) . '%');
 			})->paginate(10);
 		}
 		return view('searchList', compact('data'));
@@ -107,8 +112,9 @@ class PagesController extends Controller {
 	
 	public function homepreview($id) {
 		$data = Listings::where('id', $id)->get()->first();
+		$properties = Listings::where('status' , 1)->get();
 		if ($data) {
-			return view('dashboardUser.userDashboard_homepreview', compact('data'));
+			return view('dashboardUser.userDashboard_homepreview', compact('data', 'properties'));
 		} else {
 			return redirect(url('/'));
 		}

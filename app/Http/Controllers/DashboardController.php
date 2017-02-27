@@ -147,8 +147,21 @@ class DashboardController extends Controller {
 	}
 	
 	public function updateLanguage() {
-		$data = Msg::paginate(50);
-		return $data;
+		$data = Msg::paginate(10);
+		return view('dashboard.languageUpdate', compact('data'));
+	}
+	
+	public function updateLanguagedemo() {
+		$data = Msg::get();
+		$counter = 0;
+		foreach ($data as $row) {
+			$counter++;
+			echo "lndex : " . $counter . '<br/>';
+			echo "<pre>";
+			print_r($data[$counter - 1]['msg_en']);
+			echo "</pre>";
+		}
+		exit();
 		return view('dashboard.languageUpdate', compact('data'));
 	}
 	

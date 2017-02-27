@@ -7,19 +7,19 @@
    <div class="mainontainer_in fulwidthm left">
     <div class="col-sm-12 col-xs-12 agntheaderwrp">
      <section class="agentheader mgnB20  fulwidthm whitebg left   pdg15">
-      <h4 class="agentheading fontsize20"><span id="texts">Real Estate Agents in  Orlando, FL </span> <span class="resultcount robotolight" id="rex"> 2 Results </span></h4>
+      <h4 class="agentheading fontsize20"><span id="texts"><?= $lang[212][$current] ?> </span> <span class="resultcount robotolight" id="rex"> <?= $lang[222][$current] ?> </span></h4>
       <div class="agentfiltering fulwidthm whitebg left mgnT10">
        <div class="row">
-        <div class="col-sm-4 col-xs-12 agentfilterbox"><input id="cityname" class="rqstfrminput fulwidthm left" type="text" placeholder="Search by Agents Work Location" value="Orlando, FL"><br><span class="lgraytext agnbtmsmtxt">* Choose a City from the given List as Agent Work Location</span></div>
-        <div class="col-sm-4 col-xs-12 agentfilterbox"><input id="brokername" class="rqstfrminput fulwidthm left" type="text" placeholder="Agent Name"><br><span class="lgraytext agnbtmsmtxt">* Type In your Agents Name Above</span></div>
+        <div class="col-sm-4 col-xs-12 agentfilterbox"><input id="cityname" class="rqstfrminput fulwidthm left" type="text" placeholder="Search by Agents Work Location" value="Orlando, FL"><br><span class="lgraytext agnbtmsmtxt"><?= $lang[229][$current] ?></span></div>
+        <div class="col-sm-4 col-xs-12 agentfilterbox"><input id="brokername" class="rqstfrminput fulwidthm left" type="text" placeholder="Agent Name"><br><span class="lgraytext agnbtmsmtxt"><?= $lang[228][$current] ?></span></div>
         <div class="col-sm-4 col-xs-12 agentfilterbox">
          <select id="sortby" style="width:100%">
-          <option value="">All Agents</option>
-          <option value="1">Premium Agents</option>
-          <option value="2">Most Sold Agents</option>
-          <option value="3">Top Rated Agents</option>
+          <option value=""><?= $lang[216][$current] ?> </option>
+          <option value="1"><?= $lang[213][$current] ?> </option>
+          <option value="2"><?= $lang[214][$current] ?> </option>
+          <option value="3"><?= $lang[215][$current] ?> </option>
          </select>
-         <br><span class="lgraytext agnbtmsmtxt">* You can sort Your Agents List based on the Above Options</span>
+         <br><span class="lgraytext agnbtmsmtxt"><?= $lang[227][$current] ?> </span>
         </div>
        </div> <!-- row ends -->
       </div> <!-- agentfiltering ends -->
@@ -42,12 +42,12 @@
          <div class="agentrightdetials">
           <div class="agentRdleft left">
            <div class="agentDtop fulwidthm left">
-            <a href="#" class="dbluetext agentnamelink robotoregular fontsize18 fulwidthm textdot" title="View profile of Zera Elezabeth">Zera Elezabeth</a>
+            <a href="#" class="dbluetext agentnamelink robotoregular fontsize18 fulwidthm textdot" title="View profile of Zera Elezabeth"><?= $lang[981][$current] ?></a>
            </div>
            <!-- agentDtop ends -->
            <div class="agentDmiddle fulwidthm left">
             <p class="midlep graytext fontsize12 fulwidthm textdot"><i class="fa fa-building"></i>
-             New Homes Agency</p>
+            <?= $lang[26][$current] ?></p>
             <h6 class="agentphone lbluetext font-size14"><i class="fa fa-phone"></i>
              452-5363 </h6>                </div>
            <!-- agentDmiddle ends -->
@@ -57,7 +57,7 @@
             <div class="mgnT10 fulwidthm left">
 
              <span class="left"> <img src="images/premiumagnticon.png" alt=""></span>
-             <span class=" mgnS05 premimumagntname left whitetext lblue_bg fontsize12 pdg05">Premium Agent</span>
+             <span class=" mgnS05 premimumagntname left whitetext lblue_bg fontsize12 pdg05"><?= $lang[217][$current] ?></span>
              <!--   <a class="contactagent dblue_bg whitetext font-size14 " href="http://inout-realestate.demo.inoutscripts.net/agents/profile/3/Zera-Elezabeth">View Profile</a> -->
             </div>
 
@@ -80,13 +80,13 @@
            <div class="agentDmiddle fulwidthm right">
             <!--      <img src="userdata/Agencylogo/3/logo5.jpg" width="50px" height="50px" alt="">
             -->
-            <a id="contact_2" class="contactagent right contacthostopen dblue_bg whitetext font-size14 " title="Contact Agent">Contact</a>
+            <a id="contact_2" class="contactagent right contacthostopen dblue_bg whitetext font-size14 " title="Contact Agent"><?= $lang[1][$current] ?></a>
            </div>
            <div class="agentDbottom fulwidthm right">
             <div class="agentplace"><i class="fa fa-location-arrow"></i>
-             Abc Street,Patal Nagar</div>
+           <?= $lang[982][$current] ?></div>
             <div class="brkerRbottom fontsize12">
-             <span class="brkRsalec lgraytext"> 1 Recent Sales </span> &nbsp;|&nbsp; <span class="brklistStatus lbluetext"> 1 Lead Listings </span>&nbsp;|&nbsp; <span class="brklistStatus lbluetext"> 4 Active Listings </span>
+             <span class="brkRsalec lgraytext"> <?= $lang[201][$current] ?> </span> &nbsp;|&nbsp; <span class="brklistStatus lbluetext"> <?= $lang[258][$current] ?> </span>&nbsp;|&nbsp; <span class="brklistStatus lbluetext"><?= $lang[225][$current] ?> </span>
             </div>
            </div>
 
@@ -108,12 +108,12 @@
          <div class="agentrightdetials">
           <div class="agentRdleft left">
            <div class="agentDtop fulwidthm left">
-            <a href="#" class="dbluetext agentnamelink robotoregular fontsize18 fulwidthm textdot" title="View profile of Steve James">Steve James</a>
+            <a href="#" class="dbluetext agentnamelink robotoregular fontsize18 fulwidthm textdot" title="View profile of Steve James"><?= $lang[984][$current] ?></a>
            </div>
            <!-- agentDtop ends -->
            <div class="agentDmiddle fulwidthm left">
             <p class="midlep graytext fontsize12 fulwidthm textdot"><i class="fa fa-building"></i>
-             NewHorizon Real Estate Agency</p>
+        <?= $lang[983][$current] ?></p>
             <h6 class="agentphone lbluetext font-size14"><i class="fa fa-phone"></i>
              0456-765-542 </h6>                </div>
            <!-- agentDmiddle ends -->
@@ -123,7 +123,7 @@
             <div class="mgnT10 fulwidthm left">
 
              <span class="left"> <img src="images/premiumagnticon.png" alt=""></span>
-             <span class=" mgnS05 premimumagntname left whitetext lblue_bg fontsize12 pdg05">Premium Agent</span>
+             <span class=" mgnS05 premimumagntname left whitetext lblue_bg fontsize12 pdg05"><?= $lang[217][$current] ?></span>
 
             </div>
 
@@ -146,13 +146,13 @@
            <div class="agentDmiddle fulwidthm right">
             <!--      <img src="userdata/Agencylogo/2/361447.jpg" width="50px" height="50px" alt="">
             -->
-            <a id="contact_1" class="contactagent right contacthostopen dblue_bg whitetext font-size14 " title="Contact Agent">Contact</a>
+            <a id="contact_1" class="contactagent right contacthostopen dblue_bg whitetext font-size14 " title="Contact Agent"><?= $lang[1][$current] ?></a>
            </div>
            <div class="agentDbottom fulwidthm right">
             <div class="agentplace"><i class="fa fa-location-arrow"></i>
-             Mangloor Street,New York</div>
+            <?= $lang[985][$current] ?></div>
             <div class="brkerRbottom fontsize12">
-             <span class="brkRsalec lgraytext"> 2 Recent Sales </span> &nbsp;|&nbsp; <span class="brklistStatus lbluetext"> 4 Lead Listings </span>&nbsp;|&nbsp; <span class="brklistStatus lbluetext"> 7 Active Listings </span>
+             <span class="brkRsalec lgraytext"><?= $lang[201][$current] ?> </span> &nbsp;|&nbsp; <span class="brklistStatus lbluetext"> <?= $lang[258][$current] ?> </span>&nbsp;|&nbsp; <span class="brklistStatus lbluetext"> <?= $lang[225][$current] ?> </span>
             </div>
            </div>
 
@@ -218,7 +218,7 @@
 
       <div class="newlsitingwrp">
        <div class="col-xs-12 col-sm-3">
-        <h2 class="robotolight fontsize30 newliisthead">Popular <span class="robotomedium">Listings</span></h2>
+        <h2 class="robotolight fontsize30 newliisthead"><?= $lang[39][$current] ?><span class="robotomedium"><?= $lang[27][$current] ?></span></h2>
         <p class="newlsitingp fontsize18 robotolight">Popular Listings in <br>Orlando, FL</p>
         <div class="newlistingcontrol">
          <div class="n_l_prev n_lcontrl"><i class="flaticon-direction129"></i></div>
@@ -235,8 +235,8 @@
 
                <div class="listinimgcoverin media-cover">  <img  class="img-responsive-height"   src="userdata/List/Thumb/1/9/home-wallpaper-26.jpg"></div>
               </div>
-              <div class="photocount1">2 Photos</div>
-              <div class="listinname whitetext fontsize13 pdg05"> Orlando, FL 47367                            </div>
+              <div class="photocount1"><?= $lang[158][$current] ?></div>
+              <div class="listinname whitetext fontsize13 pdg05"> <?= $lang[988][$current] ?>                           </div>
 
              </div>
 
@@ -270,8 +270,8 @@
 
                <div class="listinimgcoverin media-cover">  <img  class="img-responsive-height"   src="userdata/List/Thumb/1/2/home-54907_960_720.jpg"></div>
               </div>
-              <div class="photocount1">1 Photos</div>
-              <div class="listinname whitetext fontsize13 pdg05"> Orlando, FL 2432  </div>
+              <div class="photocount1"><?= $lang[158][$current] ?></div>
+              <div class="listinname whitetext fontsize13 pdg05"> <?= $lang[987][$current] ?> </div>
 
              </div>
 
@@ -305,8 +305,8 @@
 
                <div class="listinimgcoverin media-cover">  <img  class="img-responsive-height"   src="userdata/List/Thumb/2/23/jjjjjj1.jpg"></div>
               </div>
-              <div class="photocount1">1 Photos</div>
-              <div class="listinname whitetext fontsize13 pdg05">Clermont, Orlando, FL 8758                            </div>
+              <div class="photocount1"><?= $lang[158][$current] ?></div>
+              <div class="listinname whitetext fontsize13 pdg05"><?= $lang[986][$current] ?>                          </div>
 
              </div>
 

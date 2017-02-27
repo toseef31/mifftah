@@ -2,12 +2,10 @@
 @section('content')
   <div class="dashleft  col-lg-9 col-md-9 col-sm-12 col-xs-12 nopadding">
     <section class="detailsection mgnB20 fulwidthm whitebg left pdg15">
-      <h4 class="robotolight fontsize24 graytext mgnB20">Manage My Agent Account
+      <h4 class="robotolight fontsize24 graytext mgnB20"><?= $lang[443][$current] ?>
         <div class="helpqust mgnT05 graytext"><i class="fa fa-question-circle"></i>
           <div class="helpanswer">
-            You can manage your agent account from here. You can activate your account, upgrade your
-            account to premium status, and even cancel your agent status from here. Please also note that in order to cancel your
-            account you have to remove your active leads if any. You can also view your active leads from here.
+          <?= $lang[899][$current] ?>
           </div>
         </div>
       </h4>
@@ -15,12 +13,12 @@
         <table class="table-bordered fulwidthm  table-striped table-condensed cf cpnl_table" id="list_results">
           <thead class="robotoregular font-size14 tablehead dblue_bg whitetext">
           <tr class="robotomedium">
-            <th class="numeric robotomedium" width="5%">Logo</th>
-            <th class="numeric robotomedium">Firm Name</th>
-            <th class="numeric robotomedium" width="32%">Firm Address</th>
-            <th class="numeric robotomedium" width="15%">Premium Status</th>
-            <th class="numeric robotomedium" width="10%"> Status</th>
-            <th class="numeric robotomedium">Actions</th>
+            <th class="numeric robotomedium" width="5%"><?= $lang[241][$current] ?></th>
+            <th class="numeric robotomedium"><?= $lang[434][$current] ?></th>
+            <th class="numeric robotomedium" width="32%"><?= $lang[435][$current] ?></th>
+            <th class="numeric robotomedium" width="15%"><?= $lang[436][$current] ?></th>
+            <th class="numeric robotomedium" width="10%"> <?= $lang[187][$current] ?></th>
+            <th class="numeric robotomedium"><?= $lang[720][$current] ?></th>
           </tr>
           </thead>
           <tbody>

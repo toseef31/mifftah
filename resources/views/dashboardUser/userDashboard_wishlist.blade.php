@@ -42,7 +42,7 @@
                       <div class="n_lsqft halfwidth text-right left dblue_bg  whitetext robotoregular fontsize16" title="Home Size : {{$active_wishlists->wishitem->homesize}} Sq.ft">{{$active_wishlists->wishitem->homesize}} Sq.ft</div>
                       <div class="nl_bottom fulwidthm left pdg10">
                         <div class="left">
-                          <a href="{{ url('/remove/wishlist/'.$active_wishlists->wishitem->id) }}"><span class="removelstfromwish  btn btn-danger" id="41">Remove</span></a>
+                          <a href="{{ url('/remove/wishlist/'.$active_wishlists->wishitem->id) }}"><span class="removelstfromwish  btn btn-danger" id="41"><?= $lang[623][$current] ?></span></a>
                         </div>
                         <div class="n_botmrd right fontsize16 ">
                           <div class="roomcount left"><i class="flaticon-sleeping fontsize24"></i><span class="n_botmrdcount">{{$active_wishlists->wishitem->beds}}</span></div>

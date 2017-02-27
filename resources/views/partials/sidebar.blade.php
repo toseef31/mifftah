@@ -10,7 +10,6 @@
       <li class="slidingmenuli"><a class="slidemneu_a" href="{{ url('/howitwork') }}">How to Sell on For Sale Network</a></li>
       <li class="slidingmenuli"><a class="slidemneu_a" href="{{ url('/support') }}">Support Desk</a></li>
     </ul>
-    
     <div class="responsivemenu fulwidthm left">
       <ul class="re_ul left fulwidthm left">
       </ul>

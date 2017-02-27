@@ -136,6 +136,7 @@ Route::get('ar-admin/deletelead/{id}', 'DashboardController@ardelead');
 
 /** seeding the database **/
 Route::get('admin/updateLanguage' , 'DashboardController@updateLanguage');
+Route::get('admin/updateLanguagedemo' , 'DashboardController@updateLanguagedemo');
 Route::post('admin/storeLanguage' , 'DashboardController@updateLanguageStore');
 Route::get('dataseeder', 'UserController@dataseed');
 

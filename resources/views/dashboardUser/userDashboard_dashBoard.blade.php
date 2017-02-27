@@ -29,7 +29,7 @@
                 <span class="left mgnS05">
                   <img src="{{ asset('images/premiumagnticon.png') }}" alt="">
                   </span>
-                <span class="  premimumagntname left whitetext lblue_bg fontsize12 pdg05">Premium Agent</span>
+                <span class="  premimumagntname left whitetext lblue_bg fontsize12 pdg05"><?= $lang[217][$current] ?></span>
               </div>
               <div class="clearfix"></div>
               <div class="dashrating fontsize16 right mgnT05"><i class="fa fa-star yellowtext"></i><i class="fa fa-star yellowtext"></i><i class="fa fa-star yellowtext"></i><i class="fa fa-star yellowtext"></i><i class="fa fa-star lgraytext"></i><span class=" fontsize12"> (1) </span></div>
@@ -41,24 +41,24 @@
           <div class="usercountf yellowbg fulwidthm left">
             <div class="usercountbox col-sm-12 col-xs-12 text-center dbluetext">
               <span class="fontsize24 ">92</span>
-              <span class="font-size14 usercntbrk">In Wishlist</span>
+              <span class="font-size14 usercntbrk"><?= $lang[999][$current] ?></span>
             </div>
           </div>
           <?php }else{ ?>
           <div class="usercountf yellowbg fulwidthm left">
             <?php if(Auth::user()->role == 1 ){ ?>
             <div class="usercountbox col-sm-4 col-xs-4 text-center dbluetext">
-              <span class="fontsize24 "><?= count($listing) ?></span> <span class="font-size14 usercntbrk">Total Listings</span>
+              <span class="fontsize24 "><?= count($listing) ?></span> <span class="font-size14 usercntbrk"><?= $lang[265][$current] ?></span>
             </div>
             <div class="usercountbox middleyellow col-sm-4 col-xs-4 text-center dbluetext">
-              <span class="fontsize24 "><?= count($listing) ?></span> <span class="font-size14 usercntbrk">Total Active Listings</span>
+              <span class="fontsize24 "><?= count($listing) ?></span> <span class="font-size14 usercntbrk"><?= $lang[266][$current] ?></span>
             </div>
             <div class="usercountbox col-sm-4 col-xs-4 text-center dbluetext">
-              <span class="fontsize24 "><?= 0 ?></span> <span class="font-size14 usercntbrk">Total Sold Listings</span>
+              <span class="fontsize24 "><?= 0 ?></span> <span class="font-size14 usercntbrk"><?= $lang[267][$current] ?></span>
             </div>
             <?php }elseif (Auth::user()->role == 2) { ?>
             <div class="usercountbox col-sm-12 col-xs-12 text-center dbluetext">
-              <span class="fontsize24 "><?= count($wishlist); ?></span> <span class="font-size14 usercntbrk">Wishlist</span>
+              <span class="fontsize24 "><?= count($wishlist); ?></span> <span class="font-size14 usercntbrk"><?= $lang[622][$current] ?></span>
             </div>
             <?php } ?>
           </div>
@@ -80,8 +80,7 @@
           <?= (Auth::user()->role == 1) ? 'Vendor' : 'Buyer'; ?> Info
           <div class="helpqust mgnT05 graytext"><i class="fa fa-question-circle"></i>
             <div class="helpanswer">
-              Details of other users &amp; their listings/properties that are handled by you as an agent is displayed here. The previous details of the listing are based
-              on the listings created/owned by you as a seller and not as an agent.
+              <?= $lang[269][$current] ?>
             </div>
           </div>
         </h4>
@@ -89,20 +88,20 @@
       <?php if (Auth::user()->role == 2) { ?>
       <div class="col-sm-9 col-xs-9 agntinfobx text-center lblue_bg whitetext pdgTB10">
         <span class="fontsize24 "><?= count($wishlist) ?></span>
-        <span class="font-size14 usercntbrk"> Wish Lists</span>
+        <span class="font-size14 usercntbrk">   <?= $lang[1000][$current] ?></span>
       </div>
       <?php }elseif(Auth::user()->role == 1) { ?>
       <div class="col-sm-3 col-xs-12 agntinfobx text-center lblue_bg whitetext pdgTB10">
         <span class="fontsize24 "><?= count($listing) ?></span>
-        <span class="font-size14 usercntbrk"> Total Lead Listings</span>
+        <span class="font-size14 usercntbrk">   <?= $lang[270][$current] ?></span>
       </div>
       <div class="col-sm-3 col-xs-12 agntinfobx text-center agntmiddle whitetext pdgTB10">
         <span class="fontsize24 ">0</span>
-        <span class="font-size14 usercntbrk"> Total Lead Listings Sold</span>
+        <span class="font-size14 usercntbrk">  <?= $lang[271][$current] ?></span>
       </div>
       <div class="col-sm-3 col-xs-12 agntinfobx lblue_bg text-center whitetext pdgTB10">
         <span class="fontsize24 ">0</span>
-        <span class="font-size14 usercntbrk"> Total Active Leads/Clients</span>
+        <span class="font-size14 usercntbrk">   <?= $lang[272][$current] ?></span>
       </div>
       <?php } ?>
     </section>
@@ -113,71 +112,70 @@
   <section class="detailsection mgnB20 fulwidthm whitebg left pdg15">
     <li class="notificationwrp fulwidthm left">
       <h4 class="robotolight fontsize24 graytext">
-        Notifications
+      <?= $lang[274][$current] ?>
         <div class="helpqust mgnT05 graytext">
           <i class="fa fa-question-circle"></i>
           <div class="helpanswer">
-            You can find the important facts about your account from here
+             <?= $lang[898][$current] ?>
           </div>
         </div>
       </h4>
       <ul class="notficationul fulwidthm mgnT25 left">
         <li class="notificaionli fulwidthm left mgnB10 pdgB10">
           <div class="notificationmsg lgraytext font-size14 robotoregular mgnB10">
-            You have <?= (isset($inactivelisting))?$inactivelisting:''; ?> Incomplete Listings.
+            You have <?= (isset($inactivelisting))?$inactivelisting:''; ?>   <?= $lang[279][$current] ?>
           </div>
           <div class="clearfix"></div>
           <div class="notoficationbtn">
-            <a href="{{ url('user/managelist') }}" class="btn dblue_bg whitetext">Complete Now</a>
+            <a href="{{ url('user/managelist') }}" class="btn dblue_bg whitetext">  <?= $lang[277][$current] ?></a>
           </div>
         </li>
         <li class="notificaionli fulwidthm left mgnB10 pdgB10">
           <div class="notificationmsg lgraytext font-size14 robotoregular mgnB10">
-            Make Your Listings Featured to Get more Attention. You have 4 Listings that is not Featured.
+             <?= $lang[283][$current] ?>
           </div>
           <div class="clearfix"></div>
           <div class="notoficationbtn">
-            <a href="#" class="btn dblue_bg whitetext">Upgrade to Featured Status</a>
+            <a href="#" class="btn dblue_bg whitetext">  <?= $lang[284][$current] ?></a>
           </div>
         </li>
         <li class="notificaionli fulwidthm left mgnB10 pdgB10">
           <div class="notificationmsg lgraytext font-size14 robotoregular mgnB10">
-            Premium status for your agent account has been expired on 08/01/2017 and extended to a grace period of 7 days.
-            In order to continue as a premium agent please make the payment before the grace period.
+           <?= $lang[1001][$current] ?>
           </div>
           <div class="clearfix"></div>
           <div class="notoficationbtn">
-            <a href="#" class="btn dblue_bg whitetext">Pay Now</a>
+            <a href="#" class="btn dblue_bg whitetext"><?= $lang[961][$current] ?></a>
           </div>
         </li>
         <li class="notificaionli fulwidthm left mgnB10 pdgB10">
           <div class="notificationmsg lgraytext font-size14 robotoregular mgnB10">
-            Featured status of some of your listing are in grace period.
+           <?= $lang[958][$current] ?>
             <div class="helpqust mgnT05 graytext">
               <i class="fa fa-question-circle"></i>
               <div class="helpanswer">
-                Grace period is the number of days after expiry.
+                <?= $lang[964][$current] ?>
               </div>
             </div>
           </div>
           <div class="clearfix"></div>
           <div class="notoficationbtn">
-            <a href="#" class="btn dblue_bg whitetext">Retain Featured Status</a>
+            <a href="#" class="btn dblue_bg whitetext"><?= $lang[962][$current] ?></a>
           </div>
         </li>
         <li class="notificaionli fulwidthm left mgnB10 pdgB10">
           <div class="notificationmsg lgraytext font-size14 robotoregular mgnB10">
-            Some of listing are currently in grace period and will be expired soon.
+           <?= $lang[959][$current] ?>
             <div class="helpqust mgnT05 graytext">
               <i class="fa fa-question-circle"></i>
               <div class="helpanswer">
-                Grace period is the number of days after expiry.
+             <?= $lang[964][$current] ?>
               </div>
             </div>
           </div>
           <div class="clearfix"></div>
           <div class="notoficationbtn">
-            <a href="#" class="btn dblue_bg whitetext"> Click to Extend</a>
+            <a href="#" class="btn dblue_bg whitetext"> <?= $lang[960][$current] ?></a>
           </div>
           
         </li>
@@ -236,10 +234,10 @@
       
       <li class="notificationwrp fulwidthm left">
         <h4 class="robotolight fontsize24 graytext">
-          Notifications
+         <?= $lang[274][$current] ?>
           <div class="helpqust mgnT05 graytext"><i class="fa fa-question-circle"></i>
             <div class="helpanswer">
-              You can find the important facts about your account from here
+             <?= $lang[898][$current] ?>
             </div>
           </div>
         </h4>
@@ -248,12 +246,12 @@
           
           <li class="notificaionli fulwidthm left mgnB10 pdgB10">
             <div class="notificationmsg lgraytext font-size14 robotoregular mgnB10">
-              You have 102 Incomplete Listings.
+             <?= $lang[1002][$current] ?>
             </div>
             
             <div class="clearfix"></div>
             <div class="notoficationbtn">
-              <a href="http://inout-realestate.demo.inoutscripts.net/user/managelist" class="btn dblue_bg whitetext">Complete Now</a>
+              <a href="http://inout-realestate.demo.inoutscripts.net/user/managelist" class="btn dblue_bg whitetext"> <?= $lang[277][$current] ?></a>
             </div>
           
           
@@ -261,47 +259,46 @@
           
           <li class="notificaionli fulwidthm left mgnB10 pdgB10">
             <div class="notificationmsg lgraytext font-size14 robotoregular mgnB10">
-              Make Your Listings Featured to Get more Attention. You have 4 Listings that is not Featured.
+               <?= $lang[283][$current] ?>
             </div>
             <div class="clearfix"></div>
             <div class="notoficationbtn">
-              <a href="http://inout-realestate.demo.inoutscripts.net/user/managelist" class="btn dblue_bg whitetext">Upgrade to Featured Status</a>
+              <a href="http://inout-realestate.demo.inoutscripts.net/user/managelist" class="btn dblue_bg whitetext"> <?= $lang[284][$current] ?></a>
             </div>
           
           </li>
           <li class="notificaionli fulwidthm left mgnB10 pdgB10">
             <div class="notificationmsg lgraytext font-size14 robotoregular mgnB10">
-              Premium status for your agent account has been expired on 08/01/2017 and extended to a grace period of 7 days.
-              In order to continue as a premium agent please make the payment before the grace period.
+             <?= $lang[1001][$current] ?>
             </div>
             <div class="clearfix"></div>
             <div class="notoficationbtn">
-              <a href="http://inout-realestate.demo.inoutscripts.net/user/agentaccount" class="btn dblue_bg whitetext">Pay Now</a>
+              <a href="http://inout-realestate.demo.inoutscripts.net/user/agentaccount" class="btn dblue_bg whitetext"> <?= $lang[961][$current] ?></a>
             </div>
           
           </li>
           <li class="notificaionli fulwidthm left mgnB10 pdgB10">
             <div class="notificationmsg lgraytext font-size14 robotoregular mgnB10">
-              Featured status of some of your listing are in grace period.
+              <?= $lang[958][$current] ?>
               <div class="helpqust mgnT05 graytext"><i class="fa fa-question-circle"></i>
                 <div class="helpanswer">
-                  Grace period is the number of days after expiry.
+                 <?= $lang[964][$current] ?>
                 </div>
               </div>
             </div>
             <div class="clearfix"></div>
             <div class="notoficationbtn">
-              <a href="http://inout-realestate.demo.inoutscripts.net/user/managelist" class="btn dblue_bg whitetext">Retain Featured Status</a>
+              <a href="http://inout-realestate.demo.inoutscripts.net/user/managelist" class="btn dblue_bg whitetext"> <?= $lang[962][$current] ?></a>
             </div>
           
           </li>
           
           <li class="notificaionli fulwidthm left mgnB10 pdgB10">
             <div class="notificationmsg lgraytext font-size14 robotoregular mgnB10">
-              Some of listing are currently in grace period and will be expired soon.
+              <?= $lang[959][$current] ?>
               <div class="helpqust mgnT05 graytext"><i class="fa fa-question-circle"></i>
                 <div class="helpanswer">
-                  Grace period is the number of days after expiry.
+                  <?= $lang[964][$current] ?>
                 </div>
               </div>
             
@@ -309,7 +306,7 @@
             </div>
             <div class="clearfix"></div>
             <div class="notoficationbtn">
-              <a href="http://inout-realestate.demo.inoutscripts.net/user/managelist" class="btn dblue_bg whitetext"> Click to Extend</a>
+              <a href="http://inout-realestate.demo.inoutscripts.net/user/managelist" class="btn dblue_bg whitetext">  <?= $lang[960][$current] ?></a>
             </div>
           
           </li>
@@ -338,7 +335,7 @@
             </div>
             <div class="wishlistdis pdgTB15 left fulwidthm whitebg lgray_border ">
               <div class=" fulwidthm text-center left pdgS10">
-                <div class="reusltheading robotomedium fontsize18 graytext">My Wishlist</div>
+                <div class="reusltheading robotomedium fontsize18 graytext"> <?= $lang[283][$current] ?> <?= $lang[290][$current] ?></div>
               </div>
             </div>
           </div>

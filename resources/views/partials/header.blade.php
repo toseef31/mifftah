@@ -10,20 +10,20 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link type="text/css" rel="stylesheet" href="{{ str_replace('/ar', '' ,asset('css/jquery.ui.autocomplete.css')) }}"/>
-  <link rel="stylesheet" type="text/css" href="{{ asset('css/main.css') }}"/>
-  <link rel="stylesheet" type="text/css" href="{{ asset('css/reset.css') }}"/>
-  <link rel="stylesheet" type="text/css" href="{{ asset('css/responsive.css') }}"/>
-  <link rel="stylesheet" type="text/css" href="{{ asset('css/flaticon.css') }}"/>
-  <link rel="stylesheet" type="text/css" href="{{ asset('css/select2.css') }}"/>
-  <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css') }}"/>
-  <link rel="stylesheet" type="text/css" href="{{ asset('css/animate/animate.css') }}"/>
-  <link rel="stylesheet" type="text/css" href="{{ asset('css/owl.carousel.css') }}"/>
-  <link rel="stylesheet" type="text/css" href="{{ asset('css/font-awesome.css') }}"/>
-  <link rel="stylesheet" href="{{ asset('css/superslides.css') }}">
-  <link rel="stylesheet" href="{{ asset('css/simpledatepicker/datepicker.css') }}" type="text/css">
-  <link rel="stylesheet" type="text/css" href="{{ asset('css/rangeslider/ion.rangeSlider.css') }}"/>
-  <link rel="stylesheet" type="text/css" href="{{ asset('css/rangeslider/ion.rangeSlider.skinFlat.css') }}"/>
-  <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}"/>
+  <link rel="stylesheet" type="text/css" href="{{ url('css/main.css') }}"/>
+  <link rel="stylesheet" type="text/css" href="{{ url('css/reset.css') }}"/>
+  <link rel="stylesheet" type="text/css" href="{{ url('css/responsive.css') }}"/>
+  <link rel="stylesheet" type="text/css" href="{{ url('css/flaticon.css') }}"/>
+  <link rel="stylesheet" type="text/css" href="{{ url('css/select2.css') }}"/>
+  <link rel="stylesheet" type="text/css" href="{{ url('css/bootstrap.min.css') }}"/>
+  <link rel="stylesheet" type="text/css" href="{{ url('css/animate/animate.css') }}"/>
+  <link rel="stylesheet" type="text/css" href="{{ url('css/owl.carousel.css') }}"/>
+  <link rel="stylesheet" type="text/css" href="{{ url('css/font-awesome.css') }}"/>
+  <link rel="stylesheet" href="{{ url('css/superslides.css') }}">
+  <link rel="stylesheet" href="{{ url('css/simpledatepicker/datepicker.css') }}" type="text/css">
+  <link rel="stylesheet" type="text/css" href="{{ url('css/rangeslider/ion.rangeSlider.css') }}"/>
+  <link rel="stylesheet" type="text/css" href="{{ url('css/rangeslider/ion.rangeSlider.skinFlat.css') }}"/>
+  <link rel="stylesheet" type="text/css" href="{{ url('css/style.css') }}"/>
   <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500' rel='stylesheet' type='text/css'>
   <script src="{{ asset('js/jquery.min.js') }}"></script>
   <script type="text/javascript" src="{{ asset('js/jquery_ui.js') }}"></script>

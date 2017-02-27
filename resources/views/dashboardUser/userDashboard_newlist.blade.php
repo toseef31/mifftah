@@ -49,17 +49,17 @@ $city = $geo["geoplugin_city"];
           </div>
           <div class="f1-step active">
             <div class="f1-step-icon"><i class="fa fa-user"></i></div>
-            <p>Add Location</p>
+            <p><?= $lang[1021][$current] ?></p>
           </div>
           <div class="f1-step">
             <div class="f1-step-icon">
               <i class="fa fa-key"></i>
             </div>
-            <p>Details</p>
+            <p><?= $lang[830][$current] ?></p>
           </div>
           <div class="f1-step">
             <div class="f1-step-icon"><i class="fa fa-twitter"></i></div>
-            <p>Publish</p>
+            <p><?= $lang[1022][$current] ?></p>
           </div>
         </div>
         <fieldset>
@@ -68,37 +68,36 @@ $city = $geo["geoplugin_city"];
               <div class=" fulwidthm left pdg20 graybg">
                 <div class="col-sm-12 col-xs-12 nopadding">
                   <div class="listingrow fulwidthm mgnB30 left">
-                    <label class="robotomedium font-size14 graytext mgnB10">Title
+                    <label class="robotomedium font-size14 graytext mgnB10"><?= $lang[1023][$current] ?>
                       <div class="helpqust mgnT05 graytext"><i class="fa fa-question-circle"></i>
-                        <div class="helpanswer"> Please Choose a label of the listing you are about to add from here.</div>
+                        <div class="helpanswer"> <?= $lang[609][$current] ?></div>
                       </div>
                     </label>
                     <input id="" type="text" class="fulwidthm commoninput commoninputborder pdgS05" placeholder="Title" autocomplete="off" name="title" required/>
                   </div>
                   <div class="listingrow fulwidthm mgnB30 left">
-                    <label class="robotomedium font-size14 graytext mgnB10">Label
+                    <label class="robotomedium font-size14 graytext mgnB10"><?= $lang[608][$current] ?>
                       <div class="helpqust mgnT05 graytext"><i class="fa fa-question-circle"></i>
-                        <div class="helpanswer"> Please Choose a label of the listing you are about to add from here.</div>
+                        <div class="helpanswer"><?= $lang[609][$current] ?></div>
                       </div>
                     </label>
                     <select id="" class="listingselect text-left" style="width: 100%" name="type" required>
-                      <option value="rent">Property For Rent</option>
-                      <option valu e="sale">Property For Sale</option>
+                      <option value="rent"><?= $lang[611][$current] ?></option>
+                      <option valu e="sale"><?= $lang[610][$current] ?></option>
                     </select>
                   </div>
                   
                   <div class="listingrow fulwidthm mgnB30 left">
-                    <label class="robotomedium font-size14 graytext mgnB10"><i class="fa fa-map-marker"></i>&nbsp;City/Region</label>
+                    <label class="robotomedium font-size14 graytext mgnB10"><i class="fa fa-map-marker"></i><?= $lang[612][$current] ?></label>
                     <div class="helpqust mgnT05 graytext"><i class="fa fa-question-circle"></i>
-                      <div class="helpanswer"> Please choose the city in which your property is located. Make sure you choose from the list, rather than typing in your place. Also make sure that
-                        you give the correct city for the best results.
+                      <div class="helpanswer"> <?= $lang[613][$current] ?>
                       </div>
                     </div>
                     <input id="listcity" type="text" class="fulwidthm commoninput commoninputborder pdgS05" placeholder="City/Region" autocomplete="off" name="region"/></div>
                   <div class="listingrow fulwidthm mgnB30 left">
-                    <label class="robotomedium font-size14 graytext mgnB10"><i class="fa fa-map-marker"></i>&nbsp;House/Street Address</label>
+                    <label class="robotomedium font-size14 graytext mgnB10"><i class="fa fa-map-marker"></i><?= $lang[614][$current] ?></label>
                     <div class="helpqust mgnT05 graytext"><i class="fa fa-question-circle"></i>
-                      <div class="helpanswer"> You can give the house name or house number, street number etc to pin point your property location.</div>
+                      <div class="helpanswer"> <?= $lang[615][$current] ?></div>
                     </div>
                     <input id="address" type="text" class="fulwidthm commoninput commoninputborder pdgS05" placeholder="House Name/Apartment Number/Street" name="street" value=""/>
                     <input id="latitude" name="latitude" type="hidden" value="" required/>
@@ -106,13 +105,13 @@ $city = $geo["geoplugin_city"];
                   </div>
                   <div id="mapCanvas"></div>
                   <div id="infoPanel">
-                    <b>Marker status:</b>
-                    <div id="markerStatus"><i>Click and drag the marker.</i></div>
+                    <b><?= $lang[1024][$current] ?></b>
+                    <div id="markerStatus"><i><?= $lang[1025][$current] ?></i></div>
                   </div>
                   <div class="listingrow fulwidthm mgnB30 left">
-                    <label class="robotomedium font-size14 graytext mgnB10">Category</label>
+                    <label class="robotomedium font-size14 graytext mgnB10"><?= $lang[1026][$current] ?></label>
                     <div class="helpqust mgnT05 graytext"><i class="fa fa-question-circle"></i>
-                      <div class="helpanswer"> Please choose the Category in which your space is located.</div>
+                      <div class="helpanswer"><?= $lang[1027][$current] ?></div>
                     </div>
                     <input id="pincode" type="text" class="fulwidthm commoninput commoninputborder pdgS05" name="pincode"/>
                   </div>
@@ -123,7 +122,7 @@ $city = $geo["geoplugin_city"];
           </div>
           <div class="f1-buttons">
             <input class="btn btn-next" type="submit" name="submit" id="submit" value="Submit" style="max-width: 120px; margin-right: 17px;background-color: orangered; color: white;"/>
-            {{--<button type="button" class="btn btn-next" form="newvalentery">Next</button>--}}
+            {{--<button type="button" class="btn btn-next" form="newvalentery"><?= $lang[1028][$current] ?></button>--}}
           </div>
         </fieldset>
       </section>

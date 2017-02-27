@@ -2,10 +2,10 @@
 @section('content')
   <div class="dashleft  col-lg-9 col-md-9 col-sm-12 col-xs-12 nopadding">
     <section class="detailsection mgnB20 fulwidthm whitebg left pdg15">
-      <h4 class="robotolight fontsize24 graytext mgnB20"> Manage Active Leads
+      <h4 class="robotolight fontsize24 graytext mgnB20">  <?= $lang[598][$current] ?>
         <div class="helpqust mgnT05 graytext"><i class="fa fa-question-circle"></i>
           <div class="helpanswer">
-            You can manage your active clients/leads from here. You can delete any active leads and contact your clients from here.
+             <?= $lang[931][$current] ?>
           </div>
         </div>
       </h4>
@@ -13,12 +13,12 @@
         <table class="table-bordered fulwidthm  table-striped table-condensed cf cpnl_table">
           <thead class="robotoregular font-size14 tablehead dblue_bg whitetext">
           <tr class="robotomedium">
-            <th class="numeric robotomedium">Image</th>
-            <th class="numeric robotomedium">Listing Address</th>
-            <th class="numeric robotomedium">Type</th>
-            {{--<th class="numeric robotomedium">Featured</th>--}}
-            <th class="numeric robotomedium">Status</th>
-            <th class="numeric robotomedium">Action</th>
+            <th class="numeric robotomedium"><?= $lang[864][$current] ?></th>
+            <th class="numeric robotomedium"><?= $lang[866][$current] ?></th>
+            <th class="numeric robotomedium"><?= $lang[870][$current] ?></th>
+            {{--<th class="numeric robotomedium"><?= $lang[867][$current] ?></th>--}}
+            <th class="numeric robotomedium"><?= $lang[868][$current] ?></th>
+            <th class="numeric robotomedium"><?= $lang[869][$current] ?></th>
           </tr>
           </thead>
           <tbody id="list_results">
